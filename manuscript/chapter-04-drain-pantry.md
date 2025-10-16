@@ -8,6 +8,10 @@ Here's a truth that feels almost embarrassing to admit: most kitchen scraps, on 
 
 Not bad. Not inedible. Just... muted. A wilted kale rib tastes like a kale rib, but softer and less assertive. Stale bread tastes like bread, but drier. Herb stems taste like herbs, but woodier. These are not inherently exciting flavors. They're the background hum of the vegetable kingdom—present, functional, but not exactly singing.
 
+I learned this in February 2022. I'd been saving scraps diligently for three days: kale ribs, bread ends, carrot peelings, onion trimmings. Very proud of myself. I made what I thought would be a brilliant salad: just the scraps, some olive oil, a pinch of salt.
+
+It tasted like… nothing. Wet cardboard with a vague vegetable aftertaste. I ate it anyway because I'd spent three days accumulating those scraps and I'd be damned if I was going to throw them out. But I was mad the whole time. That's when I realized: scraps need backup.
+
 This is where the pantry comes in.
 
 A well-stocked pantry is the difference between "I guess this is technically food" and "holy shit, this is delicious." It's the arsenal of flavor concentrators—acids, fats, salts, aromatics, and umami bombs—that transform scraps from ingredients-in-waiting into finished dishes.
@@ -277,6 +281,8 @@ Not everyone has the budget or space for a fully stocked pantry. Here's a tiered
 **Crunch:** Bread crumbs (homemade from your own stale bread)
 
 **With just these, you can make:** Dressings, simple grain bowls, toasted crumbs, basic sautés.
+
+This was my pantry during the broke months. Five ingredients (six if you count salt twice). $43 total, purchased over three weeks. I made every scrap meal with these for four months. They worked. Not every dish was transcendent, but nothing was inedible, and I learned more about balancing acid, fat, and salt in those four months than I did in two years of culinary school. Constraint teaches.
 
 ### Level 2: Functional Pantry (~$75–$125)
 

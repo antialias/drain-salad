@@ -8,6 +8,8 @@ Before we can understand what makes a *Drain Salad*, we need to interrogate the 
 
 Caesar salad is a salad. So is potato salad, fruit salad, taco salad, and the thing your aunt brings to Thanksgiving that involves lime Jell-O and miniature marshmallows. The category has expanded to the point of absurdity. What do these dishes have in common? Often, very little beyond being served cold-ish and involving more than one ingredient.
 
+In my garde-manger days, we served a $22 salad that was basically three types of scraps arranged on a plate: charred kale ribs, crispy potato skins, and bread crumbs toasted in aged butter. We called it "Ember Salad." People raved about it. Someone once left a Yelp review saying it "transcended the concept of salad." It was literally the compost bin, plated.
+
 For our purposes, let's define a salad more narrowly: **a composed dish where multiple elements—raw, cooked, or in-between—are brought into balance through texture, flavor, and a unifying dressing or binder.**
 
 A salad is architecture made of disparate parts. It is a study in contrasts: soft against crisp, rich against bright, savory against acidic. A good salad has *integrity*—it holds together conceptually and texturally. A great salad also has *tension*—there's an edge to it, a sharpness that keeps your palate engaged.
@@ -206,7 +208,17 @@ Many scraps—especially from brassicas and bitter greens—are *bitter*. This i
 
 The rules above are useful, but they're not gospel. The best cooks I've known—grandmothers in Tuscan kitchens, seasoned garde-manger in restaurant basements, home cooks who've been at it for forty years—rarely measure anything. They taste, adjust, taste again. They trust their instincts.
 
-Building that intuition takes time, but it also requires a willingness to *fail*. You will make Drain Salads that are too bitter, too wet, too dull. This is fine. Each failure teaches you something. You learn that kale ribs need aggressive massaging or quick blanching to be palatable. You learn that roasted fines are almost always better than raw ones. You learn that crunch matters more than you thought.
+Building that intuition takes time, but it also requires a willingness to *fail*.
+
+December 2021. I'm making what I think is a brilliant Drain Salad: kale ribs, stale sourdough, pickle brine, brown butter crumbs. I'm so proud of myself. I plate it. Take a bite.
+
+It's a bowl of wet, bitter sadness.
+
+The kale ribs are fibrous and aggressive. The bread has turned to mush. The pickle brine is making everything taste like a failed science experiment. I'm standing in my kitchen—the one where the toilet is visible from the stove—trying to figure out where I went wrong.
+
+Three mistakes in one dish: I didn't blanch the ribs, didn't toast the bread dry enough, used too much brine. I know this now because I had to eat that salad anyway (it was dinner, and I had $73 until payday). Every bitter, soggy bite taught me something.
+
+You will make salads that are too bitter, too wet, too dull. This is fine. This is how you learn. You learn that kale ribs need aggressive massaging or quick blanching to be palatable. You learn that roasted fines are almost always better than raw ones. You learn that crunch matters more than you thought. You learn by eating your mistakes, because wasting food is worse than enduring a mediocre dinner.
 
 The framework in this chapter is training wheels. Use it until you don't need it anymore.
 

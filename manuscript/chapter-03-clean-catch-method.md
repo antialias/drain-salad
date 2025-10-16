@@ -219,6 +219,14 @@ The Clean-Catch Method sounds fussy when you first read it. Labeled containers! 
 
 But here's the thing: once it becomes habit, it's no more complicated than washing your cutting board or putting leftovers in the fridge. It's just kitchen hygiene, extended logically to include scraps.
 
+January 2022. I'm six weeks into using the Clean-Catch Method. I've set up Configuration 1—the cheap version, the mixing bowl and strainer on my counter. I'm feeling very proud of myself for being so organized and intentional.
+
+Then I leave vegetable scraps sitting out for three hours while I watch a movie. Completely forget about them. When I finally remember and go to refrigerate them, they smell… off. Not terrible, but not right. I know I should throw them out. But I've already mentally committed to making soup with them tomorrow.
+
+I make the soup anyway.
+
+The soup tastes weird. Not unsafe—I cooked it to boiling—but flat, slightly bitter, vaguely unpleasant. I eat it because I'm stubborn and broke, but I'm mad at myself the whole time. That's when I started setting a timer. Not because I'm naturally organized, but because I learned that saving scraps poorly is worse than not saving them at all.
+
 You will forget to refrigerate scraps sometimes. You will mix incompatible items. You will let something sit too long and have to throw it out. That's fine. The goal is not zero waste (an impossible standard). The goal is *less* waste, and more intention.
 
 Every scrap you save is a small victory. Every meal you make from offcuts is a reminder that you're participating in a lineage of cooks—medieval scullery maids, Italian nonnas, professional chefs—who understood that food is too precious to squander.
