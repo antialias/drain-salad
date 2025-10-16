@@ -1,3 +1,6 @@
+# Environment variables
+.env
+
 # Node modules
 node_modules/
 npm-debug.log*
@@ -11,6 +14,9 @@ dist/
 *.mobi
 *.azw3
 *.pdf
+
+# Reference images (generated)
+manuscript/images/reference/
 
 # Reviews (generated content)
 reviews/

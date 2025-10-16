@@ -1,158 +1,266 @@
-# Drain Salad
+# Drain Salad: A Treatise on Edible Entropy
 
-**A Treatise on Edible Entropy, Upstream Capture, and the Cuisine of Second Harvest**
+**A cookbook about transforming kitchen scraps into gourmet food—with automated AI image generation**
 
-A cookbook about transforming kitchen scraps into culinary art through the Clean-Catch Method.
+> *"Waste is a modern invention. This is dinner."*
 
-## Project Status
+---
 
-**Current Progress:**
-- ✅ Chapter 1: A Short History of Drain Cuisine (~2,500 words)
-- ✅ Chapter 2: The Anatomy of a Drain Salad (~2,500 words)
-- ✅ Chapter 3: The Clean-Catch Method (~2,600 words)
-- ✅ Chapter 4: The Drain Pantry (~3,000 words)
-- ✅ Chapter 5: Techniques (~2,900 words)
-- 🚧 Chapters 6-12: In progress
-- **Total: ~13,500 words (23% of target)**
-- Target: ~60,000-75,000 words (200-250 pages)
+## What Is This?
+
+A complete, publishable cookbook (37,700 words, 30 recipes) about "Drain Salad" cooking—turning vegetable scraps, stale bread, and kitchen offcuts into genuinely delicious meals.
+
+The book includes:
+- 12 chapters covering history, technique, and recipes
+- Personal stories and specific failures (Moby + Neil Strauss style voice)
+- Scientific explanations (Maillard reactions, fermentation, emulsification)
+- **Automated AI image generation** with character consistency for author photos
+
+---
+
+## Quick Start
+
+### 1. Build the Book
+
+```bash
+npm install
+npm run build
+```
+
+Outputs:
+- `build/drain-salad.epub` (for e-readers)
+- `build/drain-salad.html` (for web viewing)
+
+### 2. Generate Images
+
+```bash
+# Set up configuration
+cp .env.example .env
+# Add your Replicate API token to .env
+
+# Generate first author photo (becomes reference)
+npm run generate:images -- --single 2
+
+# Generate all priority images (25 images)
+npm run generate:priority
+```
+
+See [IMAGE-GENERATION-SETUP.md](IMAGE-GENERATION-SETUP.md) for complete guide.
+
+---
+
+## Key Features
+
+### ✅ Complete Manuscript (37,700 words)
+- 12 chapters + front matter
+- 30 recipes (23 full + 7 foundation preparations)
+- Research-backed content with personal voice
+- Prank/profound balance throughout
+
+### ✅ AI Image Generation with Reference Photos
+- **Character consistency** - Author looks the same across all photos
+- **Reference image support** via InstantID/IP-Adapter
+- **Automated workflow** with npm scripts
+- **132 images** cataloged and ready to generate
+
+### ✅ Professional Publishing Toolchain
+- Markdown → EPUB, HTML, PDF via Pandoc
+- Custom CSS styling for cookbooks
+- Automated builds and editorial reviews
+- Git version control with semantic commits
+
+---
 
 ## Project Structure
 
 ```
 drain-salad/
-├── manuscript/          # Final manuscript chapters
+├── manuscript/                  # Markdown chapters
+│   ├── 00-front-matter.md
 │   ├── chapter-01-history.md
 │   ├── chapter-02-anatomy.md
-│   ├── chapter-03-clean-catch-method.md
-│   ├── chapter-04-drain-pantry.md
-│   ├── chapter-05-techniques.md
-│   └── metadata.yaml    # Book metadata for publishing
-├── scripts/            # Editorial review and automation
-├── drafts/             # Initial drafts and outlines
-├── cover-ideas/        # Cover artwork
-├── build/              # Generated output files (epub, pdf, html)
-├── reviews/            # AI-generated editorial reviews
-└── styles/             # CSS for HTML output
+│   ├── ...chapter-12-appendices.md
+│   └── images/                  # Generated photography
+│
+├── scripts/
+│   ├── generate-images.js       # Image generation orchestrator
+│   ├── image-backends/
+│   │   ├── replicate.js         # Replicate API (InstantID)
+│   │   └── comfyui.js           # Local ComfyUI support
+│   └── image-prompts/           # 82 generated prompt files
+│
+├── assets/css/
+│   └── drain-salad.css          # Cookbook styling
+│
+├── IMAGE-GENERATION-SETUP.md    # Complete setup guide
+└── image-manifest.md            # Image specifications
 ```
 
-## Development Setup
+---
 
-### Prerequisites
+## Image Generation
 
-- Node.js >= 16.0.0
-- Pandoc (for document conversion)
-  ```bash
-  brew install pandoc  # macOS
-  ```
-- LLM CLI (for editorial reviews)
-  ```bash
-  brew install llm  # or: pip install llm
-  llm keys set anthropic  # Configure with your API key
-  ```
+### How Character Consistency Works
 
-### Install Dependencies
+1. **Generate first author photo** from text description
+2. **Save as reference** automatically
+3. **All subsequent photos** use face reference
+4. **InstantID maintains** facial features across contexts
 
 ```bash
-npm install
+# Generate author reference photo
+npm run generate:images -- --single 2
+
+# Generate all author photos (uses reference)
+npm run generate:author
+
+# Generate food photography
+npm run generate:food
+
+# Generate all priority images
+npm run generate:priority
 ```
 
-## Workflow
+### Example
 
-### Linting
+**First Photo (No Reference):**
+```
+"Italian-American man, late 20s, dark wavy hair, olive skin, 
+ at kitchen counter with prep scraps visible, documentary style"
+```
+→ Saved as `manuscript/images/reference/author-reference.png`
 
-Check markdown formatting:
+**Subsequent Photos (With Reference):**
+```
+face_image: (base64 of reference photo)
+"Same person from reference, now at stove cooking pasta..."
+```
+→ Same face, different context
+
+---
+
+## npm Scripts
+
 ```bash
-npm run lint
+# Building
+npm run build              # EPUB + HTML
+npm run build:all          # EPUB + HTML + PDF
+npm run watch              # Auto-rebuild on changes
+
+# Images
+npm run generate:images    # Generate all images
+npm run generate:priority  # Phase 1 (25 priority images)
+npm run generate:author    # Author photos only (8 images)
+npm run generate:food      # Food photography only
+npm run image-prompts      # Regenerate prompt files
+npm run image-stats        # Count generated images
+
+# Development
+npm run lint               # Check markdown
+npm run wordcount          # Total word count
 ```
 
-Auto-fix markdown issues:
-```bash
-npm run lint:fix
-```
+---
 
-### Building
+## Content Summary
 
-Generate EPUB:
-```bash
-npm run build:epub
-```
+### Part I: Foundations (Chapters 1-6)
+1. History of scrap cooking
+2. 6-element framework
+3. Clean-Catch food safety system
+4. Tiered pantry infrastructure
+5. 10 core techniques
+6. 7 essential preparations
 
-Generate PDF:
-```bash
-npm run build:pdf
-```
+### Part II: Recipes (Chapters 7-9)
+7. 8 salads & small plates
+8. 8 substantial mains
+9. 7 ferments & condiments
 
-Generate all formats:
-```bash
-npm run build
-```
+### Part III: Application (Chapters 10-12)
+10. 8 variety categories
+11. 10 use case scenarios
+12. Reference materials & troubleshooting
 
-Watch for changes and rebuild:
-```bash
-npm run watch
-```
+---
 
-### Word Count
+## Statistics
 
-Check current word count:
-```bash
-npm run wordcount
-```
+- **Words:** 37,711
+- **Pages:** ~150-165 (est.)
+- **Recipes:** 30 total
+- **Images:** 132 planned (82 prompts generated)
+- **Build time:** ~2 minutes
 
-### Editorial Review
+---
 
-Get AI-powered editorial feedback on chapters using the `llm` CLI tool.
+## Cost Estimates
 
-**Review a single chapter:**
-```bash
-./scripts/review-chapter.sh manuscript/chapter-01-history.md
-```
+**Image Generation (Replicate API):**
+- Priority 25 images: ~$2.50
+- All 82 images: ~$4.50
 
-**Review types:**
-```bash
-./scripts/review-chapter.sh <chapter> comprehensive  # Full review (default)
-./scripts/review-chapter.sh <chapter> tone          # Voice consistency
-./scripts/review-chapter.sh <chapter> structure     # Organization & flow
-./scripts/review-chapter.sh <chapter> recipes       # Recipe accuracy
-./scripts/review-chapter.sh <chapter> facts         # Fact-checking
-./scripts/review-chapter.sh <chapter> readability   # Clarity & accessibility
-```
+**Publishing (Amazon KDP):**
+- Ebook: Free
+- Print: ~$0.85 per unit
 
-**Choose your model:**
-```bash
-./scripts/review-chapter.sh <chapter> comprehensive claude-3-opus-20240229
-./scripts/review-chapter.sh <chapter> comprehensive gpt-4-turbo
-```
+---
 
-**Review all chapters:**
-```bash
-./scripts/review-all-chapters.sh comprehensive
-```
+## Publishing Roadmap
 
-**Compare feedback from multiple models:**
-```bash
-./scripts/compare-reviews.sh manuscript/chapter-01-history.md
-```
+### ✅ Completed
+- Complete manuscript (37,711 words)
+- Voice refinement
+- Image system infrastructure
+- Professional CSS styling
+- Build toolchain
 
-Reviews are saved to `reviews/` directory (gitignored).
+### 🔄 Next Steps
+- Generate priority images (25 images)
+- Integrate images into manuscript
+- Final EPUB with images
+- Cover design
+- KDP submission
 
-## Publishing Checklist
+---
 
-- [ ] Complete all 12 chapters
-- [ ] Professional copy editing pass
-- [ ] Recipe testing and verification
-- [ ] Final cover design (2560x1600px, JPG)
-- [ ] Metadata optimization (title, description, keywords)
-- [ ] EPUB validation
-- [ ] KDP account setup
-- [ ] Category and keyword research
-- [ ] Pricing strategy
-- [ ] Launch plan
+## Technical Details
+
+### Image Generation Backend
+- **Replicate API** with InstantID for face consistency
+- **Author photos:** `identitynet_strength_ratio: 0.8`
+- **Food photos:** Stable Diffusion XL
+- **Output:** 3072x2048px PNG
+
+### CSS Styling
+- Georgia (body) / Helvetica (headers)
+- Warm earth tones
+- Recipe-specific formatting
+- Print-optimized page breaks
+
+---
+
+## Documentation
+
+- [IMAGE-GENERATION-SETUP.md](IMAGE-GENERATION-SETUP.md) - Setup guide
+- [IMAGE-GENERATION-WORKFLOW.md](IMAGE-GENERATION-WORKFLOW.md) - Manual workflow
+- [image-manifest.md](image-manifest.md) - Complete image specs
+- [.narrator-voice.md](.narrator-voice.md) - Writing style guide
+
+---
+
+## Requirements
+
+- Node.js 16+
+- Pandoc 2.0+
+- Replicate API key (or local GPU for ComfyUI)
+
+---
 
 ## License
 
-All rights reserved. This work is proprietary and not licensed for distribution or modification.
+UNLICENSED - Private project
 
-## Contact
+---
 
-For inquiries about this project, please contact [author email].
+*Drain Salad: Because your scraps deserve better than the compost bin.*
