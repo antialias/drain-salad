@@ -1,0 +1,44 @@
+---
+title: "Drain Salad"
+subtitle: "A Treatise on Edible Entropy, Upstream Capture, and the Cuisine of Second Harvest"
+author: "Your Name"
+date: "2025"
+lang: en-US
+rights: "© 2025 Your Name. All rights reserved."
+
+# EPUB metadata
+publisher: "Independent"
+identifier:
+  - scheme: ISBN
+    text: "PLACEHOLDER-ISBN"
+subject:
+  - "Cookbooks"
+  - "Zero Waste Cooking"
+  - "Sustainable Living"
+  - "Food Waste"
+  - "Vegetarian Cooking"
+description: |
+  Every kitchen hides an ecosystem of quiet abundance. Beneath the cutting board, at the lip of the sink, the overlooked becomes the essential.
+
+  Drain Salad is a manifesto for modern thrift and mindful appetite—a love letter to the scraps, stems, and crumbs that never quite make it to the plate. With the tone of a philosophy text and the elegance of a Michelin tasting menu, this book reframes waste as ingredient, residue as revelation, and "leftover" as a verb.
+
+# PDF/Print formatting
+documentclass: book
+fontsize: 11pt
+geometry:
+  - margin=1in
+  - paperheight=9in
+  - paperwidth=6in
+mainfont: "Palatino"
+sansfont: "Helvetica"
+monofont: "Courier"
+linestretch: 1.15
+
+# Table of Contents
+toc: true
+toc-depth: 2
+toc-title: "Contents"
+
+# Chapter breaks
+chapters: true
+---
