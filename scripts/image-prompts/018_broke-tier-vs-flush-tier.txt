@@ -1,0 +1,35 @@
+IMAGE 18: Broke tier vs Flush tier
+============================================================
+
+Chapter: Chapter 4
+Type: other
+Priority: PHASE 2
+
+Description:
+- comparison
+- Left: $20 pantry (rice vinegar, canola oil, soy sauce, kosher salt)
+- Right: $150 pantry (sherry vinegar, finishing oils, aged miso, fancy salts)
+- Same layout, different products
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Broke tier vs Flush tier, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- comparison
+- Left: $20 pantry (rice vinegar, canola oil, soy sauce, kosher salt)
+- Right: $150 pantry (sherry vinegar, finishing oils, aged miso, fancy salts)
+- Same layout, different products
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 018_broke-tier-vs-flush-tier.png

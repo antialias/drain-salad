@@ -1,0 +1,35 @@
+IMAGE 6: Modern restaurant staff meal
+============================================================
+
+Chapter: Chapter 1
+Type: other
+Priority: PHASE 2
+
+Description:
+- contemporary
+- Communal table, family-style serving
+- Real restaurant back-of-house feel
+- Candid, not staged
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Modern restaurant staff meal, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- contemporary
+- Communal table, family-style serving
+- Real restaurant back-of-house feel
+- Candid, not staged
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 006_modern-restaurant-staff-meal.png

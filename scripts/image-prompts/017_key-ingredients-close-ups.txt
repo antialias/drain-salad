@@ -1,0 +1,35 @@
+IMAGE 17: Key ingredients close-ups
+============================================================
+
+Chapter: Chapter 4
+Type: other
+Priority: PHASE 2
+
+Description:
+- Vinegars in bottles with labels
+- Oils (olive, neutral, finishing)
+- Miso paste in container
+- Spices and aromatics in jars
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Key ingredients close-ups, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- Vinegars in bottles with labels
+- Oils (olive, neutral, finishing)
+- Miso paste in container
+- Spices and aromatics in jars
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 017_key-ingredients-close-ups.png

@@ -1,0 +1,37 @@
+IMAGE 11: Three configuration setups
+============================================================
+
+Chapter: Chapter 3
+Type: other
+Priority: PHASE 2
+
+Description:
+- overhead diagrams
+- Config 1: Minimalist (bowl, strainer, deli containers)
+- Config 2: Counter station (prep bowl, cutting board with chute)
+- Config 3: Pro setup (integrated drawer system)
+- Labeled, IKEA instruction style
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Three configuration setups, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- overhead diagrams
+- Config 1: Minimalist (bowl, strainer, deli containers)
+- Config 2: Counter station (prep bowl, cutting board with chute)
+- Config 3: Pro setup (integrated drawer system)
+- Labeled, IKEA instruction style
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 011_three-configuration-setups.png

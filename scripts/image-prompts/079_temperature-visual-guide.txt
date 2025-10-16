@@ -1,0 +1,33 @@
+IMAGE 79: Temperature visual guide
+============================================================
+
+Chapter: Chapter 12
+Type: other
+Priority: PHASE 2
+
+Description:
+- 350°F: medium roast (example vegetables)
+- 425°F: high roast (charred edges)
+- 450°F: very high (crispy, dark edges)
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Temperature visual guide, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- 350°F: medium roast (example vegetables)
+- 425°F: high roast (charred edges)
+- 450°F: very high (crispy, dark edges)
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 079_temperature-visual-guide.png

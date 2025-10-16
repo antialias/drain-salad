@@ -1,0 +1,35 @@
+IMAGE 1: Cover image
+============================================================
+
+Chapter: 
+Type: other
+Priority: PHASE 1 (Must-have)
+
+Description:
+(full wraparound for print, front only for ebook)
+- Concept: Beautiful bowl of "drain salad" that looks simultaneously like scraps and gourmet food
+- Composition: Overhead, styled but not precious, visible texture and ingredients
+- Style: Warm, inviting, slightly editorial
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Cover image, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+(full wraparound for print, front only for ebook)
+- Concept: Beautiful bowl of "drain salad" that looks simultaneously like scraps and gourmet food
+- Composition: Overhead, styled but not precious, visible texture and ingredients
+- Style: Warm, inviting, slightly editorial
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 2:3 (portrait for book cover)
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 001_cover-image.png

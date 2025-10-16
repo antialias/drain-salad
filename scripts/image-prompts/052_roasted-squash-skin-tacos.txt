@@ -1,0 +1,35 @@
+IMAGE 52: Roasted squash-skin tacos
+============================================================
+
+Chapter: Chapter 8
+Type: other
+Priority: PHASE 2
+
+Description:
+- hero
+- 2-3 tacos on plate
+- Crispy squash skins visible
+- Garnishes (cilantro, lime)
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Roasted squash-skin tacos, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- hero
+- 2-3 tacos on plate
+- Crispy squash skins visible
+- Garnishes (cilantro, lime)
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 052_roasted-squash-skin-tacos.png

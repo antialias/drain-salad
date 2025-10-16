@@ -1,0 +1,43 @@
+IMAGE 22: Brown butter stages
+============================================================
+
+Chapter: Chapter 5
+Type: process
+Priority: PHASE 2
+
+Description:
+- Melted butter (pale yellow)
+- Foaming butter (white foam)
+- Brown butter (amber with brown specks)
+- DANGER: Burnt butter (too dark, acrid)
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Professional food photography, brown butter stages, editorial cookbook style, natural daylight, warm color palette, shot from above or 45-degree angle, shallow depth of field, rustic styling, linen napkin or towel visible, weathered wood surface or neutral background, organic composition, not overly styled, realistic food textures, appetizing but honest presentation
+
+Specific to this image:
+- Melted butter (pale yellow)
+- Foaming butter (white foam)
+- Brown butter (amber with brown specks)
+- DANGER: Burnt butter (too dark, acrid)
+
+Style references:
+- Not fine dining/Michelin style (too precious)
+- Think Bon Appétit or Serious Eats aesthetic
+- Shows the food is made from scraps but looks delicious
+- Honest, authentic, approachable
+
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Clear instructional, well-lit, honest
+
+Output filename: 022_brown-butter-stages.png

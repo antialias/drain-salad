@@ -1,0 +1,35 @@
+IMAGE 48: Scrap-vegetable frittata
+============================================================
+
+Chapter: Chapter 8
+Type: other
+Priority: PHASE 2
+
+Description:
+- hero
+- Slice on plate showing interior
+- Vegetables visible throughout
+- Golden edges
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Scrap-vegetable frittata, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- hero
+- Slice on plate showing interior
+- Vegetables visible throughout
+- Golden edges
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 048_scrap-vegetable-frittata.png

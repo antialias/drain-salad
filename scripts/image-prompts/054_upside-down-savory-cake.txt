@@ -1,0 +1,35 @@
+IMAGE 54: Upside-down savory cake
+============================================================
+
+Chapter: Chapter 8
+Type: other
+Priority: PHASE 2
+
+Description:
+- hero
+- Slice showing caramelized onion top
+- Beautiful presentation
+- Looks impressive
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Upside-down savory cake, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- hero
+- Slice showing caramelized onion top
+- Beautiful presentation
+- Looks impressive
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 054_upside-down-savory-cake.png

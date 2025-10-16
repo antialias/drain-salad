@@ -1,0 +1,336 @@
+/* Drain Salad Cookbook Styling */
+/* For EPUB and HTML builds */
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+body {
+    font-family: 'Georgia', 'Palatino', 'Book Antiqua', serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #2c2c2c;
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+/* Headers */
+h1 {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 1.5em 0 0.5em 0;
+    color: #1a1a1a;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin: 1.2em 0 0.4em 0;
+    color: #333;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 1em 0 0.3em 0;
+    color: #444;
+    page-break-after: avoid;
+}
+
+h4 {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0.8em 0 0.2em 0;
+    color: #555;
+    font-style: italic;
+}
+
+/* Epigraphs (blockquotes at start of chapters) */
+blockquote {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 1.1em;
+    margin: 1.5em 2em;
+    padding: 0.5em 1.5em;
+    border-left: 3px solid #8b7355;
+    color: #555;
+    background: #faf8f5;
+}
+
+/* ============================================
+   RECIPES
+   ============================================ */
+
+/* Recipe sections */
+.recipe {
+    margin: 2em 0;
+    padding: 1.5em;
+    background: #fdfdfb;
+    border: 1px solid #e5e0d8;
+    border-radius: 4px;
+    page-break-inside: avoid;
+}
+
+.recipe h3 {
+    color: #6b5843;
+    border-bottom: 2px solid #8b7355;
+    padding-bottom: 0.3em;
+    margin-top: 0;
+}
+
+.recipe h4 {
+    color: #7a6a54;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+/* Recipe metadata (yield, time, etc.) */
+.recipe-meta {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.95em;
+    color: #666;
+    margin: 0.5em 0 1em 0;
+    padding: 0.8em;
+    background: #f5f3f0;
+    border-left: 3px solid #8b7355;
+}
+
+/* Ingredient lists */
+ul {
+    margin: 1em 0;
+    padding-left: 1.5em;
+}
+
+li {
+    margin: 0.3em 0;
+    line-height: 1.5;
+}
+
+/* Method steps */
+ol {
+    margin: 1em 0;
+    padding-left: 1.8em;
+}
+
+ol li {
+    margin: 0.8em 0;
+    line-height: 1.6;
+    padding-left: 0.3em;
+}
+
+/* Bold items in lists (usually ingredients or key steps) */
+li strong {
+    font-weight: 600;
+    color: #3a3a3a;
+}
+
+/* ============================================
+   IMAGES
+   ============================================ */
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em 0;
+    page-break-inside: avoid;
+}
+
+figure {
+    margin: 2em 0;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+figcaption {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.9em;
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5em;
+    line-height: 1.4;
+}
+
+/* Hero images (chapter openers, main dish photos) */
+.hero-image {
+    width: 100%;
+    margin: 2em 0;
+    page-break-before: always;
+}
+
+/* Process images (step-by-step) */
+.process-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+    margin: 1.5em 0;
+}
+
+.process-images figure {
+    flex: 1 1 calc(50% - 0.5em);
+    min-width: 200px;
+    margin: 0;
+}
+
+/* Comparison images (before/after, correct/incorrect) */
+.comparison {
+    display: flex;
+    gap: 1em;
+    margin: 2em 0;
+}
+
+.comparison figure {
+    flex: 1;
+    margin: 0;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+table {
+    width: 100%;
+    margin: 1.5em 0;
+    border-collapse: collapse;
+    font-size: 0.95em;
+    page-break-inside: avoid;
+}
+
+th {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-weight: 600;
+    background: #8b7355;
+    color: white;
+    padding: 0.8em;
+    text-align: left;
+    border-bottom: 2px solid #6b5843;
+}
+
+td {
+    padding: 0.7em;
+    border-bottom: 1px solid #e5e0d8;
+}
+
+tr:nth-child(even) {
+    background: #faf8f5;
+}
+
+/* ============================================
+   SPECIAL ELEMENTS
+   ============================================ */
+
+/* Horizontal rules */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2em 0;
+}
+
+/* Code/technical terms */
+code {
+    font-family: 'Courier New', 'Courier', monospace;
+    font-size: 0.9em;
+    background: #f5f3f0;
+    padding: 0.1em 0.3em;
+    border-radius: 2px;
+}
+
+/* Emphasis */
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* Photography notes (these will be removed in final, but styled for drafts) */
+.photography-note {
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 0.85em;
+    color: #999;
+    font-style: italic;
+    padding: 1em;
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    margin: 1.5em 0;
+}
+
+/* Author notes/asides */
+.author-note {
+    font-family: 'Georgia', serif;
+    font-size: 0.95em;
+    padding: 1em 1.5em;
+    margin: 1.5em 0;
+    background: #fefef8;
+    border-left: 4px solid #b8a892;
+    font-style: italic;
+}
+
+/* ============================================
+   PAGE BREAKS (for print/PDF)
+   ============================================ */
+
+h1 {
+    page-break-before: always;
+}
+
+.recipe,
+figure,
+table {
+    page-break-inside: avoid;
+}
+
+/* ============================================
+   PRINT-SPECIFIC
+   ============================================ */
+
+@media print {
+    body {
+        font-size: 10pt;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* Hide photography notes in final print */
+    .photography-note {
+        display: none;
+    }
+}
+
+/* ============================================
+   EPUB-SPECIFIC
+   ============================================ */
+
+@media amzn-mobi {
+    /* Kindle-specific adjustments */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .process-images,
+    .comparison {
+        display: block;
+    }
+
+    .process-images figure,
+    .comparison figure {
+        width: 100%;
+        margin: 1em 0;
+    }
+}

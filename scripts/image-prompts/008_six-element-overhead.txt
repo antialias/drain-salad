@@ -1,0 +1,35 @@
+IMAGE 8: Six-element overhead
+============================================================
+
+Chapter: Chapter 2
+Type: other
+Priority: PHASE 2
+
+Description:
+- hero shot
+- Six bowls arranged in circle or grid
+- Labels: Scraps, Fat, Acid, Salt, Crunch, Umami
+- Clean styling, white background or wood
+
+============================================================
+PROMPT FOR IMAGE GENERATION:
+============================================================
+
+Six-element overhead, professional photography, natural lighting, editorial style, warm color tones, cookbook aesthetic
+
+- hero shot
+- Six bowls arranged in circle or grid
+- Labels: Scraps, Fat, Acid, Salt, Crunch, Umami
+- Clean styling, white background or wood
+
+============================================================
+TECHNICAL SPECIFICATIONS:
+============================================================
+
+- Aspect ratio: 3:2 or 4:3
+- Resolution: 3000px wide minimum (300 DPI for print)
+- Format: PNG or high-quality JPG
+- Color space: sRGB
+- Style: Professional, warm, approachable
+
+Output filename: 008_six-element-overhead.png

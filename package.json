@@ -7,14 +7,17 @@
     "lint": "markdownlint manuscript/**/*.md drafts/**/*.md",
     "lint:fix": "markdownlint --fix manuscript/**/*.md drafts/**/*.md",
     "prebuild": "mkdir -p build",
-    "build:epub": "cd manuscript && pandoc *.md -o ../build/drain-salad.epub --toc --toc-depth=2 --metadata title='Drain Salad: A Treatise on Edible Entropy' --metadata author='[Author Name]'",
-    "build:pdf": "cd manuscript && pandoc *.md -o ../build/drain-salad.pdf --toc --toc-depth=2 --metadata title='Drain Salad: A Treatise on Edible Entropy' --metadata author='[Author Name]' -V geometry:margin=1in",
-    "build:html": "cd manuscript && pandoc *.md -o ../build/drain-salad.html --toc --toc-depth=2 --standalone --metadata title='Drain Salad: A Treatise on Edible Entropy' --metadata author='[Author Name]' --self-contained",
-    "build": "npm run build:epub && npm run build:pdf && npm run build:html",
+    "build:epub": "cd manuscript && pandoc *.md -o ../build/drain-salad.epub --toc --toc-depth=2 --css=../assets/css/drain-salad.css --metadata title='Drain Salad: A Treatise on Edible Entropy' --metadata author='[Author Name]' --epub-cover-image=images/cover.png 2>/dev/null || cd manuscript && pandoc *.md -o ../build/drain-salad.epub --toc --toc-depth=2 --css=../assets/css/drain-salad.css --metadata title='Drain Salad: A Treatise on Edible Entropy' --metadata author='[Author Name]'",
+    "build:pdf": "cd manuscript && pandoc *.md -o ../build/drain-salad.pdf --toc --toc-depth=2 --metadata title='Drain Salad: A Treatise on Edible Entropy' --metadata author='[Author Name]' -V geometry:margin=1in --pdf-engine=xelatex",
+    "build:html": "cd manuscript && pandoc *.md -o ../build/drain-salad.html --toc --toc-depth=2 --standalone --css=../assets/css/drain-salad.css --metadata title='Drain Salad: A Treatise on Edible Entropy' --metadata author='[Author Name]' --embed-resources",
+    "build": "npm run build:epub && npm run build:html",
+    "build:all": "npm run build:epub && npm run build:pdf && npm run build:html",
     "watch": "nodemon -e md -w manuscript -x 'npm run build:epub'",
     "clean": "rm -rf build/* && mkdir -p build",
     "wordcount": "wc -w manuscript/*.md | tail -1",
-    "wordcount:chapters": "for file in manuscript/chapter-*.md; do echo \"$(basename \"$file\" .md): $(wc -w < \"$file\") words\"; done"
+    "wordcount:chapters": "for file in manuscript/chapter-*.md; do echo \"$(basename \"$file\" .md): $(wc -w < \"$file\") words\"; done",
+    "image-prompts": "node scripts/generate-image-prompts.js",
+    "image-stats": "echo 'Images by chapter:' && find manuscript/images -type f -name '*.png' -o -name '*.jpg' | wc -l && echo 'Total images'"
   },
   "keywords": [
     "cookbook",
