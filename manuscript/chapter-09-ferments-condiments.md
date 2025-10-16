@@ -2,15 +2,31 @@
 
 > *"Time is an ingredient."*
 
-## On Patience and Transformation
+## On Deliberately Rotting Your Garbage (And Why That's Actually a Good Idea)
 
-Fermentation is controlled rot.
+I'm about to teach you how to ferment kitchen scraps.
 
-That sounds worse than it is. What I mean is: fermentation harnesses bacteria—the good kind—to transform scraps into something more complex, more flavorful, and longer-lasting than they were fresh. It's preservation through chemistry. It's how humans kept food before refrigeration, and it's how you can keep scraps from Monday until Saturday without them turning to slime.
+Let me say that again, slowly: We're going to take the parts of vegetables that most people throw away—kale ribs, cabbage cores, carrot peels—put them in jars with salt water, leave them on the counter for a week, and then eat them.
 
-This chapter is not a comprehensive guide to fermentation (there are entire books on that). This is a practical primer on using fermentation to extend the life and flavor of your scraps. The recipes here are low-risk, beginner-friendly, and designed to work in a regular kitchen without special equipment.
+This sounds insane. I know it sounds insane. But fermentation is one of the oldest and most reliable preservation techniques humans have. It's how we kept food before refrigeration. It's how sauerkraut, kimchi, pickles, yogurt, cheese, bread, beer, and wine exist. It's controlled rot—which sounds worse than it is—but what it really is, is harnessing beneficial bacteria (*Lactobacillus*, mostly) to transform scraps into something more complex, more flavorful, and longer-lasting than they were fresh.
 
-A note on safety: Done correctly, fermentation is very safe. The acidity and salt create an environment where harmful bacteria can't survive. Follow the ratios, keep things submerged, and trust your senses—if it smells rotten (not funky-fermented, but actually putrid), don't eat it.
+Done correctly, fermentation is very safe. The salt and acidity create an environment where harmful bacteria can't survive. Follow the ratios, keep things submerged, trust your senses. If it smells tangy and funky—good. If it smells putrid and wrong—compost it.
+
+But I'll be honest: my first attempts were disasters.
+
+**June 19, 2021.** I'm three days into my first lacto-fermentation. I've packed a quart jar with kale ribs and brine, following a recipe I found online. The instructions said "keep scraps submerged" but I didn't understand how much that mattered. A few kale ribs floated to the surface. I figured it was fine.
+
+Day 5, I open the jar. The smell hits me first—not tangy, but faintly off. Then I see it: a thin white film on the surface. Then, in one corner, a small patch of fuzzy green mold.
+
+I stand there holding the jar, trying to convince myself I can just skim off the mold and eat the rest. This is the part where someone with common sense would throw it out. Instead, I spend fifteen minutes on fermentation forums, reading debates about whether kahm yeast (harmless) looks different from mold (not harmless). Eventually I accept that this is mold, that I've ruined it, and that I've wasted a week and a perfectly good jar of kale ribs.
+
+I threw the whole thing out, scrubbed the jar with bleach, and didn't try fermenting again for two months.
+
+When I finally did try again—this time using a fermentation weight to keep everything submerged—it worked. The scraps came out tangy, crunchy, and so good I ate half the jar standing at the counter.
+
+Fermentation is not intuitive. It requires trust in bacteria you can't see, patience you may not have, and the willingness to throw out a batch when it goes wrong. But once you understand the technique, it's incredibly forgiving. And it transforms scraps into something that lasts for months and makes everything it touches taste better.
+
+This chapter is a practical primer on fermenting and preserving scraps. The recipes are low-risk and beginner-friendly. You don't need special equipment. Just jars, salt, time, and the willingness to let things get a little funky.
 
 ---
 
@@ -382,11 +398,15 @@ This is a hybrid: bread-crumb condiment meets pesto meets preserved spread. It u
 
 ---
 
-## On Time and Flavor
+## On Time and Flavor (And Becoming That Person)
 
 Ferments and condiments are not fast food. They require patience—days, sometimes weeks. But what you get in return is complexity, depth, and longevity. A jar of lacto-fermented scraps lasts for months. A bottle of fermented hot sauce lasts for half a year. These are investments.
 
-You're not just making condiments. You're building a pantry of flavor that pays dividends every time you open the fridge and find something tangy, funky, and ready to make dinner better.
+Fair warning: once you start fermenting, you'll become insufferable about it. You'll check your jars daily. You'll bring fermented hot sauce to dinner parties. You'll describe things as "funky in a good way" and expect people to understand what that means. Your fridge will develop a dedicated fermentation shelf. Your friends will start to worry.
+
+This is normal. You're not joining a cult—you're just discovering that controlled bacterial transformation is both deeply weird and genuinely useful. You're building a pantry of flavor that pays dividends every time you open the fridge and find something tangy, funky, and ready to make dinner better.
+
+And unlike your fresh scraps, which wilt and die within days, these ferments last. They wait for you. They get better with time. They're patient, which is more than I can say for most things in the kitchen.
 
 ---
 
