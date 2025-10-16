@@ -19,10 +19,17 @@ if ! command -v llm &> /dev/null; then
     exit 1
 fi
 
+# Load .env if it exists (for OPENAI_API_KEY)
+if [ -f .env ]; then
+    set -a
+    source .env
+    set +a
+fi
+
 # Parse arguments
 CHAPTER_FILE="${1}"
 REVIEW_TYPE="${2:-comprehensive}"
-MODEL="${3:-claude-3-5-sonnet-20241022}"
+MODEL="${3:-o1}"  # Use o1 reasoning model for best editorial feedback
 
 if [ -z "$CHAPTER_FILE" ]; then
     echo "Usage: $0 <chapter-file> [review-type] [model]"
@@ -36,9 +43,11 @@ if [ -z "$CHAPTER_FILE" ]; then
     echo "  readability    - Clarity and accessibility"
     echo ""
     echo "Models:"
-    echo "  claude-3-5-sonnet-20241022 (default, fastest)"
-    echo "  claude-3-opus-20240229 (best for creative feedback)"
-    echo "  gpt-4-turbo (alternative)"
+    echo "  o1 (default, best reasoning for editorial work)"
+    echo "  gpt-4.5-preview (latest GPT model)"
+    echo "  gpt-4o (fast, balanced)"
+    echo "  o1-mini (faster reasoning)"
+    echo "  gpt-4o-mini (fastest, cheapest)"
     exit 1
 fi
 

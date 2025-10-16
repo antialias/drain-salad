@@ -6,7 +6,7 @@
 set -e
 
 REVIEW_TYPE="${1:-comprehensive}"
-MODEL="${2:-claude-3-5-sonnet-20241022}"
+MODEL="${2:-o1}"  # Use o1 reasoning model for best editorial feedback
 
 echo "========================================"
 echo "  Drain Salad - Batch Chapter Review"
