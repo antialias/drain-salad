@@ -53,6 +53,28 @@ Welcome to Drain Salad.
 
 ---
 
+## On the Name (Or: Yes, I Know How This Sounds)
+
+Let's address the obvious: you're holding a cookbook called *Drain Salad*.
+
+I know how that sounds. It sounds like a prank. It sounds like clickbait. It sounds like someone wrote an entire cookbook as an elaborate bit and hoped no one would notice.
+
+Here's the thing: it kind of is all those things. And it's also a serious, researched, tested cookbook about transforming kitchen scraps into genuinely good food.
+
+The name is absurd. It's supposed to be. The absurdity is what makes you stop and ask, "Wait, is this real?" And that moment—that pause—is when you start paying attention. That's when you realize that the food you throw away every day could have been dinner.
+
+The absurdity is a feature, not a bug. Because if I'd called this book *The Resourceful Kitchen: Minimizing Food Waste Through Creative Culinary Applications*, you'd have skipped it entirely. Boring. Preachy. Another zero-waste cookbook telling you to feel bad about your compost bin.
+
+But "Drain Salad"? That makes you curious. It makes you skeptical. It makes you want to know if I'm serious (I am) and if the recipes actually work (they do).
+
+So yes, the name is ridiculous. The recipes are not. The techniques are grounded in culinary science, food history, and years of trial and error. The food tastes good. That's the whole point.
+
+If you're still here, you've made it past the initial "this has got to be a joke" phase. Now we can get to the part where you discover it's also profound. That's the balance this book lives in: absurd enough to get your attention, serious enough to change how you cook.
+
+Welcome to the tension. Let's make some food.
+
+---
+
 ## A Note on Voice
 
 This book is written in the first person. I'm not hiding behind a corporate "we" or a neutral foodwriter voice. I'm here, telling you how I learned to cook this way, why it matters, and what went wrong when I screwed it up.
