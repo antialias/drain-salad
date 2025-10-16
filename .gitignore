@@ -12,6 +12,9 @@ dist/
 *.azw3
 *.pdf
 
+# Reviews (generated content)
+reviews/
+
 # OS files
 .DS_Store
 .DS_Store?
