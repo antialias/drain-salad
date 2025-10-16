@@ -2,11 +2,15 @@
 
 > *"Names clarify thinking."*
 
-## On Categorization
+## On Categorization (Or: Why I'm Taxonomizing Garbage Like It's a Biological Phylum)
 
-Drain Salads are not monolithic. A bowl of wilted greens tossed with crumb-vinaigrette is a very different thing from a gratin of stale bread and kale ribs, which is itself different from a jar of fermented vegetable scraps. They're all Drain Salads—they all transform scraps into food—but they occupy different culinary spaces.
+I realize we've reached the point where I'm creating a formal taxonomic system for dishes made from kitchen scraps. This is either the work of someone who's thought deeply about the culinary possibilities of waste reduction, or someone who's completely lost their mind. Let the reader decide.
 
-This chapter is a field guide. It categorizes Drain Salads into eight varieties based on their structure, technique, and use case. Think of these as species within the genus. Each has its own characteristics, strengths, and ideal contexts. Once you understand the taxonomy, you can improvise with confidence—because you'll know what kind of dish you're trying to make.
+But here's the thing: Drain Salads are not monolithic. A bowl of wilted greens tossed with crumb-vinaigrette is a very different thing from a gratin of stale bread and kale ribs, which is itself different from a jar of fermented vegetable scraps. They're all Drain Salads—they all transform scraps into food—but they occupy different culinary spaces, have different technical requirements, and work in different contexts.
+
+Without names for these categories, you're just flailing. With names, you can say "I'm making a Raw Toss, so I need to slice these scraps thin and dress them aggressively" or "This is a Bread-Bound dish, so the bread needs to be actually stale, not just day-old." Naming clarifies thinking.
+
+This chapter is a field guide. It categorizes Drain Salads into eight varieties based on their structure, technique, and use case. Think of these as species within the genus *Salatidae Drenularis* (I made that up, but it sounds legitimate). Each has its own characteristics, strengths, and ideal contexts. Once you understand the taxonomy, you can improvise with confidence—because you'll know what kind of dish you're trying to make.
 
 This is not about rules. It's about vocabulary. When you know the name for what you're making, you can make it better.
 
