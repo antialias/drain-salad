@@ -2,19 +2,21 @@
 
 > *"We don't rescue food from drains—we prevent it from going there."*
 
-## The Problem: Why Sinks Are Hostile Territory
+## On the Name (And Why We're Not Actually Eating From Drains)
 
-Let's address the elephant in the room—or rather, the bacteria in the basin.
+OK. Let's talk about the name.
 
-Despite the provocative title of this book, we are emphatically *not* eating anything from the sink drain. This is not because we lack adventure or commitment to the bit. It's because kitchen sinks are, microbiologically speaking, disaster zones.
+The book is called *Drain Salad*. I know. You bought a book called *Drain Salad* and now you're sitting here wondering if this is an elaborate prank, or if I've genuinely lost my mind, or possibly both. These are fair questions.
 
-In a 2019 USDA study observing home cooks preparing breakfast, researchers swabbed kitchen surfaces before and after food preparation. The results were sobering: **34% of kitchen sinks tested positive for bacterial contamination**—more than any other surface in the kitchen. More alarmingly, even after participants attempted to clean their sinks, **14% still harbored bacteria.** The difference? Most people clean their sinks (soap and water), but they don't *sanitize* them (killing pathogens with heat or chemical disinfectant).
+Here's the situation: We are not eating from the actual drain. We're not scraping biofilm off pipes. We're not fishing vegetable scraps out of the sink trap. That would be both disgusting and medically inadvisable, and also I'm pretty sure illegal in most jurisdictions.
 
-The problem is structural. Sinks are splash zones. Every time you rinse something—lettuce, raw chicken, your hands—microbes aerosolize and settle on nearby surfaces. Sinks also develop *biofilms*: sticky, multi-layered colonies of bacteria that cling to surfaces and resist casual cleaning. Once established, biofilms act as persistent reservoirs of contamination, releasing bacteria that can transfer to food, hands, or utensils.
+What we're doing—what this entire book is about—is intercepting scraps *before* they reach the drain. That's the "Clean-Catch" part. We're catching them upstream, while they're still clean food, before they touch the sink basin or get contaminated by the general disaster zone that is most people's kitchen sinks.
 
-The CDC explicitly warns against rinsing raw poultry in the sink for this reason—the splashing spreads *Salmonella* and *Campylobacter* up to three feet in every direction, including onto your countertops, dish towels, and that tomato you were planning to slice for lunch.
+**Legal disclaimer time:** Kitchen sinks are microbiological nightmares. A 2019 USDA study found that 34% of kitchen sinks test positive for bacterial contamination—more than any other surface. Sinks develop biofilms (sticky bacterial colonies that resist cleaning), become splash zones for aerosolized *Salmonella* and *Campylobacter*, and generally host a party of pathogens you do not want to eat. The CDC explicitly warns against rinsing raw chicken in sinks for this reason. So: if food has touched the sink basin, the drain, or a drain filter, don't eat it. Compost it. Throw it away. Feed it to your neighbor's chickens. Whatever. Just don't eat it.
 
-**Bottom line:** If food has touched the sink basin, the drain, or a drain filter, it should not be eaten. Full stop.
+**End legal disclaimer.**
+
+Now that we've established I'm not trying to poison you or get sued, let's talk about the actual system.
 
 ## The Solution: Capture Before Contact
 
