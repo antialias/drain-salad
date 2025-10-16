@@ -17,7 +17,11 @@
     "wordcount": "wc -w manuscript/*.md | tail -1",
     "wordcount:chapters": "for file in manuscript/chapter-*.md; do echo \"$(basename \"$file\" .md): $(wc -w < \"$file\") words\"; done",
     "image-prompts": "node scripts/generate-image-prompts.js",
-    "image-stats": "echo 'Images by chapter:' && find manuscript/images -type f -name '*.png' -o -name '*.jpg' | wc -l && echo 'Total images'"
+    "image-stats": "echo 'Images by chapter:' && find manuscript/images -type f \\( -name '*.png' -o -name '*.jpg' \\) 2>/dev/null | wc -l | tr -d ' ' && echo 'total images'",
+    "generate:images": "node scripts/generate-images.js",
+    "generate:priority": "node scripts/generate-images.js --priority",
+    "generate:author": "node scripts/generate-images.js --author",
+    "generate:food": "node scripts/generate-images.js --food"
   },
   "keywords": [
     "cookbook",
@@ -28,6 +32,9 @@
   "author": "Your Name",
   "license": "UNLICENSED",
   "private": true,
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
   "devDependencies": {
     "markdownlint-cli": "^0.37.0",
     "nodemon": "^3.0.1"
