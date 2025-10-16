@@ -34,6 +34,10 @@ Or take *panzanella*, which dates back at least to the 14th century. Its earlies
 
 The genius of cucina povera lies in its refusal to see scarcity as a limitation. Instead, it treats limitation as a creative constraint. You don't have meat? Fine. Beans and pasta will become your protein. Your bread is stale? Perfect. It will soak up flavor better than fresh. Your vegetables are wilted? Excellent. They'll collapse into silky sweetness when braised. This is not make-do cooking—it's *make-new* cooking.
 
+My grandmother—Nonna to everyone who knew her—had a fabric bag hanging from a hook in her pantry. Into it went every bread end, every crust, every slice that had gone past its prime. Once a week, that bag came down, and she'd make ribollita or panzanella, depending on the season and her mood. As a kid, I thought this was embarrassing, a visible marker of being poor. I once threw away a bread end when she wasn't looking. She found it in the trash—I still don't know how—and gave me The Look. You know the one. I never did it again.
+
+It took me two decades and a culinary degree to understand what she'd been doing. She wasn't saving bread because she was poor. She was saving it because she *knew*. She knew that stale bread, properly deployed, was better than fresh. She knew that wasting it was not just wasteful—it was *stupid*. When I started keeping my own bread bag in my freezer, it felt less like theft and more like inheritance.
+
 ## The Long Forgetting: Convenience and Its Discontents
 
 Then, sometime in the mid-20th century, we forgot all of this.
@@ -59,6 +63,12 @@ Around the same time, Douglas McMaster opened Silo in Brighton, England (later m
 Meanwhile, in Milan, Massimo Bottura—of Osteria Francescana fame, repeatedly named one of the world's best restaurants—turned an abandoned theater into Refettorio Ambrosiano, a soup kitchen staffed by volunteer chefs. The ingredients? Surplus food from Milan's Expo 2015, food that would have otherwise been discarded. Bottura's team transformed 15 tons of would-be waste into dignified meals for the homeless. The project wasn't just about feeding people; it was about demonstrating that good cooking—cooking with care, technique, and respect—can happen with any ingredient, no matter how humble or neglected.
 
 These chefs were not inventing something new. They were *remembering* something very old.
+
+I learned this firsthand during my three years working garde-manger at a mid-tier restaurant in a city I could barely afford to live in. Every day, the staff meal—the one meal we could eat for free—was made entirely from trim. Carrot tops from the line's julienned carrots. Kale ribs from the salad station's delicate leaves. The ends of roasts, the trim from fish butchery, the heels of bread loaves. Our chef, a French-trained hardass who rarely complimented anyone, called it "the most honest food we make all day."
+
+He was right. That staff meal, thrown together in twenty minutes from what the dining room would never see, was often better than the $45 entrees we plated for customers. It tasted like something *real*—unpolished, improvisational, and deeply flavorful. I started taking notes.
+
+When I left that job (burned out, broke, unable to afford rent on a cook's wages), I took those notes with me. They became the foundation of how I cook now—not because I'm virtuous, but because I finally understood what Nonna and that chef both knew: the "best" ingredients are often the ones everyone else has overlooked.
 
 ## The Problem We've Cooked Ourselves Into
 

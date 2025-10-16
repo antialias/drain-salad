@@ -10,7 +10,13 @@ But here's the thing about technique: it doesn't care about freshness. A stale p
 
 Technique is the great equalizer. It's how you transform scraps from "technically edible" into "legitimately delicious."
 
-This chapter covers the core techniques that make scrap cooking work. Some are basic (roasting, sautéing), but applied with rigor and understanding. Others are less common (lacto-fermentation, starch-emulsified dressings) but transformative. Master these, and you'll never look at scraps the same way again.
+I learned this the hard way in my first week of culinary school. We were learning to make brown butter—simple, right? Melt butter, wait for it to turn golden and nutty, done. Except I got distracted (probably by the fact that everyone else seemed to know what they were doing and I felt like an imposter), and my butter went from golden to burnt in about eight seconds. The smell was unmistakable: bitter, acrid, like someone had set a tire fire in a Parisian bakery.
+
+Our chef—a French-trained woman who scared the absolute hell out of me—walked over, looked into my pan, and said flatly: "Start over." That was it. No lecture, no explanation, just the quiet acknowledgment that I had failed and needed to try again. I burned it twice more that week before I got it right. The fourth time, when it worked, I almost cried from relief.
+
+That was the moment I understood: technique is not about getting it right the first time. It's about understanding *why* things work so that when they don't, you know how to fix them. And scraps are the perfect training ground because the stakes are low and the lessons are immediate—either it's delicious, or you try again.
+
+This chapter covers the core techniques that make scrap cooking work. Some are basic (roasting, sautéing), but applied with rigor and understanding. Others are less common (lacto-fermentation, starch-emulsified dressings) but transformative. Master these, and you'll never look at scraps the same way again. And yes, you'll probably burn some stuff along the way. We all do.
 
 ---
 
