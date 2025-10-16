@@ -2,9 +2,21 @@
 
 > *"Reference is not reading, but it's always there when you need it."*
 
-## On Tools, Not Rules
+## On Tools, Not Rules (Or: The Chapter You'll Actually Use Most)
 
-This chapter is the back-of-the-book stuff: conversion tables, troubleshooting guides, resource lists, and answers to questions you'll have three months from now when something goes wrong. Bookmark this chapter. You'll come back to it.
+I know. You skipped to the recipe chapters. You skimmed the techniques. You probably haven't read the fermentation safety guidelines as carefully as you should. That's fine. I did the same thing with every cookbook I've ever owned.
+
+But this chapter—this boring, back-of-the-book, reference-material chapter—is the one you'll actually use. Not when you're excited and inspired and making your first Drain Salad. But three months from now, when your ferment smells weird, or your kale ribs are too fibrous, or you can't remember if you can freeze cheese rinds.
+
+This is the chapter for when things go wrong. And things will go wrong. Not because you're bad at this, but because cooking is a series of controlled disasters that you learn to navigate. The first time your bread crumbs won't crisp, or your scraps taste bitter, you'll come here. Bookmark this chapter. You'll be back.
+
+**December 8, 2021.** I'm making my third attempt at lacto-fermented kale ribs. The first batch molded (my fault—didn't keep them submerged). The second batch tasted good but turned mushy after a week (too-warm fermentation environment). This time, I'm determined to get it right.
+
+Day 5, I open the jar. There's a thin white film on the surface. My first thought: mold. My second thought: Is it mold, or is it that harmless yeast thing I read about?
+
+I spend twenty minutes searching "white film on ferment" and cross-referencing three different fermentation books. Eventually I figure out it's kahm yeast—harmless, just unattractive. I skim it off, make sure everything's submerged, and keep going.
+
+The ferment turns out fine. But I shouldn't have had to dig through three books. That's why this chapter has a troubleshooting guide. So you don't have to panic-Google at 10pm when your ferment looks wrong.
 
 ---
 
@@ -370,15 +382,23 @@ This chapter is the back-of-the-book stuff: conversion tables, troubleshooting g
 
 ---
 
-## Appendix J: A Note on Failure
+## Appendix J: A Note on Failure (Because You Will Fail, and That's Fine)
 
-You will make Drain Salads that don't work. The scraps will be too bitter. The ferment will mold. The bread will turn to mush. This is normal. This is how you learn.
+You will make Drain Salads that don't work.
 
-Every cook—professional or home, trained or self-taught—fails constantly. The difference is that good cooks fail forward. They taste the failure, figure out what went wrong, and adjust next time.
+The scraps will be too bitter. The ferment will mold. The bread will turn to mush. The kale ribs will be fibrous and unpleasant. You'll over-salt something, or under-season it, or char it instead of caramelize it. You'll follow a recipe exactly and it will still come out wrong because your stove runs hot, or your bread wasn't stale enough, or you used the wrong kind of vinegar.
 
-If a Drain Salad doesn't work, don't give up. Go back to the troubleshooting guide in this appendix. Check the techniques in Chapter 5. Re-read the recipe. Try again.
+This is normal. This is not a moral failing. This is just cooking.
 
-Failure is just feedback. Use it.
+Every cook—professional or home, trained or self-taught, Michelin-starred or just trying to figure out dinner—fails constantly. The difference is that good cooks fail forward. They taste the failure, figure out what went wrong, and adjust next time. They don't take it personally. They just fix it.
+
+I have thrown out more Drain Salads than I've published in this book. I've made ferments that smelled like death. I've made bread pudding that was simultaneously dry and soggy. I've made crumb-vinaigrettes that separated into a puddle of oil with sad breadcrumbs floating on top. Every single failure taught me something.
+
+So when your Drain Salad doesn't work—and it will, eventually—don't give up. Go back to the troubleshooting guide in this appendix. Check the techniques in Chapter 5. Re-read the recipe. Taste critically and figure out what went wrong. Then try again.
+
+Failure is just feedback. Expensive, occasionally disgusting feedback, but feedback nonetheless.
+
+And if all else fails, order pizza and try again tomorrow. The scraps will still be there. They're patient.
 
 ---
 
