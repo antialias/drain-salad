@@ -2,13 +2,17 @@
 
 > *"Technique turns 'almost' into 'absolutely.'"*
 
-## The Alchemy of Heat, Salt, and Time
+## On Applying Restaurant Techniques to Garbage
 
-Here's the uncomfortable truth about scraps: without technique, they're usually worse than their fresh counterparts. Wilted greens are limper than fresh ones. Stale bread is drier. Vegetable trim is irregularly sized and often includes parts that are woody or tough.
+Let's be clear about what we're doing here: taking techniques that French-trained chefs use in Michelin-starred restaurants—the Maillard reaction, lacto-fermentation, starch emulsification—and applying them to the stuff that most people throw away. Kale ribs. Stale bread. Onion ends. Vegetable peelings.
 
-But here's the thing about technique: it doesn't care about freshness. A stale piece of bread, properly toasted, becomes better than fresh bread—it's crunchier, nuttier, more structurally sound. A wilted green, massaged with salt and acid, becomes silky and complex. Vegetable trim, roasted hard until the edges char, develops sweetness and umami that fresh vegetables can't match.
+This is either profound or completely absurd. Possibly both.
 
-Technique is the great equalizer. It's how you transform scraps from "technically edible" into "legitimately delicious."
+But here's the uncomfortable truth about scraps: without technique, they're usually worse than their fresh counterparts. Wilted greens are limper than fresh ones. Stale bread is drier. Vegetable trim is irregularly sized and often includes parts that are woody or tough. You cannot just eat this stuff and expect it to be good. It needs help.
+
+The revelation—the thing that made me take this seriously enough to write an entire book about it—is that technique doesn't care about freshness. A stale piece of bread, properly toasted, becomes *better* than fresh bread—it's crunchier, nuttier, more structurally sound. A wilted green, massaged with salt and acid, becomes silky and complex. Vegetable trim, roasted hard until the edges char, develops sweetness and umami that fresh vegetables can't match.
+
+Technique is the great equalizer. It's how you transform scraps from "technically edible" into "legitimately delicious." And once you understand the techniques, you'll find yourself getting weirdly evangelical about kale ribs. (I'm sorry in advance. It happens to all of us.)
 
 I learned this the hard way in my first week of culinary school. We were learning to make brown butter—simple, right? Melt butter, wait for it to turn golden and nutty, done. Except I got distracted (probably by the fact that everyone else seemed to know what they were doing and I felt like an imposter), and my butter went from golden to burnt in about eight seconds. The smell was unmistakable: bitter, acrid, like someone had set a tire fire in a Parisian bakery.
 
@@ -190,6 +194,10 @@ The key is **salt**. Salt creates a brine that favors lactobacillus over undesir
 6. **Cover loosely:** Put the lid on, but don't tighten it completely (gas needs to escape).
 7. **Ferment:** Leave at room temperature (65–75°F / 18–24°C) for 3–7 days. "Burp" the jar daily to release gas.
 8. **Taste and refrigerate:** After 3 days, start tasting. When it's pleasantly tangy, refrigerate. It'll keep for months.
+
+**A note on first ferments:** My first attempt at fermentation was a disaster. I used 1% salt instead of 2% (misread the recipe), didn't pack the vegetables tightly enough, and forgot to burp the jar. Day 5, I opened it. The smell hit me like a biological weapon. Not tangy-fermented. Not even funky-fermented. Just... wrong. Slimy vegetables floating in cloudy liquid. I threw out the entire jar, scrubbed it with bleach, and didn't try again for three months.
+
+When I finally did try again—following the ratios correctly, keeping everything submerged, actually checking on it daily—it worked. The vegetables were crunchy, tangy, and tasted intentional. That's when I learned: fermentation isn't magic, it's chemistry. Follow the ratios, keep things submerged, trust the process. If you do those three things, it works. If you don't, you're making compost in a jar.
 
 **Food safety notes:**
 - Use clean equipment. This isn't sterile canning—some bacteria are good—but you don't want mold spores or dirt.
