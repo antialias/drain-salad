@@ -59,7 +59,8 @@ See [IMAGE-GENERATION-SETUP.md](IMAGE-GENERATION-SETUP.md) for complete guide.
 
 ### ✅ AI Image Generation with Reference Photos
 - **Character consistency** - Author looks the same across all photos
-- **Reference image support** via InstantID/IP-Adapter
+- **Reference image support** via OpenAI GPT Image, Replicate InstantID, or IP-Adapter
+- **Multiple backends** - GPT Image (best), Replicate (budget), or local ComfyUI
 - **Automated workflow** with npm scripts
 - **132 images** cataloged and ready to generate
 
@@ -85,6 +86,7 @@ drain-salad/
 ├── scripts/
 │   ├── generate-images.js       # Image generation orchestrator
 │   ├── image-backends/
+│   │   ├── dalle.js             # OpenAI GPT Image (gpt-image-1)
 │   │   ├── replicate.js         # Replicate API (InstantID)
 │   │   └── comfyui.js           # Local ComfyUI support
 │   └── image-prompts/           # 82 generated prompt files
@@ -196,9 +198,10 @@ npm run wordcount          # Total word count
 
 ## Cost Estimates
 
-**Image Generation (Replicate API):**
-- Priority 25 images: ~$2.50
-- All 82 images: ~$4.50
+**Image Generation:**
+- **GPT Image (OpenAI):** ~$5.50 (25 priority) / ~$17.60 (all 82) - Best quality + consistency
+- **Replicate API:** ~$2.50 (25 priority) / ~$4.50 (all 82) - Budget option with consistency
+- **ComfyUI (Local):** $0 (requires GPU) - Full control
 
 **Publishing (Amazon KDP):**
 - Ebook: Free
@@ -226,8 +229,16 @@ npm run wordcount          # Total word count
 
 ## Technical Details
 
-### Image Generation Backend
-- **Replicate API** with InstantID for face consistency
+### Image Generation Backends
+
+**OpenAI GPT Image (gpt-image-1) - Recommended:**
+- Responses API with `image_generation` tool
+- **High input fidelity** for reference image preservation
+- Superior instruction following and text rendering
+- **Output:** 1536x1024px PNG (high quality)
+
+**Replicate API - Budget Option:**
+- **InstantID model** for face consistency
 - **Author photos:** `identitynet_strength_ratio: 0.8`
 - **Food photos:** Stable Diffusion XL
 - **Output:** 3072x2048px PNG

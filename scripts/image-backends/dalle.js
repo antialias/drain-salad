@@ -1,10 +1,13 @@
 /**
- * DALL-E 3 Backend for Image Generation
+ * GPT Image Backend for Image Generation
  *
- * Uses OpenAI's DALL-E 3 API
+ * Uses OpenAI's gpt-image-1 model via Responses API
  *
- * LIMITATION: DALL-E 3 does not support reference images for face consistency.
- * Workaround: Uses highly detailed, consistent character descriptions.
+ * FEATURES:
+ * - ✅ Reference image support for character consistency
+ * - ✅ High input fidelity for face preservation
+ * - ✅ Superior instruction following vs DALL-E 3
+ * - ✅ Better text rendering and real-world knowledge
  */
 
 const fs = require('fs');
@@ -15,46 +18,21 @@ class DalleBackend {
   constructor(config) {
     this.config = config;
     this.apiKey = config.openai.key;
-    this.model = 'dall-e-3';
-
-    // Store character description for consistency
-    this.characterDescription = this.loadCharacterDescription();
+    this.model = 'gpt-4.1'; // Model that supports image_generation tool
   }
 
   async init() {
     // Verify API key works
     try {
-      // Just check that we have an API key
       if (!this.apiKey || this.apiKey.length < 20) {
         throw new Error('Invalid OpenAI API key');
       }
       console.log('✓ OpenAI API key configured');
-      console.log('⚠️  Note: DALL-E 3 does not support reference images.');
-      console.log('   Using detailed prompts for character consistency.');
+      console.log('✓ Using gpt-image-1 via Responses API');
+      console.log('✓ Reference images supported for character consistency');
     } catch (error) {
       throw new Error(`Failed to configure OpenAI API: ${error.message}`);
     }
-  }
-
-  loadCharacterDescription() {
-    // Load the detailed character description from visual reference
-    try {
-      const refFile = '.author-visual-reference.md';
-      if (fs.existsSync(refFile)) {
-        const content = fs.readFileSync(refFile, 'utf8');
-
-        // Extract the core descriptor
-        const match = content.match(/\*\*Core descriptor to use in every author photo:\*\*\s*"([^"]+)"/);
-        if (match) {
-          return match[1];
-        }
-      }
-    } catch (error) {
-      console.warn('Could not load character description:', error.message);
-    }
-
-    // Fallback description
-    return "Italian-American man in his late 20s, dark brown wavy medium-length hair often pulled back in a low bun, 2-day stubble beard, olive Mediterranean skin tone, dark brown eyes, wearing casual kitchen clothing (plain t-shirt or henley), documentary photography style, natural lighting, warm color tones, film photography aesthetic, shallow depth of field";
   }
 
   async generate(options) {
@@ -68,82 +46,98 @@ class DalleBackend {
       outputPath
     } = options;
 
-    console.log(`  Using DALL-E 3`);
+    console.log(`  Using gpt-image-1 via Responses API`);
 
-    if (useReference) {
-      console.warn('  ⚠️  DALL-E 3 does not support reference images');
-      console.warn('     Using detailed character description for consistency');
-    }
-
-    // Enhance prompt with character description for author photos
+    // Enhance prompt with style descriptors
     let enhancedPrompt = prompt;
 
     if (type === 'author') {
-      // For author photos, ensure consistent character description
-      // Extract just the context/action from the original prompt
-      const contextMatch = prompt.match(/(?:now |at |in |standing )[^,]*/);
-      const context = contextMatch ? contextMatch[0] : '';
-
-      enhancedPrompt = `${this.characterDescription}${context ? ', ' + context : ''}, professional documentary photography, 35mm film aesthetic, natural window lighting, Kodak Portra 400 film stock, authentic moment, not posed, editorial style`;
+      enhancedPrompt = `${prompt}, professional documentary photography, 35mm film aesthetic, natural window lighting, Kodak Portra 400 film stock, authentic moment, not posed, editorial style`;
     } else {
-      // For food/other photos, enhance with quality descriptors
       enhancedPrompt = `${prompt}, professional photography, high quality, detailed, editorial cookbook style, natural lighting, warm color palette, shot on film`;
     }
 
-    // DALL-E 3 size options: 1024x1024, 1024x1792, or 1792x1024
-    // Map requested dimensions to closest DALL-E size
+    // Build input content array
+    const content = [
+      { type: 'input_text', text: enhancedPrompt }
+    ];
+
+    // Add reference image if provided
+    if (useReference && referenceImage && fs.existsSync(referenceImage)) {
+      console.log(`  Using reference image: ${path.basename(referenceImage)}`);
+      const imageBase64 = this.imageToDataURL(referenceImage);
+      content.push({
+        type: 'input_image',
+        image_url: imageBase64
+      });
+    }
+
+    // Map requested dimensions to closest supported size
     let size;
     if (width > height) {
-      size = '1792x1024'; // Landscape
+      size = '1536x1024'; // Landscape
     } else if (height > width) {
-      size = '1024x1792'; // Portrait
+      size = '1024x1536'; // Portrait
     } else {
       size = '1024x1024'; // Square
     }
 
-    console.log(`  Size: ${size} (DALL-E 3 preset)`);
+    console.log(`  Size: ${size}`);
     console.log(`  Prompt length: ${enhancedPrompt.length} chars`);
 
-    // DALL-E 3 has a 4000 character limit
-    if (enhancedPrompt.length > 4000) {
-      console.warn(`  ⚠️  Prompt too long (${enhancedPrompt.length} chars), truncating to 4000`);
-      enhancedPrompt = enhancedPrompt.substring(0, 3997) + '...';
-    }
-
-    // Create image generation request
-    console.log(`  Creating generation request...`);
-
+    // Create Responses API request with image_generation tool
     const requestData = {
       model: this.model,
-      prompt: enhancedPrompt,
-      n: 1,
-      size: size,
-      quality: 'hd', // Use HD quality for better results
-      style: 'natural' // Natural style (vs vivid)
+      input: [
+        {
+          role: 'user',
+          content: content
+        }
+      ],
+      tools: [
+        {
+          type: 'image_generation',
+          size: size,
+          quality: 'high',              // High quality rendering
+          input_fidelity: 'high',       // Preserve reference image details (faces)
+          background: 'auto',           // Auto-detect background needs
+          output_format: 'png'          // PNG for best quality
+        }
+      ]
     };
 
     try {
-      const result = await this.makeRequest('/v1/images/generations', 'POST', requestData);
+      console.log(`  Creating generation request...`);
+      const result = await this.makeRequest('/v1/responses/create', 'POST', requestData);
 
-      if (!result.data || !result.data[0] || !result.data[0].url) {
-        throw new Error('Invalid response from DALL-E API');
+      // Extract image from response
+      const imageGenerationCall = result.output?.find(
+        output => output.type === 'image_generation_call'
+      );
+
+      if (!imageGenerationCall || !imageGenerationCall.result) {
+        throw new Error('No image generated in response');
       }
 
-      const imageUrl = result.data[0].url;
-      const revisedPrompt = result.data[0].revised_prompt;
+      // result is base64-encoded PNG
+      const imageBase64 = imageGenerationCall.result;
+      const revisedPrompt = imageGenerationCall.revised_prompt;
 
       if (revisedPrompt) {
-        console.log(`  ℹ️  DALL-E revised prompt (safety/quality):`, revisedPrompt.substring(0, 100) + '...');
+        console.log(`  ℹ️  Model revised prompt:`, revisedPrompt.substring(0, 100) + '...');
       }
 
-      // Download image
-      console.log(`  Downloading image...`);
-      await this.downloadImage(imageUrl, outputPath);
+      // Save image from base64
+      console.log(`  Saving image...`);
+      const imageBuffer = Buffer.from(imageBase64, 'base64');
 
-      // If this is an author photo and we need higher resolution, upscale it
-      if (type === 'author' && (width > 1792 || height > 1792)) {
-        console.log(`  ℹ️  DALL-E max size is 1792px, generated image may be smaller than requested ${width}x${height}`);
+      // Ensure directory exists
+      const dir = path.dirname(outputPath);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
       }
+
+      fs.writeFileSync(outputPath, imageBuffer);
 
       // Get file size
       const stats = fs.statSync(outputPath);
@@ -152,42 +146,20 @@ class DalleBackend {
       return {
         path: outputPath,
         size: fileSize,
-        url: imageUrl
+        model: 'gpt-image-1'
       };
 
     } catch (error) {
-      throw new Error(`DALL-E generation failed: ${error.message}`);
+      throw new Error(`GPT Image generation failed: ${error.message}`);
     }
   }
 
-  async downloadImage(url, outputPath) {
-    // Ensure directory exists
-    const dir = path.dirname(outputPath);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-
-    return new Promise((resolve, reject) => {
-      const file = fs.createWriteStream(outputPath);
-
-      const request = https.get(url, response => {
-        response.pipe(file);
-        file.on('finish', () => {
-          file.close();
-          resolve();
-        });
-      });
-
-      request.on('error', err => {
-        fs.unlink(outputPath, () => {});
-        reject(err);
-      });
-
-      file.on('error', err => {
-        fs.unlink(outputPath, () => {});
-        reject(err);
-      });
-    });
+  imageToDataURL(imagePath) {
+    const imageBuffer = fs.readFileSync(imagePath);
+    const base64 = imageBuffer.toString('base64');
+    const ext = path.extname(imagePath).toLowerCase().replace('.', '');
+    const mimeType = ext === 'png' ? 'image/png' : 'image/jpeg';
+    return `data:${mimeType};base64,${base64}`;
   }
 
   async makeRequest(endpoint, method = 'GET', data = null) {
@@ -229,10 +201,6 @@ class DalleBackend {
 
       req.end();
     });
-  }
-
-  sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
 

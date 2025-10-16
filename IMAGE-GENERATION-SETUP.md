@@ -178,20 +178,21 @@ npm run build
 
 ---
 
-### Option 2: OpenAI DALL-E 3 (Best Quality, No Reference Support)
+### Option 2: OpenAI GPT Image (gpt-image-1) - Best of Both Worlds! 🔥
 
 **Pros:**
-- ✅ **Highest quality** images (often best composition/lighting)
+- ✅ **Reference image support!** - Uses Responses API for character consistency
+- ✅ **Superior instruction following** - Better than DALL-E 3 and Replicate
+- ✅ **High input fidelity** - Preserves facial features from reference images
+- ✅ **Better text rendering** - Improved over DALL-E series
+- ✅ **Real-world knowledge** - Understands context and composition
 - ✅ Cloud-based (no local GPU needed)
-- ✅ Fast generation (30-60 seconds per image)
 - ✅ Natural, photorealistic style
-- ✅ Cheaper than Replicate (~$0.04-0.08 per image)
 
 **Cons:**
-- ⚠️ **No reference image support** - can't use face reference for consistency
-- ⚠️ **Character consistency harder** - relies on detailed text descriptions only
-- ⚠️ Max size 1792px (lower than 3072px target)
-- ⚠️ OpenAI may revise prompts for safety/quality
+- 💵 Token-based pricing (varies by size/quality, ~$0.10-0.20 per image)
+- ⚠️ Max size 1536px (vs 3072px target, but acceptable quality)
+- ⚠️ Model may revise prompts for safety/quality
 
 **Setup:**
 1. Get OpenAI API key from https://platform.openai.com/api-keys
@@ -199,14 +200,28 @@ npm run build
 3. Set backend: `IMAGE_GEN_BACKEND=dalle`
 4. Run: `npm run generate:priority`
 
-**Character Consistency Workaround:**
-DALL-E doesn't support reference images, but uses **very detailed character descriptions** in every prompt to maintain consistency. Results will be high quality but faces may vary slightly between photos.
+**How Reference Images Work:**
+The backend uses OpenAI's **Responses API** with the `image_generation` tool:
+```javascript
+{
+  input: [
+    { type: 'input_text', text: 'Italian-American man cooking...' },
+    { type: 'input_image', image_url: 'data:image/png;base64,...' }
+  ],
+  tools: [{
+    type: 'image_generation',
+    quality: 'high',
+    input_fidelity: 'high'  // Preserves reference face
+  }]
+}
+```
 
-**When to use DALL-E:**
-- Food photography (no consistency needed)
-- Single author photo (just one, so no consistency issue)
-- When you prioritize image quality over perfect consistency
-- When you're okay with slight variation in author appearance
+**When to use GPT Image:**
+- ✅ **Best overall choice** if you have OpenAI API access
+- ✅ Author photos with character consistency
+- ✅ Complex scenes requiring instruction following
+- ✅ When you want text labels rendered correctly
+- ✅ When you want both quality AND consistency
 
 ---
 
@@ -412,28 +427,35 @@ cp manuscript/images/front-matter/002_author-photo.png \
 
 Actual costs may vary. First-time users often get free credits.
 
-### OpenAI DALL-E 3 (Cloud - Best Quality)
+### OpenAI GPT Image (gpt-image-1) - Cloud, Best Overall
 
-| Image Type | Cost/Image | Count | Total |
+Token-based pricing depends on size and quality. Approximate costs:
+
+| Quality | Size (1024×1024) | Size (1024×1536) | Size (1536×1024) |
 |---|---|---|---|
-| 1024x1024 (square) | $0.040 | — | — |
-| 1024x1792 or 1792x1024 (HD) | $0.080 | — | — |
-| **Priority 25 (mostly landscape)** | ~$0.07 avg | 25 | **$1.75** |
-| **All 82 images** | ~$0.07 avg | 82 | **$5.75** |
+| Low | ~$0.05 | ~$0.07 | ~$0.07 |
+| Medium | ~$0.15 | ~$0.20 | ~$0.20 |
+| High | ~$0.25 | ~$0.35 | ~$0.35 |
 
-**Cheaper than Replicate**, but no reference image support for character consistency.
+**Estimated project costs:**
 
-### Hybrid Approach (Recommended)
+| Image Type | Quality | Cost/Image | Count | Total |
+|---|---|---|---|---|
+| Author photos (with reference) | High | $0.35 | 8 | $2.80 |
+| Food photography | Medium | $0.20 | 65 | $13.00 |
+| Infographics | Medium | $0.20 | 9 | $1.80 |
+| **Total (Priority 25)** | Mixed | ~$0.22 avg | 25 | **~$5.50** |
+| **Total (All 82)** | Mixed | ~$0.21 avg | 82 | **~$17.60** |
 
-Use **DALL-E 3 for food** + **Replicate for author photos**:
+**More expensive than Replicate**, but has **reference support + superior instruction following + better text rendering**.
 
-| Category | Backend | Count | Cost |
-|---|---|---|---|
-| Author photos (need consistency) | Replicate (InstantID) | 8 | $0.80 |
-| Food & other (no consistency needed) | DALL-E 3 | 74 | $5.20 |
-| **Total** | Mixed | 82 | **$6.00** |
+### Comparison Summary
 
-**Best of both worlds:** Character consistency where needed, best quality elsewhere.
+| Backend | Character Consistency | Quality | Cost (25 images) | Cost (82 images) | Best For |
+|---|---|---|---|---|---|
+| **GPT Image** | ✅ Yes (high fidelity) | Excellent | ~$5.50 | ~$17.60 | Best overall, instruction following |
+| **Replicate** | ✅ Yes (InstantID) | Very Good | ~$2.50 | ~$4.50 | Budget-conscious, good consistency |
+| **ComfyUI** | ✅ Yes (IP-Adapter) | Excellent | $0 | $0 | Local GPU, full control |
 
 ### ComfyUI (Local)
 
