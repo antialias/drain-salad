@@ -157,10 +157,11 @@ npm run build
 
 ## Backend Options
 
-### Option 1: Replicate API (Recommended)
+### Option 1: Replicate API (Recommended for Character Consistency)
 
 **Pros:**
-- ✅ Supports face reference (InstantID model)
+- ✅ **Supports face reference** (InstantID model)
+- ✅ **Best character consistency** across author photos
 - ✅ Cloud-based (no local GPU needed)
 - ✅ Reliable, fast
 - ✅ Works out of the box
@@ -172,11 +173,44 @@ npm run build
 1. Sign up at https://replicate.com
 2. Get API token from account settings
 3. Add to `.env`: `REPLICATE_API_TOKEN=r8_...`
-4. Run: `npm run generate:priority`
+4. Set backend: `IMAGE_GEN_BACKEND=replicate`
+5. Run: `npm run generate:priority`
 
 ---
 
-### Option 2: Local ComfyUI (Advanced)
+### Option 2: OpenAI DALL-E 3 (Best Quality, No Reference Support)
+
+**Pros:**
+- ✅ **Highest quality** images (often best composition/lighting)
+- ✅ Cloud-based (no local GPU needed)
+- ✅ Fast generation (30-60 seconds per image)
+- ✅ Natural, photorealistic style
+- ✅ Cheaper than Replicate (~$0.04-0.08 per image)
+
+**Cons:**
+- ⚠️ **No reference image support** - can't use face reference for consistency
+- ⚠️ **Character consistency harder** - relies on detailed text descriptions only
+- ⚠️ Max size 1792px (lower than 3072px target)
+- ⚠️ OpenAI may revise prompts for safety/quality
+
+**Setup:**
+1. Get OpenAI API key from https://platform.openai.com/api-keys
+2. Add to `.env`: `OPENAI_API_KEY=sk-...`
+3. Set backend: `IMAGE_GEN_BACKEND=dalle`
+4. Run: `npm run generate:priority`
+
+**Character Consistency Workaround:**
+DALL-E doesn't support reference images, but uses **very detailed character descriptions** in every prompt to maintain consistency. Results will be high quality but faces may vary slightly between photos.
+
+**When to use DALL-E:**
+- Food photography (no consistency needed)
+- Single author photo (just one, so no consistency issue)
+- When you prioritize image quality over perfect consistency
+- When you're okay with slight variation in author appearance
+
+---
+
+### Option 3: Local ComfyUI (Advanced)
 
 **Pros:**
 - ✅ Free after initial setup
@@ -366,7 +400,7 @@ cp manuscript/images/front-matter/002_author-photo.png \
 
 ## Cost Estimates
 
-### Replicate (Cloud)
+### Replicate (Cloud - Best for Character Consistency)
 
 | Image Type | Cost/Image | Count | Total |
 |---|---|---|---|
@@ -377,6 +411,29 @@ cp manuscript/images/front-matter/002_author-photo.png \
 | **Total (All 82)** | — | 82 | **$4.50** |
 
 Actual costs may vary. First-time users often get free credits.
+
+### OpenAI DALL-E 3 (Cloud - Best Quality)
+
+| Image Type | Cost/Image | Count | Total |
+|---|---|---|---|
+| 1024x1024 (square) | $0.040 | — | — |
+| 1024x1792 or 1792x1024 (HD) | $0.080 | — | — |
+| **Priority 25 (mostly landscape)** | ~$0.07 avg | 25 | **$1.75** |
+| **All 82 images** | ~$0.07 avg | 82 | **$5.75** |
+
+**Cheaper than Replicate**, but no reference image support for character consistency.
+
+### Hybrid Approach (Recommended)
+
+Use **DALL-E 3 for food** + **Replicate for author photos**:
+
+| Category | Backend | Count | Cost |
+|---|---|---|---|
+| Author photos (need consistency) | Replicate (InstantID) | 8 | $0.80 |
+| Food & other (no consistency needed) | DALL-E 3 | 74 | $5.20 |
+| **Total** | Mixed | 82 | **$6.00** |
+
+**Best of both worlds:** Character consistency where needed, best quality elsewhere.
 
 ### ComfyUI (Local)
 
