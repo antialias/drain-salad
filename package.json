@@ -35,7 +35,10 @@
     "publish:print": "node scripts/build-print-pdf.js",
     "publish:epub": "node scripts/build-epub.js",
     "publish:optimized": "node scripts/build-optimized-pdf.js",
-    "publish:all": "npm run build:book && npm run publish:print && npm run publish:epub && npm run publish:optimized && echo '\n✅ All formats ready for publishing!'"
+    "publish:all": "npm run build:book && npm run publish:print && npm run publish:epub && npm run publish:optimized && echo '\n✅ All formats ready for publishing!'",
+    "review": "./scripts/review-chapter.sh",
+    "review:all": "./scripts/review-all-chapters.sh",
+    "review:compare": "./scripts/compare-reviews.sh"
   },
   "keywords": [
     "cookbook",
