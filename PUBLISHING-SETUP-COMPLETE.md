@@ -128,8 +128,8 @@ Once you've done one manual upload:
 
 - `drain-salad-typst.pdf`: ~298MB (original with all images)
 - `drain-salad-print.pdf`: ~298MB (same, formatted for print)
-- `drain-salad.epub`: ~50-100MB (compressed for e-readers)
-- `drain-salad-optimized.pdf`: ~80-150MB (30-50% smaller if Ghostscript installed)
+- `drain-salad.epub`: ~220MB (all 81 images included)
+- `drain-salad-optimized.pdf`: ~5MB (98% compression with Ghostscript)
 
 ## Quick Reference
 
