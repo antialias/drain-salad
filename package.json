@@ -31,7 +31,11 @@
     "generate:missing:dry-run": "node scripts/generate-missing-images.js --dry-run",
     "generate:priority": "node scripts/generate-images.js --priority",
     "generate:author": "node scripts/generate-images.js --author",
-    "generate:food": "node scripts/generate-images.js --food"
+    "generate:food": "node scripts/generate-images.js --food",
+    "publish:print": "node scripts/build-print-pdf.js",
+    "publish:epub": "node scripts/build-epub.js",
+    "publish:optimized": "node scripts/build-optimized-pdf.js",
+    "publish:all": "npm run build:book && npm run publish:print && npm run publish:epub && npm run publish:optimized && echo '\n✅ All formats ready for publishing!'"
   },
   "keywords": [
     "cookbook",

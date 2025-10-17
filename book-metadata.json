@@ -1,0 +1,51 @@
+{
+  "title": "Drain Salad",
+  "subtitle": "A Treatise on Edible Entropy",
+  "fullTitle": "Drain Salad: A Treatise on Edible Entropy",
+  "author": "[Author Name]",
+  "description": "A comprehensive guide to transforming kitchen scraps into restaurant-quality dishes. From medieval pottage to modern zero-waste cooking, Drain Salad explores the culinary intelligence of using everything—kale ribs, bread ends, herb stems, and vegetable trim—to create meals that are resourceful, flavorful, and surprisingly elegant.\n\nThis book teaches the Clean-Catch Method, foundational recipes, fermentation techniques, and a complete taxonomy of scrap-based dishes. Perfect for home cooks who want to reduce waste, save money, and discover flavors they've been throwing away.\n\nIncludes detailed recipes, step-by-step techniques, and the personal story of cooking through four months of financial hardship with nothing but scraps and ingenuity.",
+  "keywords": [
+    "cooking from scraps",
+    "zero waste cooking",
+    "food waste reduction",
+    "sustainable cooking",
+    "frugal recipes",
+    "kitchen scraps",
+    "cucina povera",
+    "fermentation",
+    "resourceful cooking",
+    "cookbook"
+  ],
+  "categories": {
+    "bisac": [
+      "CKB085000",
+      "CKB024000",
+      "CKB002000"
+    ],
+    "names": [
+      "Cooking / Specific Ingredients / Natural Foods",
+      "Cooking / Methods / General",
+      "Cooking / Courses & Dishes / General"
+    ]
+  },
+  "language": "en",
+  "isbn": "",
+  "price": {
+    "digital_usd": 14.99,
+    "print_usd": 24.99,
+    "print_minimum": 0
+  },
+  "print": {
+    "trim_size": "6x9",
+    "paper_type": "white",
+    "binding": "paperback",
+    "bleed": true,
+    "interior_ink": "color",
+    "pages": 0
+  },
+  "publishingRights": "worldwide",
+  "adultContent": false,
+  "version": "1.0.0",
+  "publicationDate": "",
+  "edition": "First Edition"
+}
