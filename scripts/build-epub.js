@@ -78,6 +78,7 @@ const command = `pandoc ${metadataPath} ${chapterPaths} \\
   -o build/drain-salad.epub \\
   --toc \\
   --toc-depth=2 \\
+  --resource-path=manuscript \\
   --epub-cover-image=manuscript/images/front-matter/001_cover-image.png \\
   --metadata-file=${metadataPath}`;
 
