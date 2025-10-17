@@ -12,6 +12,9 @@ A note on precision: Unlike the rest of this book, which encourages improvisatio
 
 That said, once you've made each of these a few times, you'll internalize the technique and can riff freely. Until then, measure. Your scraps deserve it.
 
+<!-- img-prompt: Create a side-by-side comparison grid (two columns, four rows) titled subtly in small, clean sans-serif type: left column labeled “Correct,” right column labeled “Incorrect.” Field-guide aesthetic, warm neutral palette, slightly desaturated, natural daylight from a window. Shot in a cramped San Francisco studio apartment kitchen—cheap laminate counter with a nicked edge, scuffed rental stove barely in frame, faintly blurred bathroom door visible in the far background to ground the reality. Overhead camera angle (90° top-down), 35mm film look, shallow depth of field, no glossy food styling, real crumbs and smudges acceptable. Row 1 (Brown Butter): Correct shows a light-colored skillet with butter at a perfect hazelnut-amber hue, tiny medium-brown specks of toasted milk solids visible; Incorrect shows butter too dark with black flecks, slightly smoky appearance. Row 2 (Bread Crumbs): Correct shows irregular, coarse crumbs toasted to a deep golden, dry and crisp; Incorrect shows either pale, soggy crumbs with visible moisture sheen or over-charred near-black crumbs. Row 3 (Crumb Vinaigrette): Correct shows a creamy, cohesive emulsion clinging to the sides of a small glass jar; Incorrect shows a broken dressing with oil floating on top and watery vinegar below. Row 4 (Garlic Confit): Correct shows cloves just barely shimmering in oil, pale gold and intact; Incorrect shows aggressively bubbling oil with cloves browning rapidly, edges fraying. Keep labels minimal at the top of each panel; no arrows or heavy graphics. Mood: instructional, honest, unglamorous—“the difference between success and regret.” -->
+![Correct vs. incorrect technique: the difference between success and regret](images/chapter-06/024_correct-vs-incorrect.png)
+
 ---
 
 ## Foundation 1: Brown-Butter Bread Crumbs
@@ -23,6 +26,9 @@ Bread crumbs are the unsung heroes of scrap cooking. They absorb liquid, add tex
 Brown butter (beurre noisette in fancy French) is what happens when you stop cooking butter *before* it becomes burnt butter. The milk solids caramelize, developing a nutty, toffee-like flavor through the Maillard reaction. It's alchemy, but the science-backed kind.
 
 ### The Recipe
+
+<!-- img-prompt: Design a three-panel process triptych (left-to-right) that clearly shows the progression for Brown-Butter Bread Crumbs. Natural daylight from a single window, warm tones, slightly desaturated, unpretentious editorial cookbook style. Shoot overhead (90° top-down) on a weathered wooden surface set on a cheap laminate counter edge peeking at the bottom—hint of a cramped San Francisco studio kitchen (rental stove knob visible at far edge). Panel 1 (Prep): A bowl of irregular, coarse, pea-sized stale bread crumbs sits beside torn crust pieces and a small digital scale; a note card reads “2 cups (120g)” in neat handwriting; a light-colored skillet is empty nearby. Panel 2 (Brown the butter): The skillet now contains butter in mid-brown stage—foam just subsiding, amber milk-solid specks collecting on the pale skillet surface; a hand tilts the pan slightly, swirl motion visible, steam faintly drifting. The color is a nutty medium amber, not dark. Panel 3 (Toast the crumbs): The crumbs are added and are toasting—spatula mid-stir with obvious motion blur; crumbs visibly transitioning to deep golden with a dry, crisp look; a pinch bowl of sea salt and a tiny dish of optional spice (za’atar/chili flakes) sit to the side. Include tiny cues of real life: a single crumb on the burner, a faint coffee ring on the wood. Camera: 50mm lens equivalent, f/3.5 for clarity across each panel. Mood: fast and focused—“have everything ready; this moves fast.” -->
+![Brown-butter bread crumbs process: stale bread torn, butter browning, crumbs toasting](images/chapter-06/025_brown-butter-bread-crumbs-process.png)
 
 **Yield:** About 2 cups toasted crumbs
 **Active time:** 8 minutes
@@ -70,6 +76,9 @@ Brown butter (beurre noisette in fancy French) is what happens when you stop coo
 - **Crumbs won't crisp:** Your bread wasn't stale enough, or your heat was too low. Try toasting them longer, or start with drier bread.
 - **Soggy the next day:** You stored them while they were still warm. Moisture is the enemy. Always cool completely.
 
+<!-- img-prompt: Create a hero shot of Brown-Butter Bread Crumbs in a simple, matte ceramic bowl, mounded and overflowing slightly. The crumbs are irregular, deeply golden with a matte, dry crunch—speckles of toasted milk solids clinging subtly, no oily gloss. A well-loved metal spoon rests in the bowl, a few crumbs spilled onto a weathered wood surface. Natural window light from the left, warm and soft, with gentle falloff and a shallow depth of field that keeps the crumbs crisp and the background pleasantly blurred. Slightly desaturated editorial palette; no artificial shine. In the soft blur, hint at the reality of the setting: the edge of a cheap laminate counter and a scuffed rental stove knob. No props that suggest luxury—just a tiny pinch bowl of salt and a folded dish towel. Camera angle: three-quarter overhead (about 45°) with a 50mm or short macro lens at f/2.8 to emphasize texture. Mood: quietly triumphant, the scent of hazelnut and toasted bread implied—“so good you eat them with a spoon over the stove.” Avoid perfect symmetry; let the scene feel lived-in. This is honest, not Instagram-polished. Keep tones warm, slightly desaturated, and appetizing-but-real. -->
+![Brown-butter bread crumbs hero: golden, crispy perfection in a bowl](images/chapter-06/026_brown-butter-crumbs-hero.png)
+
 ---
 
 ## Foundation 2: House Crumb-Vinaigrette (Three Ways)
@@ -89,6 +98,9 @@ For a **more stable emulsion** (if you're making this ahead or want it extra cre
 ---
 
 ### Recipe A: Classic Sherry-Crumb Vinaigrette
+
+<!-- img-prompt: Render a clear four-step process sequence for House Crumb-Vinaigrette, arranged left-to-right in a single strip or a 2x2 grid. Natural daylight, warm neutral palette, slightly desaturated. Shot overhead (90° top-down) on a weathered wood board resting atop a cheap laminate counter—subtle nod to a cramped San Francisco studio kitchen. Minimal props, instructional clarity. Step 1 (Bloom crumbs): A small glass bowl with finely ground, toasted bread crumb powder (from a spice grinder nearby) mixed with sherry vinegar; the crumbs have visibly swelled, forming a paste. Label discreetly in small, clean sans-serif type at the top-left: “1. Bloom crumbs in vinegar (1 min).” Step 2 (Add flavor): Dijon, honey, salt, and black pepper added to the paste; a small whisk partially submerged; mustard jar and honey spoon just at the edge. Label: “2. Whisk in mustard, honey, salt, pepper.” Step 3 (Emulsify): Olive oil being poured in a thin, steady stream from a measuring cup while whisking vigorously; the mixture thickening, glossy-sticky, clinging to the bowl sides. Label: “3. Stream in oil while whisking.” Step 4 (Finish): A creamy, cohesive dressing in a small jar, with a tiny spoonful lifting to show viscosity—no separation. Label: “4. Adjust: water if too thick, vinegar/salt to balance.” Include a few stray crumb flecks on the board, no heavy graphics, and tiny shadows. Lens: 50mm equivalent, f/3.2. Mood: smart, practical, unglamorous science—“emulsions have opinions about ratios.” -->
+![Crumb-vinaigrette process: ingredients being emulsified](images/chapter-06/027_crumb-vinaigrette-process.png)
 
 **Yield:** About ¾ cup (enough for 6–8 salads)
 **Active time:** 3 minutes
@@ -155,6 +167,9 @@ Umami-forward. Excellent for heartier scraps (kale ribs, roasted roots, grain bo
 
 **Method:** Whisk miso into the vinegar-crumb mixture until smooth, then proceed as above. Finish with sesame seeds if using.
 
+<!-- img-prompt: Create a hero image of the House Crumb-Vinaigrette in a small, clear glass jar, filled almost to the rim. The dressing is creamy and cohesive with a gentle sheen, visible micro-flecks from finely ground toasted crumbs, no pools of oil. A spoon dipped into the jar trails a thick ribbon back into the surface to show viscosity. Subtle supporting elements (soft focus): a small bowl of crumb powder, a bottle of sherry vinegar, a pepper mill—kept minimal. Set on a weathered wooden surface with the edge of a cheap laminate counter faintly visible, hinting at the real San Francisco studio kitchen context. Natural window light from the right, warm and diffuse; slightly desaturated editorial palette. Camera angle: 45° three-quarter view, shallow depth of field (f/2.8 on a 50mm or short macro lens) to make the jar the star, with background gently blurred. Mood: quietly confident, utilitarian elegance—no garnish, no frills. Include gentle condensation or smear marks on the jar rim to emphasize honest use. Avoid bright, glossy “food porn” highlights; keep it appetizing but real, matte-ish, with subtle texture on the dressing’s surface. This is the signature move—closed-loop cooking that feels smart and satisfying. -->
+![Crumb-vinaigrette hero: creamy, emulsified dressing in a jar](images/chapter-06/028_crumb-vinaigrette-hero.png)
+
 ---
 
 ## Foundation 3: Parmesan-Rind Broth (Brodo)
@@ -166,6 +181,9 @@ Parmesan rinds are too tough to eat, but they're packed with umami. Simmered in 
 Use this as a base for soups, risotto, braising liquid, or just sip it from a mug like bouillon when you're feeling fancy and/or unwell.
 
 ### The Recipe
+
+<!-- img-prompt: Build a three-stage vertical process sequence for Parmesan-Rind Broth (Brodo). Natural daylight, warm neutrals, slightly desaturated. Shot in a cramped San Francisco studio kitchen—cheap laminate counters, a coil-burner rental stove, and a well-used enamel pot. Overhead or slightly elevated (60°) for clarity, editorial cookbook style. Panel 1 (Optional sauté): Onion quarters (unpeeled) and a halved head of garlic cut-side down in a slick of olive oil, browning in the enamel pot; bay leaves, peppercorns, and herb stems (parsley/thyme) staged nearby; a tomato end or dab of tomato paste in a tiny dish. Label in small sans-serif at the top-left: “Sear aromatics (optional).” Panel 2 (Simmer): Water added with several Parmesan rinds (stickers/wax scrubbed clean), bay leaves, peppercorns, and herb stems bobbing. Gentle steam and a barely-there simmer; rinds softening at the edges. Label: “Simmer 1–2 hours, partially covered.” Panel 3 (Strain): A fine-mesh strainer over a large bowl catching a rich golden broth; a wooden spoon presses solids in the strainer to extract every drop; the softened rinds and spent aromatics visible in the sieve. Label: “Strain and season lightly.” Include real-life details: a slightly stained pot rim, stray peppercorn, a folded dish towel. Lens: 50mm, f/3.5 for clarity. Mood: old-world wisdom meets broke-kitchen pragmatism—“garbage becomes dinner.” -->
+![Parmesan-rind broth process: rinds simmering with aromatics](images/chapter-06/029_parmesan-rind-broth-process.png)
 
 **Yield:** About 6 cups
 **Active time:** 10 minutes
@@ -207,6 +225,9 @@ Use this as a base for soups, risotto, braising liquid, or just sip it from a mu
 - Deglaze roasting pans
 - Sip it with a little black pepper and a drizzle of olive oil
 
+<!-- img-prompt: Produce a serene hero shot of Parmesan-Rind Broth served simply in a small, matte off-white bowl. The broth is a clear, rich golden color with a faint sheen; a few tiny droplets of olive oil shimmer on the surface, and a twist of freshly cracked black pepper floats at center. Whisper of steam rises, catching the natural window light from the left. Set on a weathered wood board, with the subtle edge of a cheap laminate counter peeking in the lower frame—an honest nod to the San Francisco studio apartment. Background out of focus: an enamel pot lid and a stray Parmesan rind, both soft and unobtrusive. Camera angle: 45° three-quarter, shallow depth of field (f/2.8 on a 50mm lens) to keep the surface detail and steam crisp while the world falls away. Color palette: warm neutrals, slightly desaturated; no stylized garnishes. Mood: comforting, minimal, quietly luxurious in a humble way—“sip it like bouillon when you’re feeling fancy and/or unwell.” Texture should be realistic, not overly glossy; keep reflections soft. This image should feel like a pause—the essence of flavor extracted from scraps, distilled into something restorative and precise. -->
+![Parmesan-rind broth hero: rich, golden broth in a bowl](images/chapter-06/030_parmesan-rind-broth-hero.png)
+
 ---
 
 ## Foundation 4: Garlic Confit & Infused Oil
@@ -216,6 +237,9 @@ Use this as a base for soups, risotto, braising liquid, or just sip it from a mu
 Raw garlic is aggressive. Roasted garlic is sweet. Garlic confit—garlic slowly poached in oil—is *both*: mellow, jammy, spreadable, and utterly versatile. Plus, you get two products for the price of one: silky garlic cloves and garlic-infused oil. Both keep for weeks. Both make everything better.
 
 ### The Recipe
+
+<!-- img-prompt: Create a three-step process sequence for Garlic Confit & Infused Oil, arranged left-to-right. Natural daylight, warm tones, slightly desaturated, honest editorial style. Shot overhead (90°) on a weathered board set on a cheap laminate counter—hinting at the cramped San Francisco studio kitchen. Step 1 (Peel & submerge): A small saucepan (or oven-safe dish) filled with peeled garlic cloves (about 30), completely covered in olive oil. Optional aromatics—two thyme sprigs, a bay leaf, and a few peppercorns—are nestled among the cloves. Label in subtle small sans-serif: “1. Peel. Submerge in oil.” Step 2 (Poach low & slow): The same vessel on a rental stove coil burner with the tiniest shimmer of bubbles—barely perceptible movement—cloves turning pale gold but not browning. Include a visible dial set to the lowest heat. Label: “2. Gentle bubbles, 45–60 min.” Step 3 (Cool & store): The finished confit cooled in the oil and transferred to a clean glass jar; cloves look soft, jammy, golden, fully submerged. Label: “3. Cool in oil. Store refrigerated.” Honest details: a few papery skins off to the side, a dribble of oil on the counter, a folded towel. Lens: 50mm, f/3.5 for clarity. Mood: calm, meditative, two-for-one magic—silky cloves and infused oil. -->
+![Garlic confit process: cloves slowly poaching in golden oil](images/chapter-06/031_garlic-confit-process.png)
 
 **Yield:** About 30 cloves confit + 1 cup infused oil
 **Active time:** 10 minutes
@@ -256,6 +280,9 @@ Raw garlic is aggressive. Roasted garlic is sweet. Garlic confit—garlic slowly
 - Use anywhere you'd use olive oil, but want a subtle garlic flavor
 
 **Safety note:** Garlic in oil can theoretically harbor *Clostridium botulinum* (botulism) if stored improperly. The key is **refrigeration** and **using it within 2 weeks**. Don't leave it at room temp. If it smells off or looks cloudy, discard it.
+
+<!-- img-prompt: Compose a hero image of Garlic Confit: a small glass jar packed with jammy, golden garlic cloves fully submerged in olive oil. The surface glows warmly in soft window light, with tiny thyme leaves and a bay leaf pressed against the glass, peppercorns settled at the bottom. A tarnished spoon rests alongside, holding a single smashed clove to show its spreadable texture. Set on a weathered wooden surface; the blurred edge of a cheap laminate counter and a faint glimpse of a rental stove knob sit at the periphery to ground the reality of a cramped San Francisco studio kitchen. Camera angle: 45° three-quarter, shallow depth of field (f/2.8, 50mm or short macro) emphasizing the luscious, soft structure of cloves without high-gloss shine. Slightly desaturated, warm neutral palette. Honest imperfections allowed: a little oil smear on the jar rim, a speck of garlic skin nearby. Mood: quietly opulent, practical luxury—two products in one. Avoid styling that looks staged or aspirational; keep it candid, appetizing, and real. Optional subtle hand-written label on the jar reading “Garlic Confit — refrigerate, 2 weeks.” -->
+![Garlic confit hero: golden, jammy cloves glistening in infused oil](images/chapter-06/032_garlic-confit-hero.png)
 
 ---
 
@@ -303,6 +330,9 @@ Pickles are controlled chaos—acid, salt, and sugar taming raw scraps into some
 - Top tacos, sandwiches, or burgers
 - Eat straight from the jar while standing in front of the fridge
 
+<!-- img-prompt: Design a hero shot of Quick-Pickled Fines: a clear pint jar tightly packed with mixed vegetable scraps in jewel-toned brine. Include thin carrot ribbons, cucumber ends, red onion slivers, jalapeño stems, radish tops, cabbage core shavings, and cauliflower trim. Brine is bright and clear with visible mustard seeds, peppercorns, and a bay leaf suspended. The colors should pop yet remain slightly desaturated for an honest editorial look—crimson onion, orange carrot, green stems, pale cabbage. Natural daylight from a side window, warm and soft. The jar sits on a weathered wood surface with subtle water rings; the edge of a cheap laminate counter just peeks in frame to anchor the San Francisco studio kitchen vibe. Background blur might include a small saucepan and a measuring cup (soft focus). Camera angle: 45° three-quarter, shallow depth of field (f/2.8, 50mm), highlighting the translucent brine and crisp textures pressed against the glass. A few stray seeds and a drip of brine on the board underscore real use. Mood: bright, zippy, controlled chaos tamed by acid. No artificial gloss; keep reflections soft, not flashy. This should look like something you’d grab from the fridge and eat standing there, fork in jar. -->
+![Quick-pickled fines hero: vibrant, tangy vegetables in jewel-toned brine](images/chapter-06/033_quick-pickled-fines-hero.png)
+
 ---
 
 ## Foundation 6: Green-Stem Pesto
@@ -347,6 +377,9 @@ This is not traditional Genovese pesto. This is *stem pesto*—rougher, greener,
 - Mix with mayo for a bright aioli
 - Use as a marinade for vegetables before roasting
 
+<!-- img-prompt: Create a hero image of Green-Stem Pesto in a low, wide ceramic bowl. The pesto is chunky and vibrant—flecks of herb stems, crushed nuts or seeds, grated cheese (or nutritional yeast), and a sheen of olive oil pooling lightly in crevices. Texture is intentionally rough and assertive, not silky; visible strands of minced stems signal “punk farm” energy. Natural daylight from the left, warm and slightly desaturated to maintain an honest editorial look. Set on a weathered wooden surface with a lemon half, a small pile of trimmed herb stems, and a few toasted nuts in soft background blur. The edge of a cheap laminate counter or a scuffed rental stove knob should be barely perceptible to root the image in the San Francisco studio kitchen. Camera angle: 45° three-quarter with a short macro lens (60–100mm equivalent), shallow depth of field (f/2.8) to emphasize texture. A spoon smear on the board reveals thickness and chunkiness. Mood: bold, practical, and green in the best way—resourcefulness turned into flavor. Avoid pristine styling; allow a few escaped pesto flecks and an oil drop or two. No overly glossy highlights; keep the color true and appetizing. -->
+![Green-stem pesto hero: vibrant, chunky herb paste ready to use](images/chapter-06/034_green-stem-pesto-hero.png)
+
 ---
 
 ## Foundation 7: Brewed-Coffee Molasses (Dregs Reduction)
@@ -383,6 +416,9 @@ This one's weird, but trust me. If you have leftover coffee (or tea, or mushroom
 - Add a spoonful to savory sauces or stews for complexity
 - Drizzle over vanilla ice cream if you're feeling adventurous
 
+<!-- img-prompt: Produce a moody hero shot of Brewed-Coffee Molasses (Dregs Reduction): a small glass or ceramic pouring vessel filled with a dark, glossy, bittersweet syrup. Capture a slow ribbon of the reduction falling from a spoon back into the vessel, showing thick, lacquered viscosity that coats the back of the spoon. Natural window light, warm and soft, slightly desaturated palette. Set on a weathered wood board with a few scattered coffee grounds and a stained mug in blurred background, plus the edge of a cheap laminate counter—anchoring the San Francisco studio apartment setting. Keep the background objects out of focus: a small saucepan with caramelized residue, a crumpled sugar packet. Camera angle: 45° three-quarter, shallow depth of field (f/2.8, 85mm or short macro) to emphasize the glossy surface without turning it into flashy food porn—reflections should be controlled, soft, and realistic. Mood: intriguing, a little strange, quietly elegant—“what is that?” in the best way. Color should read deep mahogany with amber highlights at the edges. Honest imperfections welcome: a small drip on the rim, a streak on the spoon. Keep it minimal, functional, and inviting for both savory and sweet applications. -->
+![Coffee molasses hero: glossy, bittersweet syrup ready to drizzle](images/chapter-06/035_coffee-molasses-hero.png)
+
 ---
 
 ## The Foundation Mindset: Make Ahead, Use Freely
@@ -394,5 +430,3 @@ You don't need all seven at once. Start with two or three that sound most useful
 Welcome to the infrastructure layer. It only gets more delicious from here.
 
 ---
-
-**Photography note:** *This chapter needs process-driven, step-by-step imagery. Include: (1) the stages of brown butter (melted → foaming → brown specks forming); (2) crumb-vinaigrette in a jar, mid-shake; (3) a pot of simmering parmesan-rind broth with visible rinds; (4) garlic confit cloves, golden and glistening in oil; (5) jars of pickled fines in jewel tones; (6) bright green stem pesto in a bowl with a spoon; (7) coffee molasses being drizzled from a spoon. Also include finished "hero shots" of each foundation stored in clean jars with labels. The aesthetic should be both instructional and aspirational—like a cooking school meets a well-organized pantry.*

@@ -12,6 +12,16 @@ The salads and small plates in this chapter are designed to be entry points: str
 
 A note on yields: Most of these serve 2–4 people as a side, or 1–2 as a main if you're hungry or eating alone standing over the sink. Scale up as needed.
 
+<!-- img-ref: images/chapter-06/026_brown-butter-crumbs-hero.png -->
+<!-- img-ref: images/chapter-06/028_crumb-vinaigrette-hero.png -->
+<!-- img-ref: images/chapter-06/030_parmesan-rind-broth-hero.png -->
+<!-- img-ref: images/chapter-06/032_garlic-confit-hero.png -->
+<!-- img-ref: images/chapter-06/033_quick-pickled-fines-hero.png -->
+<!-- img-ref: images/chapter-06/034_green-stem-pesto-hero.png -->
+<!-- img-ref: images/chapter-06/035_coffee-molasses-hero.png -->
+<!-- img-prompt: Create a documentary-style, editorial cookbook image that shows all seven foundations together as the honest building blocks for Drain Salad. Composition: a slightly oblique overhead (about 35–45° three-quarter top view) on a weathered wood cutting board set on a cheap, speckled laminate rental counter in a cramped San Francisco studio kitchen. Natural late-afternoon window light from the left, soft shadows, warm, slightly desaturated palette, shallow depth of field with all seven items in sharp focus and the edges falling softly. Include: (1) brown-butter crumbs—golden, sandy pile in a small chipped ceramic pinch bowl; (2) crumb vinaigrette—cloudy tan dressing in a small mason jar with oil bead on top; (3) parmesan-rind broth—amber liquid in a glass measuring cup with a couple of gnawed parmesan rinds nearby; (4) garlic confit—soft golden cloves submerged in oil in a squat jar; (5) quick-pickled fines—tangled green herb stems in clear brine in a slender jar; (6) green-stem pesto—vivid, textured green paste in a white ramekin with a slick of oil; (7) coffee-molasses—inky, glossy syrup in a tiny glass bottle, a viscous drip on the board. Scatter honest scraps: a few stale bread crumbs, a microplane with garlic smears, lemon zest curls, pepper grinder out of focus. In the deep background, softly blurred, hint at reality: rental-grade stove coil and the open bathroom doorway just peeking in frame (toilet barely implied, not featured). No text or branding. Camera: 35mm lens, f/5.6, ISO 400. Mood: practical, inviting, not precious—“Start small. Start honest.” Show subtle fingerprints, water rings, and a dish towel corner for human presence. -->
+![All seven foundations together: the building blocks for every Drain Salad](images/chapter-07/036_all-seven-foundations-together.png)
+
 ---
 
 ## Recipe 1: Sludge Caesar (Kale Ribs, Stale Bread, Parmesan Rinds)
@@ -29,6 +39,9 @@ Someone asks for the recipe. Someone else says it's "the kind of thing you'd pay
 This is a riff on Caesar salad, but built from scraps. The kale ribs—fibrous, bitter when raw—are blanched until tender, then tossed in a dressing made from parmesan-rind broth (umami bomb), stale bread (body and emulsification), and anchovy (funk and salt). It's rich, creamy, crunchy, and tastes like you meant to make it this way.
 
 ### The Recipe
+
+<!-- img-prompt: Produce a clean, three-panel process sequence (triptych) for Sludge Caesar that clearly shows progression: blanching kale ribs → making croutons → emulsifying dressing. Consistent natural window light from the left, warm, slightly desaturated tones, editorial cookbook style, no text or logos. Set in a cramped San Francisco studio kitchen, March 2022, early evening (friends due any minute, $11 in the checking account—resourceful urgency). Panel 1 (left): Overhead top-down shot of a battered stockpot at a gentle rolling boil on an electric coil stove; a handful of 1/2-inch sliced kale ribs tumbling into salted water, tongues of steam rising, a metal spider strainer resting across the pot rim, a nearby metal bowl packed with ice water ready for shocking. Cheap laminate counter, stray kale rib ends, a clean towel. Panel 2 (center): Three-quarter overhead shot of torn stale baguette chunks on a scuffed baking sheet lined with wrinkled parchment, glistening lightly with olive oil, coarse salt sprinkled; a small bowl with olive oil and a tablespoon, half of the rock-hard baguette in frame, crumbs scattered. Oven door ajar in background (no visible temperature readouts). Panel 3 (right): Close three-quarter shot of a small glass jar mid-emulsification: parmesan-rind broth, fine toasted bread crumbs, lemon juice, Dijon, minced anchovy, grated garlic, and olive oil being whisked with a tiny whisk; dressing looks creamy and thick. Props: anchovy tin (label obscured), microplane with garlic residue, measuring cup of amber parmesan broth, pepper grinder. Camera: 35mm lens, f/5.6 for clarity across each panel. Mood: instructional, calm, and honest—technique over glamour. -->
+![Sludge Caesar process: blanching ribs, making croutons, emulsifying dressing](images/chapter-07/038_sludge-caesar-process.png)
 
 **Serves:** 2–4 as a side, 1–2 as a main
 **Active time:** 20 minutes
@@ -77,6 +90,9 @@ This is a riff on Caesar salad, but built from scraps. The kale ribs—fibrous, 
 - **Why blanch the ribs?** Raw kale ribs are too fibrous and bitter. Blanching tenderizes them and mellows the bitterness while retaining their structure.
 - **Can I use other greens?** Yes. Chard stems work. So do broccoli stems (slice thin). Cabbage cores (shaved on a mandoline) work great.
 - **What if I don't have parmesan broth?** Use vegetable stock and stir in 1 tablespoon grated Parmesan when making the dressing.
+
+<!-- img-prompt: Create a hero shot of Sludge Caesar that reads as elevated yet clearly made from scraps. Show blanched kale ribs glistening with a creamy, peppery dressing, generously studded with deeply golden, jagged croutons, and finished with snowy, irregular shavings of Parmesan, flaky salt, and freshly cracked black pepper. Composition: 45° angle close-up on a small, slightly chipped ceramic plate set on a weathered wood board atop a cheap laminate counter in a San Francisco studio kitchen (March 2022 dinner for six). Natural early-evening window light from the left, warm and soft, with gentle shadows; slightly desaturated tones. In the soft background, out of focus: a zip-top bag with parmesan rinds, a spent lemon half, and a few raw kale rib trimmings to hint at the transformation. No text or branding. Include a fork with a little dressing sheen and a few crumbs on the board; a smear of dressing on the plate rim is okay—real, not messy. The dressing should look thick and emulsified (bread crumbs giving body). The kale ribs should be visibly tender yet structured, not raw. Steam is not necessary; focus on texture and gloss. Camera: 50mm lens, f/4 to emphasize dimensionality of croutons and rib contours. Mood: quiet triumph—desperation and technique looking identical on a plate. Color palette: emerald greens, toasty browns, ivory Parmesan, olive oil gold, pepper black. -->
+![Sludge Caesar hero: finished dish with crispy croutons and shaved Parmesan](images/chapter-07/037_sludge-caesar.png)
 
 ---
 
@@ -138,6 +154,9 @@ This version uses tomato ends (the tough stem caps you'd normally discard), pick
 - **Bread texture:** You want the bread to be moist and tender, but still holding its shape. If it turns to mush, your bread was too soft to begin with. Next time, toast it first.
 - **Make ahead?** You can prep all the components separately and assemble 30 minutes before serving. Don't assemble more than 2 hours ahead or it'll get soggy.
 
+<!-- img-prompt: Render a juicy, honest panzanella remix hero: torn, sturdy stale bread chunks saturated but still structured, mingling with diced tomato ends (cores removed), cucumber scraps, thin red onion slices, and torn basil. Dressing is bright with pickle brine—show a small, unlabeled jar of cornichon or dill pickle brine nearby, a spoon resting in it, without text. Composition: overhead top-down shot to highlight color and soak; place the salad in a wide, shallow ceramic bowl with visible pooling juices collecting at the bottom (a testament to the 15–30 minute rest), bread visibly drinking it up. Scatter a few extra tomato end pieces and herb leaves around the bowl for realism. Warm natural daylight from a window, soft but directional, slightly desaturated palette with reds, greens, and golds. Set on a weathered wooden surface over a cheap laminate counter edge peeking in, San Francisco studio kitchen context implied. Include a few onion crescents and coarse black pepper on the rim. No branding or text. Camera: 35mm lens, f/5.6 so most of the bowl is in crisp focus with gentle falloff at edges. Mood: summer-in-a-bowl, tangy and generous, resourceful not rustic cosplay. Optional subtle background cues: the corner of a pickle jar lid, a crumpled paper towel, and a dull paring knife with tomato seeds clinging. Make the bread look glossy-moist, not soggy; the cucumbers fresh; the herbs torn, not cut. Convey the sense that the bowl has been resting and is now perfectly ready to eat. -->
+![Bread-and-tomato salad: juicy panzanella with pickle brine and fresh herbs](images/chapter-07/039_bread-and-tomato-salad.png)
+
 ---
 
 ## Recipe 3: Crispy Potato Skins with Brown Butter and Chives
@@ -188,6 +207,9 @@ This is barely a recipe. It's more of a technique you'll use forever.
 - **Make sure they're dry:** Wet skins = soggy skins. Pat them aggressively dry.
 - **High heat:** Don't be timid. You want a hot pan so the skins crisp, not steam.
 - **Save the potatoes:** You peeled potatoes to get these skins. Make mashed potatoes with the flesh. One scrap begets another.
+
+<!-- img-prompt: Photograph a pile of crispy potato skins, crackly and deeply golden, glistening in brown butter with flecks of toasted milk solids. Composition: 45° angle close-up on a black cast-iron skillet set on a rental-grade electric coil stove, with a small pool of nutty brown butter shimmering at the pan’s edge. The skins are irregular curls and arcs, some with a whisper of potato flesh attached; edges blistered and crisp. Finish with flaky salt, a heavy dusting of black pepper, and a scattering of finely minced chives. Include a small ramekin of sour cream at the margin (optional dip, not drowning the scene), and a micrograter with a dusting of Parmesan nearby if you wish to hint at the variation, but keep the hero clean. Lighting: warm natural window light from the side, soft highlights, slightly desaturated to avoid greasy gloss. Let a wisp of steam catch the light for heat. Set in a cramped San Francisco studio kitchen—subtle context like a cheap laminate counter corner, a worn wooden spoon, and a stained dish towel. No text or logos. Camera: 50mm lens, f/3.5 for shallow depth isolating the skins while keeping the butter’s texture visible. Mood: audaciously simple and indulgent; the smell of nutty beurre noisette practically wafts off the frame. Color palette: burnished golds and browns, fresh green chives, matte black pan. -->
+![Crispy potato skins: golden, crunchy, and rich with brown butter](images/chapter-07/040_crispy-potato-skins.png)
 
 ---
 
@@ -242,6 +264,9 @@ Onion ends—the root base and the papery top—are usually the first thing to h
 - **Char is essential:** The charred bits add a smoky sweetness that makes this dish. Don't skip that step.
 - **Miso variation:** Use red miso for a funkier, more intense flavor. White/yellow miso is milder.
 - **What about the papery layers?** Compost those. They're too tough and bitter.
+
+<!-- img-prompt: Create an honest, appetizing plate of charred onion ends glazed with miso-sesame. Composition: 45° angle, medium close-up of halved onion root ends, their cut faces deeply charred and black in places, sitting alongside sautéed, lightly browned onion tops. Everything is slicked in a glossy, clingy miso glaze (white/yellow miso, rice vinegar, sesame oil, a hint of honey) that pools slightly on the plate. Sprinkle toasted sesame seeds and a few sliced scallion greens over the top. Place the plated onions on a small, off-white ceramic plate with imperfect edges, set on a weathered wood board over a cheap laminate counter. In the soft background, keep the cast-iron skillet visible with smudges of glaze, a wooden spatula, and a tiny bowl with the remaining glaze, whisk peeking out—no text or branding. Lighting: natural window light from the left, warm and directional, emphasizing the lacquer of the glaze and the matte char. Slightly desaturated editorial palette to avoid food-porn sheen. Camera: 35mm lens, f/4 to balance texture and depth. Mood: weeknight cleverness—simple, smoky, sweet-savory. Show a faint curl of steam to suggest immediacy. Optional micro-detail: a small bottle of toasted sesame oil in the far blur, label obscured. Make sure the char is assertive but appetizing, not ashy; glaze should read as smooth and savory with a subtle sheen. -->
+![Charred onion ends: sweet, smoky, and glazed with miso-sesame sauce](images/chapter-07/041_charred-onion-ends.png)
 
 ---
 
@@ -301,6 +326,9 @@ This is excellent alongside roasted vegetables, grilled proteins, or eaten alone
 - **Lemon is key:** This dish should taste bright and acidic. Don't be shy.
 - **Leftovers:** This gets better the next day as the bulgur continues absorbing the dressing.
 
+<!-- img-prompt: Deliver a bright, lemon-forward herb-stem tabbouleh where minced parsley stems are the star. Composition: overhead top-down shot of a wide, shallow bowl filled with fluffy bulgur and an abundance of ultra-fine chopped parsley stems that read as green confetti, with a touch of parsley leaves. Diced tomato ends and cucumber scraps appear as small, juicy gems; a light gloss from olive oil and lemon juice coats everything. Include a lemon half and a small cruet of olive oil near the rim; a micro-pile of unchopped parsley stems on a small cutting board with a chef’s knife stained green to signal the scrap-to-salad transformation. Set on a weathered wood surface over a glimpse of cheap laminate counter in a San Francisco studio kitchen. Lighting: natural daylight, soft and even, warm but slightly desaturated for an editorial, honest look. No text or branding. Camera: 35mm lens, f/5.6 to keep most of the bowl in crisp focus. Mood: clean, fresh, and assertively herbal. Visual cues: bulgur grains fluffy and separate; moisture visible without pooling; black pepper flecks; tiny droplets of dressing clinging to stems. Convey that it’s just past the 10-minute rest—settled, cohesive, and ready to spoon up. Optional garnish: a few torn mint leaves, not excessive. -->
+![Herb-stem tabbouleh: bright, lemony, and packed with minced parsley stems](images/chapter-07/042_herb-stem-tabbouleh.png)
+
 ---
 
 ## Recipe 6: Roasted Carrot-Top Greens with Garlic and Chili
@@ -349,6 +377,9 @@ Carrot tops are edible. They're bitter, herbaceous, and slightly grassy—like p
 - **Are carrot tops safe to eat?** Yes. The myth that they're toxic comes from confusion with other Apiaceae family members (like hemlock, which you're not eating). Carrot tops are safe and nutritious.
 - **They're bitter:** This is normal. The garlic, chili, and lemon balance the bitterness.
 - **What about the carrots?** Roast them. Eat them. This book is about using the whole vegetable.
+
+<!-- img-prompt: Show roasted/sautéed carrot-top greens transformed from scrappy to craveable. Composition: 45° angle close-up of a large skillet with carrot tops just off the heat: tangled, deep green fronds with crisped, slightly charred edges; thin slices of garlic glistening and lightly golden; red chili flakes scattered. A lemon wedge rests on the skillet’s rim, freshly squeezed with a few droplets visible. Set on a rental-grade electric coil stove with a cheap laminate counter edge peeking in—cramped San Francisco studio reality. Lighting: bright natural window light from the side, warm and honest, bringing out texture without greasy shine. Slight desaturation for an editorial cookbook feel. No text or logos. Camera: 50mm lens, f/3.5 to emphasize the lacy crisp edges while keeping the pan context. Mood: quick, punchy, foraged-fancy meets weeknight. Steam wisps are welcome to suggest immediacy; the greens should look dry-crisp at the edges and tender in the stems, not wet. Include a small bowl of chili flakes and a dribble trail of olive oil on the stovetop to keep it real. The garlic should read as aromatic, not burnt; the greens as bitter-savory balanced by lemon. Keep the color palette deep greens, pale garlic, flickers of red chili, and matte black/steel. -->
+![Roasted carrot-top greens: tender, crispy, and perfectly seasoned with garlic and chili](images/chapter-07/043_roasted-carrot-top-greens.png)
 
 ---
 
@@ -404,6 +435,9 @@ After you juice a lemon or orange, you're left with the spent rind. Most people 
 - **The pith is bitter:** That's the point. It mellows with marinating and adds complexity.
 - **Shave the fennel thin:** Thick fennel will be too crunchy and overwhelming. Use a mandoline if you have one.
 
+<!-- img-prompt: Craft an elegant yet unpretentious Sicilian-leaning citrus-peel salad. Composition: overhead top-down shot of a shallow platter featuring ultra-thin, translucent strips of spent citrus rind (lemon and orange), pith and all, marinated until supple; interlaced with whisper-thin shaved fennel (mandoline-thin), torn green/black olives, and scattered torn mint/parsley. Dressing is a light gloss of olive oil, white wine/champagne vinegar, salt, pepper, and chili flakes—visible as delicate sheen and a few red specks. Color palette: luminous citrus yellows/oranges, pale fennel greens, matte olive greens, and warm neutral tones; slightly desaturated editorial finish. Set on weathered wood with a hint of cheap laminate counter edge—San Francisco studio kitchen honesty. In the soft background, a small jar containing extra marinating citrus strips (indicating the 30-minute to overnight rest), and two halved, juiced organic citrus shells with imperfect skins (no stickers, no text, no waxy shine) to signal “organic-only peel.” Lighting: natural window light from the left, soft shadows, no gloss. Camera: 35mm lens, f/5.6 for detail across the platter. Mood: bright, floral, slightly bitter in a good way—surprisingly refined from scraps. Emphasize the knife-work thinness: almost translucent citrus ribbons, delicate fennel, torn olives. No branding or typography. -->
+![Citrus-peel salad: elegant, bright, and surprisingly complex with fennel and olives](images/chapter-07/044_citrus-peel-salad.png)
+
 ---
 
 ## Recipe 8: Wilted Kale Leaf Chips with Nutritional Yeast
@@ -454,6 +488,9 @@ When you use kale ribs for something else, you're left with a pile of leafy gree
 - **Low heat is essential:** High heat burns the edges before the leaves crisp.
 - **Moisture is the enemy:** Dry the leaves thoroughly. Don't use too much oil.
 - **They're delicate:** Once baked, they shatter easily. Handle gently.
+
+<!-- img-prompt: Photograph crisp, low-and-slow baked kale chips made from wilted leaves: feather-light, frilly edges, dusted with nutritional yeast. Composition: two baking sheets side-by-side in frame, lined with wrinkled parchment, each holding kale in a single uncrowded layer. The chips are deep green, matte, and brittle-looking, not browned; a fine, pale golden dusting of nutritional yeast clings evenly. A small bowl of nutritional yeast and a bottle-cap’s worth of olive oil sit nearby; a clean, dry towel implies the crucial drying step. Set on a weathered wood work surface over a cheap laminate counter edge—cramped San Francisco studio realism. Lighting: soft natural daylight from the side, warm and slightly desaturated to avoid glossy “food porn” shine. No text or branding. Camera: overhead top-down, 35mm lens, f/6.3 for uniform sharpness across both trays. Mood: quiet, meditative thrift turned snack-time victory. Visual cues: a few stray chips resting on the parchment corners, a tiny crumble pile, and a cooling rack peeking in the background. Avoid any signs of oil pooling; the leaves should look dry-crisp. Optional subtle prop: an open, empty storage container in the far blur (hinting at storing with a silica packet), but don’t show the packet explicitly. Keep the color palette dark leafy green, parchment beige, and warm wood tones. -->
+![Wilted kale chips: crispy, savory, and dusted with nutritional yeast](images/chapter-07/045_wilted-kale-chips.png)
 
 ---
 

@@ -71,8 +71,9 @@ console.log(`${'='.repeat(60)}\n`);
 // Main execution
 (async () => {
   try {
-    // Load backend module
-    const Backend = require(`./image-backends/${config.backend}`);
+    // Load backend module (map 'dalle' to 'gpt-image' for backward compatibility)
+    const backendName = config.backend === 'dalle' ? 'gpt-image' : config.backend;
+    const Backend = require(`./image-backends/${backendName}`);
     const generator = new Backend(config);
 
     // Initialize backend
@@ -81,12 +82,16 @@ console.log(`${'='.repeat(60)}\n`);
     // Check for author reference image
     let authorRefExists = fs.existsSync(config.authorReference);
 
-    // Generate images
-    for (let i = 0; i < imagePrompts.length; i++) {
-      const promptData = imagePrompts[i];
+    // Generate images in parallel with concurrency limit
+    const CONCURRENCY = 8; // Generate 8 images at a time
+    let completed = 0;
+    let failed = 0;
+
+    // Create batches
+    const generateImage = async (promptData, index) => {
       const isAuthorPhoto = promptData.type === 'author';
 
-      console.log(`\n[${i + 1}/${imagePrompts.length}] Generating: ${promptData.title}`);
+      console.log(`\n[${index + 1}/${imagePrompts.length}] Generating: ${promptData.title}`);
       console.log(`  Type: ${promptData.type}`);
       console.log(`  File: ${promptData.filename}`);
 
@@ -124,17 +129,28 @@ console.log(`${'='.repeat(60)}\n`);
           console.log(`  ✓ Saved as author reference for future images`);
         }
 
+        completed++;
+        return { success: true, index };
       } catch (error) {
         console.error(`  ✗ Failed: ${error.message}`);
+        failed++;
         if (options.stopOnError) {
           throw error;
         }
+        return { success: false, index, error };
       }
+    };
 
-      // Small delay between generations to avoid rate limits
-      if (i < imagePrompts.length - 1) {
-        await sleep(2000);
-      }
+    // Process in batches with concurrency limit
+    for (let i = 0; i < imagePrompts.length; i += CONCURRENCY) {
+      const batch = imagePrompts.slice(i, i + CONCURRENCY);
+      const batchPromises = batch.map((promptData, batchIndex) =>
+        generateImage(promptData, i + batchIndex)
+      );
+
+      await Promise.all(batchPromises);
+
+      console.log(`\n--- Progress: ${completed}/${imagePrompts.length} completed, ${failed} failed ---\n`);
     }
 
     console.log(`\n${'='.repeat(60)}`);
@@ -321,11 +337,15 @@ function validateConfig(config, options) {
       break;
 
     case 'dalle':
+    case 'gpt-image':
       if (!config.openai.key) {
         console.error('Error: OPENAI_API_KEY not set in .env');
         valid = false;
       }
-      console.warn('Warning: DALL-E does not support reference images for character consistency');
+      if (config.backend === 'dalle') {
+        console.warn('Note: Backend name "dalle" is deprecated, use "gpt-image" instead');
+      }
+      console.log('Using gpt-image-1 model with reference image support');
       break;
 
     case 'comfyui':
@@ -338,7 +358,8 @@ function validateConfig(config, options) {
 
     default:
       console.error(`Error: Unknown backend: ${config.backend}`);
-      console.error('Supported backends: replicate, dalle, comfyui, a1111');
+      console.error('Supported backends: replicate, gpt-image, comfyui, a1111');
+      console.error('(Note: "dalle" is supported for backward compatibility but deprecated)');
       valid = false;
   }
 
@@ -370,7 +391,7 @@ Options:
   --start N          Start from image number N
   --end N            End at image number N
   --single N         Generate only image number N
-  --backend NAME     Override backend (replicate, comfyui, a1111, dalle)
+  --backend NAME     Override backend (replicate, gpt-image, comfyui, a1111)
   --stop-on-error    Stop if any generation fails
   --help             Show this help
 
@@ -388,10 +409,10 @@ Examples:
   npm run generate:images -- --start 10 --end 20
 
 Backends:
-  replicate    - Replicate API with face reference (recommended)
+  replicate    - Replicate API with face reference
+  gpt-image    - OpenAI gpt-image-1 with reference support (recommended)
   comfyui      - Local ComfyUI API
   a1111        - Local Automatic1111 API
-  dalle        - OpenAI DALL-E 3 (no reference support)
 
 Configuration:
   Copy .env.example to .env and add your API keys

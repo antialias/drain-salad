@@ -12,16 +12,23 @@
     "build:html": "cd manuscript && pandoc *.md -o ../build/drain-salad.html --toc --toc-depth=2 --standalone --css=../assets/css/drain-salad.css --metadata title='Drain Salad: A Treatise on Edible Entropy' --metadata author='[Author Name]' --embed-resources",
     "build": "npm run build:epub && npm run build:html",
     "build:all": "npm run build:epub && npm run build:pdf && npm run build:html",
-    "build:typst": "typst compile typst/book.typ build/drain-salad-typst.pdf",
-    "build:typst:watch": "typst watch typst/book.typ build/drain-salad-typst.pdf",
-    "convert:typst": "node scripts/markdown-to-typst.js",
+    "convert:typst": "for file in manuscript/*.md; do node scripts/markdown-to-typst.js \"$file\"; done",
+    "convert:typst:single": "node scripts/markdown-to-typst.js",
+    "build:typst": "npm run convert:typst && typst compile --root . typst/book.typ build/drain-salad-typst.pdf",
+    "build:typst:watch": "typst watch --root . typst/book.typ build/drain-salad-typst.pdf",
+    "build:typst:quick": "typst compile --root . typst/book.typ build/drain-salad-typst.pdf",
+    "build:book": "npm run convert:typst && typst compile --root . typst/book.typ build/drain-salad-typst.pdf && echo '✓ Book built: build/drain-salad-typst.pdf'",
     "watch": "nodemon -e md -w manuscript -x 'npm run build:epub'",
     "clean": "rm -rf build/* typst/chapters/* && mkdir -p build typst/chapters",
     "wordcount": "wc -w manuscript/*.md | tail -1",
     "wordcount:chapters": "for file in manuscript/chapter-*.md; do echo \"$(basename \"$file\" .md): $(wc -w < \"$file\") words\"; done",
     "image-prompts": "node scripts/generate-image-prompts.js",
     "image-stats": "echo 'Images by chapter:' && find manuscript/images -type f \\( -name '*.png' -o -name '*.jpg' \\) 2>/dev/null | wc -l | tr -d ' ' && echo 'total images'",
+    "extract-manifest": "node scripts/extract-image-manifest.js",
+    "validate-images": "node scripts/validate-images.js",
     "generate:images": "node scripts/generate-images.js",
+    "generate:missing": "node scripts/generate-missing-images.js",
+    "generate:missing:dry-run": "node scripts/generate-missing-images.js --dry-run",
     "generate:priority": "node scripts/generate-images.js --priority",
     "generate:author": "node scripts/generate-images.js --author",
     "generate:food": "node scripts/generate-images.js --food"
@@ -36,7 +43,8 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "openai": "^6.4.0"
   },
   "devDependencies": {
     "markdownlint-cli": "^0.37.0",

@@ -1,50 +1,33 @@
-#import "template.typ": *
+#import "@preview/orange-book:0.6.1": book, make-index, index
 
-// Title Page
-#align(center + horizon)[
-  #text(size: 48pt, weight: "light", fill: rgb("#4a4035"))[
-    *Drain Salad*
-  ]
+// Import our custom functions from template.typ for compatibility
+#import "template.typ": hero-image, recipe, divider
 
-  #v(1em)
-
-  #text(size: 24pt, style: "italic", fill: rgb("#8b7355"))[
-    A Treatise on Edible Entropy
-  ]
-
-  #v(2em)
-
-  #text(size: 14pt, fill: rgb("#666"))[
-    Upstream Capture and the Cuisine of Second Harvest
-  ]
-
-  #v(4em)
-
-  #text(size: 16pt)[
-    [Author Name]
-  ]
-]
-
-#pagebreak()
-
-// Table of Contents
-#outline(
-  title: "Contents",
-  indent: true,
+// Configure the book with orange-book template
+#show: book.with(
+  title: "Drain Salad",
+  subtitle: "A Treatise on Edible Entropy: Upstream Capture and the Cuisine of Second Harvest",
+  author: "[Author Name]",
+  main-color: rgb("#9d826b"),  // Clay/earth color from our design
+  lang: "en",
+  paper-size: "us-letter",
 )
 
-#pagebreak()
-
-// Note: Add chapters here as they're converted
-// For now, this will be populated programmatically
+// Front Matter
+#include "00-front-matter.typ"
 
 #pagebreak()
 
-= Coming Soon
-
-This Typst edition is being prepared. Chapters will be added as they're converted from Markdown.
-
-For now, use the conversion script:
-```bash
-node scripts/markdown-to-typst.js manuscript/chapter-XX.md
-```
+// Chapters
+#include "chapter-01-history.typ"
+#include "chapter-02-anatomy.typ"
+#include "chapter-03-clean-catch-method.typ"
+#include "chapter-04-drain-pantry.typ"
+#include "chapter-05-techniques.typ"
+#include "chapter-06-foundations.typ"
+#include "chapter-07-salads-small-plates.typ"
+#include "chapter-08-mains.typ"
+#include "chapter-09-ferments-condiments.typ"
+#include "chapter-10-taxonomy.typ"
+#include "chapter-11-use-cases.typ"
+#include "chapter-12-appendices.typ"
