@@ -85,10 +85,25 @@ npm run quality:loop             # Run automated quality assurance
 
 ## Documentation
 
+### Reference Guides
+
 - **[IMAGE-WORKFLOW.md](IMAGE-WORKFLOW.md)** - Image generation system (backends, prompts, quality loops)
 - **[EDITORIAL-REVIEW.md](EDITORIAL-REVIEW.md)** - Chapter review workflows and review types
 - **[PUBLISHING.md](PUBLISHING.md)** - Building and distribution guide (KDP, Gumroad, etc.)
 - **[TYPST-LAYOUT-GUIDE.md](TYPST-LAYOUT-GUIDE.md)** - PDF layout customization
+
+### Step-by-Step Playbooks
+
+Comprehensive guides for every user journey:
+
+- **[Playbook #1: Zero to First Chapter](docs/playbooks/01-first-chapter.md)** - First-time setup and getting your first chapter published (60-90 min)
+- **[Playbook #2: Complete Authoring Workflow](docs/playbooks/02-complete-authoring.md)** - End-to-end manuscript creation from blank page to multi-format book
+- **[Playbook #3: AI Image Generation](docs/playbooks/03-image-generation.md)** - Master the automated image system, backends, and prompt writing
+- **[Playbook #4: Quality Assurance Workflows](docs/playbooks/04-quality-assurance.md)** - Editorial reviews and automated image quality loops
+- **[Playbook #5: Multi-Format Publishing](docs/playbooks/05-multi-format-publishing.md)** - Understanding outputs and uploading to KDP, Gumroad, Itch.io
+- **[Playbook #6: Advanced Typst Layouts](docs/playbooks/06-advanced-layouts.md)** - Custom design features beyond basic markdown
+- **[Playbook #7: Troubleshooting Common Issues](docs/playbooks/07-troubleshooting.md)** - Diagnosing and fixing problems quickly
+- **[Playbook #8: Migrating Existing Manuscripts](docs/playbooks/08-migration.md)** - Bringing Word/Google Docs/InDesign content into Drain Salad
 
 ---
 
