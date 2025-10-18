@@ -1,6 +1,6 @@
 # Conversational Review Assistant: Complete Implementation Plan
 
-**Transform the editorial review system from command-line scripts into an intelligent, conversational assistant that guides authors through the review process naturally.**
+**Transform the editorial review system from command-line scripts into an intelligent, conversational assistant that guides authors through AI-assisted book writing and review.**
 
 ---
 
@@ -10,14 +10,23 @@
 One command (`npm run review`) that:
 - Reads current state automatically
 - Analyzes what chapter you're working on
-- Understands context from history
+- Understands context from history and book genre
 - Asks clarifying questions only when needed
-- Provides smart suggestions
+- Provides genre-appropriate smart suggestions
 - Shows clear progress
 - Learns your patterns
 
 ### Core Principle
 **Guide users into a pit of success** - authors should write, not memorize commands or manage complex workflows.
+
+### Platform Scope
+An AI-assisted ghostwriting platform for any book genre:
+- Fiction (novels, short stories, satire, sci-fi, romance, etc.)
+- Non-fiction (memoir, self-help, business, history, etc.)
+- Technical (cookbooks, how-to guides, textbooks, etc.)
+- Academic (research, thesis, monographs, etc.)
+
+**Genre-specific features are configured, not hardcoded.**
 
 ---
 
@@ -56,12 +65,9 @@ const path = require('path');
 // manuscript/.state/
 // manuscript/.state/chapters/
 // manuscript/.state/project.json
+// manuscript/.state/book-config.json
 // manuscript/.state/preferences.json
 // manuscript/.state/workflow.json
-
-// Scans manuscript/ for all chapter files
-// Creates initial state for each chapter
-// Detects basic characteristics (word count, has recipes, etc.)
 
 class StateInitializer {
   constructor() {
@@ -79,13 +85,16 @@ class StateInitializer {
     // Scan for chapters
     const chapters = this.scanChapters();
 
+    // Load or create book configuration
+    const bookConfig = this.loadOrCreateBookConfig();
+
     // Create state for each chapter
     for (const chapter of chapters) {
-      await this.createChapterState(chapter);
+      await this.createChapterState(chapter, bookConfig);
     }
 
     // Create project state
-    this.createProjectState(chapters);
+    this.createProjectState(chapters, bookConfig);
 
     // Create preferences
     this.createPreferences();
@@ -94,6 +103,7 @@ class StateInitializer {
     this.createWorkflowState();
 
     console.log(`✓ Initialized state for ${chapters.length} chapters`);
+    console.log(`✓ Book type: ${bookConfig.type} - ${bookConfig.genre}`);
   }
 
   createDirectories() {
@@ -103,6 +113,51 @@ class StateInitializer {
     if (!fs.existsSync(this.chaptersDir)) {
       fs.mkdirSync(this.chaptersDir, { recursive: true });
     }
+  }
+
+  loadOrCreateBookConfig() {
+    const configPath = path.join(this.stateDir, 'book-config.json');
+
+    if (fs.existsSync(configPath)) {
+      return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+    }
+
+    // Create default configuration
+    const config = {
+      type: 'non-fiction',
+      genre: 'cookbook',
+      subgenre: 'satire',
+      title: 'Untitled Book',
+      targetAudience: 'general',
+      voice: 'conversational',
+      contentTypes: {
+        hasRecipes: true,
+        hasCodeSamples: false,
+        hasDialogue: false,
+        hasFootnotes: false,
+        hasTechnicalContent: true
+      },
+      reviewTypes: [
+        'comprehensive',
+        'tone',
+        'structure',
+        'facts',
+        'readability',
+        'creative',
+        'recipes'  // genre-specific
+      ],
+      customDetection: {
+        // Genre-specific content detection patterns
+        recipes: {
+          patterns: ['## Recipe:', '### Ingredients', '### Instructions'],
+          required: ['ingredients', 'instructions']
+        }
+      }
+    };
+
+    fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+    console.log('  ✓ Created book-config.json (edit to customize for your book)');
+    return config;
   }
 
   scanChapters() {
@@ -115,10 +170,9 @@ class StateInitializer {
       }));
   }
 
-  async createChapterState(chapter) {
+  async createChapterState(chapter, bookConfig) {
     const statePath = path.join(this.chaptersDir, `${chapter.name}.json`);
 
-    // Skip if already exists
     if (fs.existsSync(statePath)) {
       console.log(`  Skipping ${chapter.name} (already exists)`);
       return;
@@ -127,17 +181,15 @@ class StateInitializer {
     const content = fs.readFileSync(chapter.file, 'utf8');
     const wordCount = content.split(/\s+/).length;
 
+    // Detect content based on book configuration
+    const characteristics = this.detectCharacteristics(content, bookConfig);
+
     const state = {
       file: `manuscript/${path.basename(chapter.file)}`,
       lastModified: fs.statSync(chapter.file).mtime.toISOString(),
       wordCount,
       status: 'draft',
-      characteristics: {
-        hasRecipes: content.includes('## Recipe:') || content.includes('### Ingredients'),
-        hasHistoricalClaims: /medieval|historical|century|era/i.test(content),
-        hasTechnicalContent: /temperature|°F|°C|ferment/i.test(content),
-        complexity: wordCount > 4000 ? 'complex' : wordCount > 2500 ? 'medium' : 'simple'
-      },
+      characteristics,
       reviews: [],
       pendingActions: [],
       readyForPublication: false
@@ -147,7 +199,35 @@ class StateInitializer {
     console.log(`  ✓ Created state for ${chapter.name}`);
   }
 
-  createProjectState(chapters) {
+  detectCharacteristics(content, bookConfig) {
+    const characteristics = {
+      complexity: this.detectComplexity(content),
+      estimatedReadingTime: Math.ceil(content.split(/\s+/).length / 200)
+    };
+
+    // Add genre-specific detections
+    if (bookConfig.contentTypes.hasRecipes && bookConfig.customDetection.recipes) {
+      const patterns = bookConfig.customDetection.recipes.patterns;
+      characteristics.hasRecipes = patterns.some(p => content.includes(p));
+    }
+
+    if (bookConfig.contentTypes.hasCodeSamples) {
+      characteristics.hasCodeSamples = /```[\s\S]*?```/.test(content);
+    }
+
+    if (bookConfig.contentTypes.hasDialogue) {
+      characteristics.hasDialogue = /"[^"]{20,}"/.test(content);
+    }
+
+    return characteristics;
+  }
+
+  detectComplexity(content) {
+    const wordCount = content.split(/\s+/).length;
+    return wordCount > 4000 ? 'complex' : wordCount > 2500 ? 'medium' : 'simple';
+  }
+
+  createProjectState(chapters, bookConfig) {
     const projectPath = path.join(this.stateDir, 'project.json');
 
     if (fs.existsSync(projectPath)) {
@@ -156,7 +236,9 @@ class StateInitializer {
     }
 
     const state = {
-      name: 'Drain Salad',
+      title: bookConfig.title,
+      type: bookConfig.type,
+      genre: bookConfig.genre,
       chapters: chapters.map(c => ({
         name: c.name,
         status: 'draft',
@@ -215,7 +297,9 @@ module.exports = StateInitializer;
 
 **Acceptance Criteria:**
 - ✓ Creates `.state/` directory structure
+- ✓ Creates or loads book configuration
 - ✓ Generates state files for all existing chapters
+- ✓ Detects content based on book type
 - ✓ Handles missing chapters gracefully
 - ✓ Can be run multiple times safely (idempotent)
 
@@ -223,8 +307,9 @@ module.exports = StateInitializer;
 ```bash
 npm run state:init
 # Verify directory created
+# Verify book-config.json created
 # Verify all chapters have state files
-# Verify project.json exists
+# Verify project.json reflects book type
 ```
 
 ---
@@ -249,6 +334,10 @@ class StateManager {
   getProjectState()
   updateProjectState(updates)
 
+  // Book configuration
+  getBookConfig()
+  updateBookConfig(updates)
+
   // Preferences
   getPreferences()
   updatePreferences(updates)
@@ -262,6 +351,7 @@ class StateManager {
   getAllChapters()
   getNextChapterToReview()
   getBlockers()
+  getAvailableReviewTypes() // Based on book config
 }
 ```
 
@@ -271,6 +361,7 @@ class StateManager {
 - Atomic writes (write to temp file, then rename)
 - Schema validation for state objects
 - Default values for missing fields
+- Genre-aware queries
 
 **Acceptance Criteria:**
 - ✓ All CRUD operations work correctly
@@ -278,6 +369,7 @@ class StateManager {
 - ✓ Validates state schema
 - ✓ Atomic writes prevent corruption
 - ✓ Query methods return correct results
+- ✓ Respects book configuration
 
 ---
 
@@ -285,43 +377,68 @@ class StateManager {
 
 **File:** `scripts/lib/chapter-analyzer.js`
 
-**Purpose:** Extract characteristics from chapter markdown files
+**Purpose:** Extract characteristics from chapter markdown files based on book type
 
 **API:**
 ```javascript
 class ChapterAnalyzer {
+  constructor(bookConfig) {
+    this.bookConfig = bookConfig;
+  }
+
   analyze(chapterPath) {
     return {
       wordCount: number,
-      hasRecipes: boolean,
-      recipeCount: number,
-      hasHistoricalClaims: boolean,
-      hasTechnicalContent: boolean,
-      hasScientificClaims: boolean,
       complexity: 'simple' | 'medium' | 'complex',
       estimatedReadingTime: number,
       detectedTopics: string[],
       headingCount: number,
-      sections: string[]
+      sections: string[],
+      // Genre-specific detections
+      ...this.detectGenreSpecific(content)
     }
+  }
+
+  detectGenreSpecific(content) {
+    // Dynamic detection based on book configuration
+    // Examples:
+    // - Cookbooks: hasRecipes, recipeCount
+    // - Technical: hasCodeSamples, codeLanguages
+    // - Fiction: hasDialogue, characterCount
+    // - Academic: hasFootnotes, citationCount
   }
 }
 ```
 
-**Detection Logic:**
-- **hasRecipes**: Looks for recipe patterns (ingredients list, instructions)
-- **hasHistoricalClaims**: Keywords like "medieval", dates, "historically"
-- **hasTechnicalContent**: Temperature mentions, measurements, techniques
-- **hasScientificClaims**: "Maillard", "fermentation", chemical terms
-- **complexity**: Based on word count, sentence length, jargon density
-- **detectedTopics**: Extract from headings and frequent terms
+**Detection Patterns (Configurable):**
+
+**For Cookbooks:**
+- hasRecipes: Looks for recipe patterns (ingredients list, instructions)
+- hasHistoricalClaims: Keywords like "traditionally", dates
+- hasTechnicalContent: Temperature mentions, measurements, techniques
+
+**For Fiction:**
+- hasDialogue: Dialogue patterns
+- characterIntroductions: New character mentions
+- sceneTransitions: Scene breaks and transitions
+
+**For Technical:**
+- hasCodeSamples: Code blocks
+- hasExamples: Example sections
+- hasDiagrams: Image/diagram references
+
+**For Academic:**
+- hasFootnotes: Footnote markers
+- hasCitations: Citation patterns
+- hasEquations: Math equations
 
 **Acceptance Criteria:**
-- ✓ Accurately detects recipes
-- ✓ Identifies historical content
+- ✓ Detects content based on book configuration
+- ✓ Accurately identifies genre-specific elements
 - ✓ Calculates complexity correctly
 - ✓ Extracts meaningful topics
 - ✓ Fast (< 100ms per chapter)
+- ✓ Extensible for new genres
 
 ---
 
@@ -331,56 +448,49 @@ class ChapterAnalyzer {
 
 **Purpose:** Integrate state updates after each review
 
-**Changes to `review-chapter.sh`:**
-```bash
-# After successful review, call state updater
-node scripts/lib/update-review-state.js \
-  "$CHAPTER_FILE" \
-  "$REVIEW_TYPE" \
-  "$MODEL" \
-  "$OUTPUT_FILE"
-```
+**Changes:**
+- Load book configuration to customize review prompts
+- Update system prompts based on book type
+- Track genre-specific review types
 
-**New File:** `scripts/lib/update-review-state.js`
-- Called by bash script to update state
-- Parses review output for issues (basic regex)
-- Updates chapter state with review data
+**Example system prompt customization:**
+```javascript
+function getSystemPrompt(reviewType, bookConfig) {
+  const basePrompts = {
+    comprehensive: `You are an experienced ${bookConfig.type} editor reviewing a ${bookConfig.genre} book...`,
+    tone: `Review this ${bookConfig.genre} chapter for voice consistency...`,
+    // ... etc
+  };
+
+  // Add genre-specific review types
+  if (reviewType === 'recipes' && bookConfig.genre === 'cookbook') {
+    return `You are a recipe editor. Review all recipes for clarity, measurements, timing, and food safety...`;
+  }
+
+  if (reviewType === 'code' && bookConfig.contentTypes.hasCodeSamples) {
+    return `You are a technical editor. Review all code samples for correctness, clarity, and best practices...`;
+  }
+
+  return basePrompts[reviewType];
+}
+```
 
 **Acceptance Criteria:**
 - ✓ Existing scripts continue to work
 - ✓ State updated after each review
-- ✓ Review history tracked correctly
+- ✓ Review prompts customized to book type
+- ✓ Genre-specific reviews available when configured
 - ✓ No breaking changes to existing workflows
-
----
-
-### Task 1.5: State Validation & Migration
-
-**File:** `scripts/validate-state.js`
-
-**Purpose:** Validate state files and repair issues
-
-**Features:**
-- Schema validation
-- Detect orphaned state files
-- Detect chapters without state
-- Repair corrupted state
-- Migrate from old formats (future-proofing)
-
-**Acceptance Criteria:**
-- ✓ Validates all state files
-- ✓ Reports errors clearly
-- ✓ Can repair common issues
-- ✓ Safe to run anytime
 
 ---
 
 ### Phase 1 Deliverables
 
 - ✅ State directory structure created
+- ✅ Book configuration system
 - ✅ StateManager library with full API
-- ✅ ChapterAnalyzer extracts characteristics
-- ✅ Existing review scripts update state
+- ✅ ChapterAnalyzer detects based on book type
+- ✅ Existing review scripts genre-aware
 - ✅ State validation tool
 - ✅ All existing functionality preserved
 
@@ -389,456 +499,119 @@ node scripts/lib/update-review-state.js \
 ## Phase 2: Conversational Interface Core
 
 **Timeline:** Days 4-7
-**Goal:** Build the main `npm run review` command with smart suggestions
+**Goal:** Build the main `npm run review` command with genre-aware smart suggestions
 
-### Task 2.1: Review Assistant Main Entry Point
+### Genre-Aware Context Detection
 
-**File:** `scripts/review-assistant.js`
+The conversational interface adapts to book type:
 
-**Purpose:** Main conversational interface
+**For Cookbooks:**
+- Suggests recipe reviews for chapters with recipes
+- Checks for food safety issues
+- Validates measurements and temperatures
 
-**Structure:**
-```javascript
-class ReviewAssistant {
-  constructor() {
-    this.stateManager = new StateManager();
-    this.analyzer = new ChapterAnalyzer();
-    this.ui = new ConversationalUI();
-  }
+**For Fiction:**
+- Suggests character consistency checks
+- Checks dialogue authenticity
+- Validates scene transitions
 
-  async run() {
-    // Main loop
-    while (true) {
-      const context = await this.detectContext();
-      const suggestion = await this.makeSuggestion(context);
-      const action = await this.ui.prompt(suggestion);
-      await this.executeAction(action);
-    }
-  }
+**For Technical:**
+- Suggests code review for chapters with samples
+- Checks technical accuracy
+- Validates examples
 
-  async detectContext() {
-    // What chapter is user working on?
-    // What's the status?
-    // What was last action?
-  }
+**For Academic:**
+- Suggests citation verification
+- Checks argument structure
+- Validates references
 
-  async makeSuggestion(context) {
-    // Smart suggestions based on context
-  }
-
-  async executeAction(action) {
-    // Route to appropriate handler
-  }
-}
-```
-
-**Modes:**
-- **Interactive mode** (default): One command at a time
-- **Command mode**: Parse natural language commands
-- **Batch mode**: Process multiple chapters
-- **Workflow mode**: Follow template
-
----
-
-### Task 2.2: Conversational UI Library
-
-**File:** `scripts/lib/conversational-ui.js`
-
-**Purpose:** Handle all user interaction with clean API
-
-**API:**
-```javascript
-class ConversationalUI {
-  // Display methods
-  showWelcome()
-  showStatus(chapterState)
-  showProgress(current, total)
-  showReviewResults(review)
-  showError(error)
-
-  // Input methods
-  async prompt(message, options)
-  async confirm(message)
-  async choose(message, choices)
-  async askNumber(message, min, max)
-  async askText(message)
-
-  // Visual elements
-  spinner(message)
-  progressBar(current, total)
-  separator()
-  header(text)
-
-  // Formatting
-  formatChapterStatus(state)
-  formatReviewSummary(review)
-  formatIssues(issues)
-}
-```
-
-**Implementation:**
-- Uses `inquirer` or `prompts` for input
-- Uses `chalk` for colors
-- Uses `ora` for spinners
-- Uses `cli-progress` for progress bars
-
----
-
-### Task 2.3: Context Detector
-
-**File:** `scripts/lib/context-detector.js`
-
-**Purpose:** Determine what the user is most likely trying to do
-
-**Decision Logic:**
-```javascript
-// Priority order for next action:
-1. Critical blockers (facts errors, safety issues)
-2. Pending actions from last review
-3. Never reviewed (suggest comprehensive)
-4. Changed since last review (suggest re-review)
-5. Ready for next review type in sequence
-6. Ready for publication (suggest moving on)
-```
-
----
-
-### Task 2.4: Action Executor
-
-**File:** `scripts/lib/action-executor.js`
-
-**Purpose:** Execute user-chosen actions
-
-**API:**
-```javascript
-class ActionExecutor {
-  async executeReview(chapterName, reviewType, model)
-  async showChapterStatus(chapterName)
-  async showProjectOverview()
-  async runBatch(chapters, reviewType)
-  async switchChapter(newChapterName)
-}
-```
-
----
-
-### Task 2.5: Command Parser
-
-**File:** `scripts/lib/command-parser.js`
-
-**Purpose:** Parse natural language commands
-
-**Examples:**
-```javascript
-"creative" -> { action: 'review', type: 'creative' }
-"tone" -> { action: 'review', type: 'tone' }
-"batch" -> { action: 'batch' }
-"review chapter-03" -> { action: 'review', chapter: 'chapter-03' }
-"batch 4-7" -> { action: 'batch', range: [4, 7] }
-```
-
----
-
-### Task 2.6: Package Integration
-
-**File:** `package.json`
-
-**Add commands:**
-```json
-{
-  "scripts": {
-    "review": "node scripts/review-assistant.js",
-    "state:init": "node scripts/state-init.js",
-    "state:validate": "node scripts/validate-state.js"
-  }
-}
-```
-
-**Dependencies:**
-```json
-{
-  "dependencies": {
-    "inquirer": "^9.2.0",
-    "chalk": "^5.3.0",
-    "ora": "^7.0.1",
-    "cli-progress": "^3.12.0",
-    "cli-table3": "^0.6.3",
-    "word-wrap": "^1.2.5",
-    "date-fns": "^2.30.0"
-  }
-}
-```
-
----
-
-### Phase 2 Deliverables
-
-- ✅ `npm run review` command works
-- ✅ Conversational UI with smart suggestions
-- ✅ Context detection and next action suggestions
-- ✅ Command parsing for natural input
-- ✅ Action execution integrated
-- ✅ Clean, professional user experience
+All suggestions are driven by `book-config.json`, not hardcoded.
 
 ---
 
 ## Phase 3: Advanced Features & Workflows
 
 **Timeline:** Days 8-10
-**Goal:** Batch processing, workflows, edit suggestions
+**Goal:** Batch processing, genre-specific workflows, edit suggestions
 
-### Task 3.1: Batch Review Mode
-
-**File:** `scripts/lib/batch-processor.js`
-
-**Features:**
-```javascript
-class BatchProcessor {
-  async reviewBatch(chapters, reviewType, options)
-  async reviewAll()
-  async reviewRange(start, end)
-}
-```
-
-**UI:**
-```
-Batch Review Mode
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-[1/4] chapter-04-drain-pantry
-  ✓ Done (8.2/10) - 2 minor issues
-
-[2/4] chapter-05-techniques
-  ✓ Done (7.5/10) - 3 issues (1 critical)
-```
-
----
-
-### Task 3.2: Workflow Templates
+### Genre-Specific Workflow Templates
 
 **File:** `scripts/lib/workflow-templates.js`
 
-**Templates:**
-```javascript
-const workflows = {
-  'pre-publication': {
-    name: 'Pre-Publication Comprehensive',
-    steps: [
-      { action: 'review', type: 'comprehensive', model: 'o1' },
-      { action: 'wait-for-fixes' },
-      { action: 'review', type: 'creative', model: 'gpt-5-pro' },
-      { action: 'review', type: 'facts', model: 'gpt-4o' },
-      { action: 'verify' }
-    ]
-  },
+**Templates** are loaded from book configuration:
 
-  'quick-check': {
-    name: 'Quick Tone & Readability Check',
+```javascript
+// For cookbooks
+{
+  'cookbook-pre-publication': {
     steps: [
-      { action: 'review', type: 'tone', model: 'gpt-4o-mini' },
-      { action: 'review', type: 'readability', model: 'gpt-4o-mini' }
+      { action: 'review', type: 'comprehensive' },
+      { action: 'review', type: 'recipes' },
+      { action: 'review', type: 'facts' },
+      { action: 'review', type: 'creative' }
     ]
   }
-};
-```
+}
 
----
-
-### Task 3.3: Review Parser & Edit Suggester
-
-**File:** `scripts/lib/review-parser.js`
-
-**Purpose:** Parse review output to extract structured issues
-
-```javascript
-class ReviewParser {
-  parseReview(reviewContent) {
-    return {
-      overallScore: 7.5,
-      issues: [...],
-      strengths: [...],
-      requiresFollowUp: true
-    };
+// For fiction
+{
+  'fiction-pre-publication': {
+    steps: [
+      { action: 'review', type: 'comprehensive' },
+      { action: 'review', type: 'character-consistency' },
+      { action: 'review', type: 'dialogue' },
+      { action: 'review', type: 'pacing' }
+    ]
   }
 }
 
-class EditSuggester {
-  async suggestEdits(chapterPath, issues)
-  async applyEdit(chapterPath, edit)
+// For technical
+{
+  'technical-pre-publication': {
+    steps: [
+      { action: 'review', type: 'comprehensive' },
+      { action: 'review', type: 'code' },
+      { action: 'review', type: 'examples' },
+      { action: 'review', type: 'technical-accuracy' }
+    ]
+  }
 }
 ```
 
-**UI:**
-```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SUGGESTED EDITS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Issue 1: Missing citation (page 8)
-Current: "Medieval kitchens used every part"
-Suggestion: "Medieval kitchens, constrained by scarcity..."
-
-Apply this edit? [y/n/e]>
-```
-
----
-
-### Task 3.4: Session Management
-
-**File:** `scripts/lib/session-manager.js`
-
-**Features:**
-```javascript
-class SessionManager {
-  startSession()
-  saveSession(session)
-  resumeSession()
-  getSessionHistory()
-}
-```
-
-**UI:**
-```
-Welcome back! Last session: 2 hours ago
-
-You were working on: chapter-03-clean-catch
-Status: In revision (1 blocker)
-
-[1] Resume chapter-03
-[2] Start fresh
-```
-
----
-
-### Phase 3 Deliverables
-
-- ✅ Batch review mode works
-- ✅ Workflow templates defined and executable
-- ✅ Review parsing extracts issues
-- ✅ Edit suggestions with before/after
-- ✅ Session management and resume
+Workflows are defined in `book-config.json` under `customWorkflows`.
 
 ---
 
 ## Phase 4: Intelligence & Polish
 
 **Timeline:** Days 11-12
-**Goal:** Learning, optimization, UX polish
+**Goal:** Learning, optimization, genre-aware suggestions
 
-### Task 4.1: Pattern Learning
+### Pattern Learning (Genre-Aware)
 
-**File:** `scripts/lib/pattern-learner.js`
-
-**Features:**
 ```javascript
 class PatternLearner {
-  analyzePatterns() {
-    // What issues are most common?
-    // Which reviews catch most issues?
-    // How many iterations typical?
-  }
-
-  getPersonalizedSuggestion(chapterName) {
-    // "Chapters with recipes typically need 2 iterations"
-    // "Similar to chapter-03, which needed facts review"
+  analyzePatterns(bookConfig) {
+    // Learn patterns specific to this book type
+    // Example for cookbooks: "Recipes typically need 2 iterations"
+    // Example for fiction: "Dialogue chapters need extra tone review"
+    // Example for technical: "Code samples often have formatting issues"
   }
 }
 ```
-
----
-
-### Task 4.2: Cost Tracking & Optimization
-
-**File:** `scripts/lib/cost-tracker.js`
-
-**Features:**
-```javascript
-class CostTracker {
-  estimateCost(reviewType, model, wordCount)
-  trackActualCost(review)
-  getTotalCost()
-  suggestOptimization()
-}
-```
-
-**UI:**
-```
-Review cost estimate: $0.15
-Project total to date: $2.34
-
-💡 Tip: Using o1-mini would cost $0.03 (80% savings)
-```
-
----
-
-### Task 4.3: Enhanced Creative Consultant Integration
-
-**Features:**
-- Prompt to create `.creative-intention.md` if missing
-- Show intention before creative reviews
-- Track alignment score over iterations
-
----
-
-### Task 4.4: Error Handling & Recovery
-
-**Features:**
-- API failures: Retry with backoff
-- File not found: Helpful suggestions
-- State corruption: Automatic repair
-- Interrupted reviews: Resume capability
-
----
-
-### Task 4.5: Help System & Documentation
-
-**File:** `scripts/lib/help-system.js`
-
-**UI:**
-```
-> help
-
-Commands:
-  [Enter]     Accept suggestion
-  creative    Creative consultant review
-  batch       Review multiple chapters
-  help        Get help
-  quit        Exit
-```
-
----
-
-### Task 4.6: Documentation Updates
-
-**Files:** `EDITORIAL-REVIEW.md`, `README.md`, new `REVIEW-ASSISTANT.md`
-
-- Update all documentation
-- Add troubleshooting guide
-- Add FAQ
-
----
-
-### Phase 4 Deliverables
-
-- ✅ Pattern learning improves suggestions
-- ✅ Cost tracking and optimization
-- ✅ Enhanced creative consultant flow
-- ✅ Robust error handling
-- ✅ Comprehensive help system
-- ✅ Polished UX throughout
-- ✅ Complete documentation
 
 ---
 
 ## Complete File Structure
 
 ```
-drain-salad/
+book-platform/                      # Generic book writing platform
 ├── manuscript/
 │   ├── chapter-*.md
 │   └── .state/                    # NEW
+│       ├── book-config.json       # NEW - Book type & genre configuration
 │       ├── chapters/
-│       │   ├── chapter-01-history.json
+│       │   ├── chapter-01.json
 │       │   └── ...
 │       ├── project.json
 │       ├── preferences.json
@@ -846,102 +619,148 @@ drain-salad/
 │       └── session.json
 │
 ├── scripts/
-│   ├── review-assistant.js        # NEW - Main entry point
-│   ├── state-init.js              # NEW
+│   ├── review-assistant.js        # NEW - Genre-aware main entry
+│   ├── state-init.js              # NEW - Detects/creates book config
 │   ├── validate-state.js          # NEW
 │   │
 │   ├── lib/
-│   │   ├── state-manager.js       # NEW
-│   │   ├── chapter-analyzer.js    # NEW
+│   │   ├── state-manager.js       # NEW - Genre-aware state management
+│   │   ├── chapter-analyzer.js    # NEW - Configurable content detection
 │   │   ├── conversational-ui.js   # NEW
-│   │   ├── context-detector.js    # NEW
+│   │   ├── context-detector.js    # NEW - Genre-aware suggestions
 │   │   ├── command-parser.js      # NEW
 │   │   ├── action-executor.js     # NEW
 │   │   ├── batch-processor.js     # NEW
-│   │   ├── workflow-templates.js  # NEW
+│   │   ├── workflow-templates.js  # NEW - Genre-specific workflows
 │   │   ├── workflow-executor.js   # NEW
 │   │   ├── review-parser.js       # NEW
 │   │   ├── edit-suggester.js      # NEW
 │   │   ├── session-manager.js     # NEW
-│   │   ├── pattern-learner.js     # NEW
+│   │   ├── pattern-learner.js     # NEW - Genre-aware learning
 │   │   ├── cost-tracker.js        # NEW
 │   │   ├── creative-consultant.js # NEW
 │   │   ├── error-handler.js       # NEW
-│   │   ├── help-system.js         # NEW
+│   │   ├── help-system.js         # NEW - Genre-aware help
 │   │   └── update-review-state.js # NEW
 │   │
-│   ├── review-chapter.sh          # MODIFIED
-│   └── review-pro.js              # MODIFIED
+│   ├── review-chapter.sh          # MODIFIED - Genre-aware prompts
+│   └── review-pro.js              # MODIFIED - Genre-aware prompts
 │
 └── package.json                   # MODIFIED
 ```
 
 ---
 
-## Testing Strategy
+## Book Configuration (`book-config.json`)
 
-### Unit Tests
-```bash
-scripts/test/
-├── state-manager.test.js
-├── chapter-analyzer.test.js
-├── command-parser.test.js
-└── review-parser.test.js
+**Example for Cookbook:**
+```json
+{
+  "type": "non-fiction",
+  "genre": "cookbook",
+  "subgenre": "satire",
+  "title": "Drain Salad",
+  "targetAudience": "home cooks interested in sustainability",
+  "voice": "serious chef with philosophical wit",
+  "contentTypes": {
+    "hasRecipes": true,
+    "hasCodeSamples": false,
+    "hasDialogue": false,
+    "hasTechnicalContent": true
+  },
+  "reviewTypes": [
+    "comprehensive",
+    "tone",
+    "structure",
+    "facts",
+    "readability",
+    "creative",
+    "recipes"
+  ],
+  "customDetection": {
+    "recipes": {
+      "patterns": ["## Recipe:", "### Ingredients", "### Instructions"]
+    }
+  },
+  "customWorkflows": {
+    "pre-publication": ["comprehensive", "recipes", "facts", "creative"]
+  }
+}
 ```
 
-### Integration Tests
-```bash
-scripts/test/integration/
-├── full-review-flow.test.js
-├── batch-review.test.js
-└── workflow-execution.test.js
+**Example for Fiction (Novel):**
+```json
+{
+  "type": "fiction",
+  "genre": "literary-fiction",
+  "subgenre": "coming-of-age",
+  "title": "The Summer Before",
+  "targetAudience": "adult literary fiction readers",
+  "voice": "lyrical, introspective, first-person",
+  "contentTypes": {
+    "hasRecipes": false,
+    "hasCodeSamples": false,
+    "hasDialogue": true,
+    "hasTechnicalContent": false
+  },
+  "reviewTypes": [
+    "comprehensive",
+    "tone",
+    "structure",
+    "dialogue",
+    "character-consistency",
+    "pacing",
+    "creative"
+  ],
+  "customDetection": {
+    "dialogue": {
+      "patterns": ["\"", "'"]
+    },
+    "characters": {
+      "trackNames": true
+    }
+  },
+  "customWorkflows": {
+    "pre-publication": ["comprehensive", "character-consistency", "dialogue", "pacing", "creative"]
+  }
+}
 ```
 
-### Manual Testing Checklist
-- [ ] First-time user experience
-- [ ] Returning user experience
-- [ ] All review types work
-- [ ] Batch mode works
-- [ ] Workflows execute correctly
-- [ ] Error handling works
-- [ ] State persists correctly
-
----
-
-## Migration Strategy
-
-### For Existing Users
-
-1. **Phase 1:** State tracking added, existing scripts still work
-2. **Phase 2:** New `npm run review` available, old scripts still work
-3. **Phase 3:** Documentation promotes new command
-4. **Phase 4:** Old scripts marked as "advanced/manual mode"
-
-**No breaking changes at any point**
-
----
-
-## Risk Mitigation
-
-### Risk: State corruption
-**Mitigation:**
-- Atomic writes
-- State validation tool
-- Automatic backups
-- Repair functionality
-
-### Risk: Breaking existing workflows
-**Mitigation:**
-- Existing scripts unchanged initially
-- Gradual migration path
-- Comprehensive testing
-
-### Risk: Complex code hard to maintain
-**Mitigation:**
-- Modular architecture
-- Clear separation of concerns
-- Comprehensive documentation
-- Unit tests for all components
+**Example for Technical (Programming Book):**
+```json
+{
+  "type": "technical",
+  "genre": "programming",
+  "subgenre": "tutorial",
+  "title": "Mastering TypeScript",
+  "targetAudience": "intermediate JavaScript developers",
+  "voice": "clear, instructional, encouraging",
+  "contentTypes": {
+    "hasRecipes": false,
+    "hasCodeSamples": true,
+    "hasDialogue": false,
+    "hasTechnicalContent": true
+  },
+  "reviewTypes": [
+    "comprehensive",
+    "tone",
+    "structure",
+    "code",
+    "technical-accuracy",
+    "examples",
+    "readability"
+  ],
+  "customDetection": {
+    "code": {
+      "patterns": ["```typescript", "```javascript", "```"],
+      "languages": ["typescript", "javascript"]
+    }
+  },
+  "customWorkflows": {
+    "pre-publication": ["comprehensive", "code", "technical-accuracy", "examples"]
+  }
+}
+```
 
 ---
 
@@ -953,25 +772,16 @@ scripts/test/integration/
 - ✓ 90% of users accept smart suggestions
 - ✓ Zero breaking changes
 - ✓ < 100ms response time for UI
+- ✓ Works for any book genre with proper configuration
 
 ### Qualitative
-- ✓ Users describe as "natural" and "helpful"
+- ✓ Users describe as "natural" and "helpful" across genres
 - ✓ Don't need to reference documentation
 - ✓ Feel guided, not constrained
 - ✓ Understand what's happening
 - ✓ Confident in results
+- ✓ Genre-specific features feel native, not tacked-on
 
 ---
 
-## Next Steps After Approval
-
-1. ✅ Approve this plan
-2. Install dependencies
-3. Create directory structure
-4. Begin Phase 1: State Infrastructure
-5. Test each phase before proceeding
-6. Iterate based on feedback
-
----
-
-**This implementation plan provides a complete roadmap from current state to fully-functioning conversational review assistant.**
+**This implementation plan provides a complete roadmap for a genre-agnostic AI-assisted ghostwriting platform with configuration-driven specialization.**
