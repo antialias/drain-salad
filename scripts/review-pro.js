@@ -28,6 +28,13 @@ const log = {
 const chapterFile = process.argv[2];
 const reviewType = process.argv[3] || 'comprehensive';
 
+// Read creative intention from file if it exists
+const creativeIntentionFile = '.creative-intention.md';
+let statedIntention = '';
+if (fs.existsSync(creativeIntentionFile)) {
+  statedIntention = fs.readFileSync(creativeIntentionFile, 'utf8').trim();
+}
+
 if (!chapterFile) {
   console.log('Usage: node scripts/review-pro.js <chapter-file> [review-type]');
   console.log('');
@@ -38,9 +45,19 @@ if (!chapterFile) {
   console.log('  recipes        - Recipe accuracy and clarity');
   console.log('  facts          - Fact-checking and citations');
   console.log('  readability    - Clarity and accessibility');
+  console.log('  creative       - Creative consultant feedback (GPT-5 pro recommended)');
   console.log('');
-  console.log('Example:');
+  console.log('Creative Intention (for \'creative\' reviews):');
+  console.log('  Create a file named \'.creative-intention.md\' in the project root with your');
+  console.log('  creative goal. The creative consultant will align feedback with this intention.');
+  console.log('');
+  console.log('  Example .creative-intention.md contents:');
+  console.log('    \'Make this cookbook feel more intimate and personal, as if the');
+  console.log('     author is speaking directly to a close friend in their kitchen.\'');
+  console.log('');
+  console.log('Examples:');
   console.log('  node scripts/review-pro.js manuscript/chapter-01-history.md comprehensive');
+  console.log('  node scripts/review-pro.js manuscript/chapter-05.md creative');
   process.exit(1);
 }
 
@@ -49,7 +66,7 @@ if (!fs.existsSync(chapterFile)) {
   process.exit(1);
 }
 
-// Review prompts
+// Review prompts (creative prompt is built dynamically below)
 const systemPrompts = {
   comprehensive: "You are an experienced cookbook editor reviewing a chapter from 'Drain Salad', a cookbook about transforming kitchen scraps into culinary art. Provide comprehensive editorial feedback covering: (1) Tone and voice consistency (should be serious chef with philosophical wit), (2) Structure and flow, (3) Factual accuracy, (4) Recipe clarity if recipes are present, (5) Readability and engagement, (6) Suggestions for improvement. Be honest but constructive.",
   tone: "You are a voice and style editor. Review this cookbook chapter for consistency with the established voice: serious culinary expertise with philosophical depth, occasional wit, but never jokey or condescending. Flag any passages that feel off-brand. Suggest improvements.",
@@ -58,6 +75,15 @@ const systemPrompts = {
   facts: "You are a fact-checker and culinary researcher. Verify all factual claims in this chapter: historical references, scientific explanations, cooking temperatures, food safety guidelines, and cited sources. Flag anything that seems inaccurate or needs verification.",
   readability: "You are a clarity editor focused on making complex information accessible. Review this chapter for: sentence clarity, jargon usage, paragraph length, transitions, and overall readability. Suggest simplifications where the prose is unnecessarily dense."
 };
+
+// Build creative prompt dynamically based on stated intention
+if (reviewType === 'creative') {
+  if (statedIntention) {
+    systemPrompts.creative = `You are a creative consultant and editorial advisor working with an author on their cookbook 'Drain Salad'. The author has shared this specific creative intention for the chapter: "${statedIntention}". Your role is to provide constructive creative feedback aligned with this intention. Consider: (1) How effectively the chapter achieves the stated creative goal, (2) Specific passages or techniques that support the intention, (3) Areas where the intention could be strengthened, (4) Creative suggestions for better realizing the author's vision, (5) Any potential conflicts between the stated intention and the chapter's current execution. Be supportive but honest, and offer concrete suggestions for improvement.`;
+  } else {
+    systemPrompts.creative = "You are a creative consultant and editorial advisor working with an author on their cookbook 'Drain Salad'. Provide creative feedback on this chapter focusing on: (1) The chapter's creative voice and emotional resonance, (2) Narrative flow and storytelling elements, (3) How effectively the writing engages and moves the reader, (4) Creative opportunities to enhance the chapter, (5) Balance between information and artistry. Be supportive but honest, offering concrete creative suggestions.";
+  }
+}
 
 const chapterName = path.basename(chapterFile, '.md');
 const chapterContent = fs.readFileSync(chapterFile, 'utf8');

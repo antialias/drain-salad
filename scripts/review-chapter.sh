@@ -31,6 +31,13 @@ CHAPTER_FILE="${1}"
 REVIEW_TYPE="${2:-comprehensive}"
 MODEL="${3:-o1}"  # Use o1 reasoning model for best editorial feedback
 
+# Read creative intention from file if it exists
+CREATIVE_INTENTION_FILE=".creative-intention.md"
+STATED_INTENTION=""
+if [ -f "$CREATIVE_INTENTION_FILE" ]; then
+    STATED_INTENTION=$(cat "$CREATIVE_INTENTION_FILE")
+fi
+
 if [ -z "$CHAPTER_FILE" ]; then
     echo "Usage: $0 <chapter-file> [review-type] [model]"
     echo ""
@@ -41,6 +48,7 @@ if [ -z "$CHAPTER_FILE" ]; then
     echo "  recipes        - Recipe accuracy and clarity"
     echo "  facts          - Fact-checking and citations"
     echo "  readability    - Clarity and accessibility"
+    echo "  creative       - Creative consultant feedback (use with GPT-5 pro)"
     echo ""
     echo "Models:"
     echo "  o1 (default, best reasoning for editorial work)"
@@ -48,6 +56,14 @@ if [ -z "$CHAPTER_FILE" ]; then
     echo "  gpt-4o (fast, balanced)"
     echo "  o1-mini (faster reasoning)"
     echo "  gpt-4o-mini (fastest, cheapest)"
+    echo ""
+    echo "Creative Intention (for 'creative' reviews):"
+    echo "  Create a file named '.creative-intention.md' in the project root with your"
+    echo "  creative goal. The creative consultant will align feedback with this intention."
+    echo ""
+    echo "  Example .creative-intention.md contents:"
+    echo "    'Make this cookbook feel more intimate and personal, as if the"
+    echo "     author is speaking directly to a close friend in their kitchen.'"
     exit 1
 fi
 
@@ -86,6 +102,13 @@ case $REVIEW_TYPE in
         ;;
     readability)
         SYSTEM_PROMPT="You are a clarity editor focused on making complex information accessible. Review this chapter for: sentence clarity, jargon usage, paragraph length, transitions, and overall readability. Suggest simplifications where the prose is unnecessarily dense."
+        ;;
+    creative)
+        if [ -n "$STATED_INTENTION" ]; then
+            SYSTEM_PROMPT="You are a creative consultant and editorial advisor working with an author on their cookbook 'Drain Salad'. The author has shared this specific creative intention for the chapter: \"${STATED_INTENTION}\". Your role is to provide constructive creative feedback aligned with this intention. Consider: (1) How effectively the chapter achieves the stated creative goal, (2) Specific passages or techniques that support the intention, (3) Areas where the intention could be strengthened, (4) Creative suggestions for better realizing the author's vision, (5) Any potential conflicts between the stated intention and the chapter's current execution. Be supportive but honest, and offer concrete suggestions for improvement."
+        else
+            SYSTEM_PROMPT="You are a creative consultant and editorial advisor working with an author on their cookbook 'Drain Salad'. Provide creative feedback on this chapter focusing on: (1) The chapter's creative voice and emotional resonance, (2) Narrative flow and storytelling elements, (3) How effectively the writing engages and moves the reader, (4) Creative opportunities to enhance the chapter, (5) Balance between information and artistry. Be supportive but honest, offering concrete creative suggestions."
+        fi
         ;;
     *)
         echo -e "${RED}Unknown review type: $REVIEW_TYPE${NC}"

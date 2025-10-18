@@ -21,6 +21,9 @@ manuscript/images/reference/
 # Reviews (generated content)
 reviews/
 
+# Creative intention (personal configuration)
+.creative-intention.md
+
 # OS files
 .DS_Store
 .DS_Store?

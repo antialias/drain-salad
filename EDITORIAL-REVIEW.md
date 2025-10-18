@@ -121,6 +121,48 @@ The Drain Salad platform includes a sophisticated editorial review system that a
 
 ---
 
+### 7. **Creative Consultant Review** (GPT-5 Pro Recommended)
+**Purpose**: Creative direction and authorial vision alignment
+
+**Analyzes**:
+- Creative voice and emotional resonance
+- Narrative flow and storytelling elements
+- Reader engagement and emotional impact
+- Balance between information and artistry
+- Achievement of stated creative intentions
+
+**Use when**: Seeking creative direction or evaluating whether the chapter achieves your creative vision
+
+```bash
+# Basic creative feedback
+./scripts/review-chapter.sh manuscript/chapter-01-history.md creative
+
+# With GPT-5 pro for deeper creative analysis
+npm run review:pro manuscript/chapter-01-history.md creative
+```
+
+**Creative Intention File**:
+The creative consultant aligns feedback with your stated creative goals. Create a file named `.creative-intention.md` in the project root with your creative vision:
+
+```markdown
+# Example .creative-intention.md
+
+Make this cookbook feel more intimate and personal, as if the author is
+speaking directly to a close friend in their kitchen. The tone should be
+warm and conversational while maintaining culinary expertise, creating a
+sense of trust and camaraderie between author and reader.
+```
+
+**Example creative intentions**:
+- "Increase dramatic tension and sense of discovery while maintaining scientific accuracy"
+- "Make the writing feel more philosophical and contemplative, like an essay collection"
+- "Add more humor and playfulness without undermining the serious culinary expertise"
+- "Create a sense of urgency and importance around food waste reduction"
+
+**Template available**: Copy `.creative-intention.md.example` to `.creative-intention.md` and customize
+
+---
+
 ## Available Review Models
 
 ### **o1** (Best - Extended Reasoning)
@@ -440,7 +482,7 @@ npm run review:pro manuscript/chapter-05-techniques.md comprehensive
 ./scripts/review-chapter.sh manuscript/chapter-07-salads.md recipes o1
 ./scripts/review-chapter.sh manuscript/chapter-10-taxonomy.md readability gpt-4o-mini
 
-# Review types: comprehensive, tone, structure, recipes, facts, readability
+# Review types: comprehensive, tone, structure, recipes, facts, readability, creative
 # Models: o1, o1-mini, gpt-4.5-preview, gpt-4o, gpt-4o-mini (default: o1-mini)
 ```
 
