@@ -19,7 +19,7 @@
     "build:typst:quick": "typst compile --root . typst/book.typ build/drain-salad-typst.pdf",
     "build:book": "npm run convert:typst && typst compile --root . typst/book.typ build/drain-salad-typst.pdf && echo '✓ Book built: build/drain-salad-typst.pdf'",
     "watch": "nodemon -e md -w manuscript -x 'npm run build:epub'",
-    "clean": "rm -rf build/* typst/chapters/* && mkdir -p build typst/chapters",
+    "clean": "rm -rf build/* typst/*.typ reviews/*",
     "wordcount": "wc -w manuscript/*.md | tail -1",
     "wordcount:chapters": "for file in manuscript/chapter-*.md; do echo \"$(basename \"$file\" .md): $(wc -w < \"$file\") words\"; done",
     "image-prompts": "node scripts/generate-image-prompts.js",
