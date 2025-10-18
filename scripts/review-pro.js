@@ -7,7 +7,6 @@
  * Uses background mode to avoid timeouts.
  */
 
-const OpenAI = require('openai');
 const fs = require('fs');
 const path = require('path');
 
@@ -89,10 +88,12 @@ ${chapterContent}
 
 Provide detailed editorial feedback formatted in markdown.`;
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
+if (!OPENAI_API_KEY) {
+  log.error('Error: OPENAI_API_KEY environment variable not set');
+  process.exit(1);
+}
 
 async function runReview() {
   try {
@@ -100,23 +101,37 @@ async function runReview() {
     log.info('This may take several minutes for GPT-5 pro to think deeply.');
     console.log('');
 
-    // Create response with background mode
-    const response = await openai.responses.create({
-      model: 'gpt-5-pro',
-      messages: [
-        {
-          role: 'system',
-          content: systemPrompt
-        },
-        {
-          role: 'user',
-          content: userPrompt
-        }
-      ],
-      background: true  // Use background mode to avoid timeouts
+    // Create response with background mode using fetch
+    const createResponse = await fetch('https://api.openai.com/v1/responses', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-5-pro',
+        input: [
+          {
+            role: 'system',
+            content: systemPrompt
+          },
+          {
+            role: 'user',
+            content: userPrompt
+          }
+        ],
+        background: true
+      })
     });
 
+    if (!createResponse.ok) {
+      const error = await createResponse.json();
+      throw new Error(`API error: ${JSON.stringify(error)}`);
+    }
+
+    const response = await createResponse.json();
     const responseId = response.id;
+
     log.success(`Response created: ${responseId}`);
     log.info('Waiting for completion (checking every 10 seconds)...');
     console.log('');
@@ -132,14 +147,39 @@ async function runReview() {
       // Wait 10 seconds between checks
       await new Promise(resolve => setTimeout(resolve, 10000));
 
-      // Check status
-      const status = await openai.responses.retrieve(responseId);
+      // Check status using fetch
+      const statusResponse = await fetch(`https://api.openai.com/v1/responses/${responseId}`, {
+        headers: {
+          'Authorization': `Bearer ${OPENAI_API_KEY}`
+        }
+      });
+
+      if (!statusResponse.ok) {
+        const error = await statusResponse.json();
+        throw new Error(`Status check failed: ${JSON.stringify(error)}`);
+      }
+
+      const status = await statusResponse.json();
 
       if (status.status === 'completed') {
         completed = true;
 
-        // Get the review content
-        const reviewContent = status.output.content;
+        // Extract the review content from the response structure
+        // The output is an array with reasoning and message objects
+        // We want the message object's content[0].text
+        let reviewContent;
+
+        if (status.output && Array.isArray(status.output)) {
+          const messageObj = status.output.find(item => item.type === 'message');
+          if (messageObj && messageObj.content && messageObj.content[0] && messageObj.content[0].text) {
+            reviewContent = messageObj.content[0].text;
+          } else {
+            // Fallback to JSON if structure is unexpected
+            reviewContent = JSON.stringify(status.output, null, 2);
+          }
+        } else {
+          reviewContent = JSON.stringify(status.output, null, 2);
+        }
 
         // Save to file
         fs.writeFileSync(outputFile, reviewContent);
@@ -168,7 +208,7 @@ async function runReview() {
     if (!completed) {
       console.log('');
       log.error('✗ Review timed out after 10 minutes');
-      log.info(`You can check status later with: openai responses retrieve ${responseId}`);
+      log.info(`Response ID: ${responseId}`);
       process.exit(1);
     }
 
