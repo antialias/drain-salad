@@ -47,7 +47,10 @@
     "prompts:refine:preview": "node scripts/refine-prompts-from-review.js --dry-run",
     "quality:loop": "node scripts/image-quality-loop.js",
     "quality:loop:full": "node scripts/image-quality-loop.js --regenerate-minor",
-    "quality:fix": "node scripts/image-quality-loop.js --skip-initial-review"
+    "quality:fix": "node scripts/image-quality-loop.js --skip-initial-review",
+    "state:init": "node bin/state-init.js",
+    "state:sync": "node bin/state-sync.js",
+    "state:status": "node bin/state-status.js"
   },
   "keywords": [
     "cookbook",
