@@ -29,7 +29,7 @@ const log = {
 };
 
 const REVIEWS_DIR = path.join(__dirname, '..', 'reviews', 'images');
-const IMAGE_PROMPTS_PATH = path.join(__dirname, '..', 'image-prompts.json');
+const IMAGE_PROMPTS_PATH = path.join(__dirname, '..', 'generated-manifest.json');
 
 /**
  * Load all individual review files
@@ -290,8 +290,8 @@ async function main() {
       continue;
     }
 
-    // Find original prompt
-    const promptEntry = promptsData.images.find(img => img.number === imageNum);
+    // Find original prompt (number is stored as string in generated-manifest.json)
+    const promptEntry = promptsData.images.find(img => parseInt(img.number, 10) === imageNum);
     if (!promptEntry) {
       log.error(`No prompt found for image ${imageNum}`);
       continue;
@@ -303,7 +303,7 @@ async function main() {
 
     // Check if actually changed
     if (refinedPrompt === originalPrompt) {
-      log.detail(`No changes for image ${imageNum}: ${promptEntry.filename}`);
+      log.detail(`No changes for image ${imageNum}: ${promptEntry.slug || path.basename(promptEntry.path)}`);
       continue;
     }
 
@@ -311,7 +311,7 @@ async function main() {
 
     refinements.push({
       number: imageNum,
-      filename: promptEntry.filename,
+      filename: promptEntry.slug || path.basename(promptEntry.path),
       status: review.status,
       original: originalPrompt,
       refined: refinedPrompt,
@@ -325,7 +325,7 @@ async function main() {
       promptEntry.prompt = refinedPrompt;
     }
 
-    log.success(`Refined image ${imageNum}: ${promptEntry.filename}`);
+    log.success(`Refined image ${imageNum}: ${promptEntry.slug || path.basename(promptEntry.path)}`);
     log.detail(`Original: ${originalPrompt.substring(0, 80)}...`);
     log.detail(`Refined:  ${refinedPrompt.substring(0, 80)}...`);
     console.log('');
