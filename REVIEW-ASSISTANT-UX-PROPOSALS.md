@@ -7,13 +7,15 @@
 ## Problem Statement
 
 The current editorial review system requires users to:
-- Remember 7 different review types
+- Remember multiple review types (varies by book genre)
 - Know which model to use when
 - Understand command-line syntax
 - Track review state manually
 - Decide what to do next without guidance
 
-**Authors want to write, not manage command-line workflows.**
+**Book authors across all genres want to write, not manage command-line workflows.**
+
+Whether writing a cookbook, novel, technical manual, or academic work, authors need intuitive guidance through the review process without memorizing commands or managing complex state.
 
 ---
 
@@ -177,10 +179,13 @@ The assistant:
 
 ## Complete User Experience: First-Time Review
 
+**Example 1: Cookbook**
 ```bash
 $ npm run review
 
-Drain Salad Review Assistant
+Book Review Assistant
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Book: Drain Salad (Cookbook - Satire)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Analyzing manuscript/chapter-01-history.md...
@@ -195,6 +200,7 @@ Cost: ~$0.05 | Time: ~2 min
 Press Enter to proceed, or type:
   'creative' for creative consultant
   'tone' for just tone check
+  'recipes' for recipe validation
   'help' for all options
 
 > [Enter]
@@ -308,6 +314,124 @@ Suggestions:
   • Generate images for chapter-01
 
 What next? [creative/next/images/quit]>
+```
+
+**Example 2: Fiction Novel**
+```bash
+$ npm run review
+
+Book Review Assistant
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Book: The Summer of Change (Literary Fiction)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Analyzing manuscript/chapter-03-confrontation.md...
+✓ 2,800 words
+✓ Dialogue detected (45% of chapter)
+✓ New character introduced (Sarah)
+✓ Never been reviewed
+
+Recommended: Comprehensive + Dialogue review (o1-mini)
+Cost: ~$0.08 | Time: ~3 min
+
+Press Enter to proceed, or type:
+  'creative' for creative consultant
+  'tone' for just tone check
+  'dialogue' for dialogue review only
+  'character' for character consistency check
+  'help' for all options
+
+> [Enter]
+
+Running comprehensive review with o1-mini...
+⣾ Analyzing tone and voice...
+⣽ Checking structure and flow...
+⣻ Evaluating character development...
+⣺ Assessing pacing and tension...
+
+✓ Review complete!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHAPTER STATUS: In Revision
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Overall: 8.0/10 - Strong emotional impact, dialogue needs polish
+
+Issues Found:
+  🔴 Critical (1): Character inconsistency with Sarah's motivation
+  🟡 Minor (3): Dialogue attribution unclear, pacing slow in middle
+
+Strengths:
+  ✓ Powerful emotional resonance
+  ✓ Natural dialogue flow
+  ✓ Strong scene setting
+
+Next Steps:
+  1. Fix Sarah's character consistency
+  2. Clarify dialogue attribution
+  3. Consider tightening middle section
+  4. Run dialogue-specific review
+
+What next? [dialogue/character/creative/quit]>
+```
+
+**Example 3: Technical Programming Book**
+```bash
+$ npm run review
+
+Book Review Assistant
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Book: Async Patterns in TypeScript (Programming Tutorial)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Analyzing manuscript/chapter-05-async-patterns.md...
+✓ 3,400 words
+✓ 8 code samples detected (TypeScript)
+✓ 3 diagrams referenced
+✓ Never been reviewed
+
+Recommended: Comprehensive + Code review (o1-mini)
+Cost: ~$0.10 | Time: ~4 min
+
+Press Enter to proceed, or type:
+  'creative' for creative consultant
+  'tone' for just tone check
+  'code' for code validation only
+  'examples' for example clarity check
+  'help' for all options
+
+> [Enter]
+
+Running comprehensive review with o1-mini...
+⣾ Analyzing tone and clarity...
+⣽ Checking code samples...
+⣻ Verifying technical accuracy...
+⣺ Assessing example quality...
+
+✓ Review complete!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHAPTER STATUS: In Revision
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Overall: 7.0/10 - Solid technical content, needs better examples
+
+Issues Found:
+  🔴 Critical (2): Code sample 3 has syntax error, Example 6 doesn't run
+  🟡 Minor (4): Unclear explanation of Promise chains, missing error handling
+
+Strengths:
+  ✓ Clear technical writing
+  ✓ Good progression of concepts
+  ✓ Helpful inline comments
+
+Next Steps:
+  1. Fix code syntax errors
+  2. Test all code samples
+  3. Add error handling examples
+  4. Re-run code review to verify
+
+What next? [code/examples/creative/quit]>
 ```
 
 ---
@@ -441,6 +565,7 @@ Start with chapter-05? [y/n]>
 
 ## User Experience: Creative Consultant
 
+**Example 1: Cookbook**
 ```bash
 $ npm run review
 
@@ -448,6 +573,8 @@ $ npm run review
 
 Checking for .creative-intention.md...
 ✓ Found creative intention
+
+Book: Drain Salad (Cookbook - Satire)
 
 Your stated intention:
   "Make this cookbook feel more intimate and personal,
@@ -502,6 +629,129 @@ Would you like me to:
   [2] Show examples of more intimate voice
   [3] Re-review after you make changes
   [4] Save feedback and continue
+
+>
+```
+
+**Example 2: Fiction Novel**
+```bash
+$ npm run review
+
+> creative chapter-03
+
+Checking for .creative-intention.md...
+✓ Found creative intention
+
+Book: The Summer of Change (Literary Fiction)
+
+Your stated intention:
+  "Create visceral emotional impact that stays with
+   readers long after they close the book. Make them
+   feel Sarah's internal struggle."
+
+Review chapter-03-confrontation with this intention?
+
+Model recommendation: gpt-5-pro (deep analysis)
+Cost: ~$0.18 | Time: ~4-6 min
+
+[gpt-5-pro/o1/cancel]> [Enter]
+
+Starting GPT-5 pro creative consultant...
+
+⏳ Deep analysis in progress... (90s elapsed)
+✓ Complete!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CREATIVE CONSULTANT FEEDBACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Alignment with Creative Intention: 8.5/10
+
+The chapter achieves powerful emotional resonance but
+could deepen Sarah's internal struggle.
+
+What's Working:
+  ✓ Visceral physical descriptions of emotion
+  ✓ Strong sensory grounding in the scene
+  ✓ Dialogue reveals character naturally
+
+What Needs Work:
+  • Sarah's internal conflict stated, not shown
+  • Missing body language during key moment
+  • Could slow down climactic confrontation
+
+Specific Suggestions:
+  1. Replace "she felt conflicted" with physical sensations
+  2. Add micro-expressions during dialogue exchange
+  3. Extend confrontation scene - let tension breathe
+  4. Deeper POV during decision moment
+
+Would you like me to:
+  [1] Suggest specific rewrites
+  [2] Show examples of deeper interiority
+  [3] Re-review after you make changes
+
+>
+```
+
+**Example 3: Technical Programming Book**
+```bash
+$ npm run review
+
+> creative chapter-05
+
+Checking for .creative-intention.md...
+✓ Found creative intention
+
+Book: Async Patterns in TypeScript (Programming Tutorial)
+
+Your stated intention:
+  "Make complex concepts feel approachable and achievable.
+   Readers should feel encouraged, not intimidated, while
+   maintaining technical rigor."
+
+Review chapter-05-async-patterns with this intention?
+
+Model recommendation: gpt-5-pro (deep analysis)
+Cost: ~$0.20 | Time: ~5-7 min
+
+[gpt-5-pro/o1/cancel]> [Enter]
+
+Starting GPT-5 pro creative consultant...
+
+⏳ Deep analysis in progress... (120s elapsed)
+✓ Complete!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CREATIVE CONSULTANT FEEDBACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Alignment with Creative Intention: 7.0/10
+
+The chapter maintains technical accuracy but the tone
+sometimes becomes intimidating rather than encouraging.
+
+What's Working:
+  ✓ Clear explanations of complex concepts
+  ✓ Good use of analogies
+  ✓ Code examples are well-commented
+
+What Needs Work:
+  • Assumes too much prior knowledge in section 3
+  • Missing encouragement after difficult concepts
+  • Some error messages unexplained (could discourage)
+
+Specific Suggestions:
+  1. Add "Let's break this down" before complex sections
+  2. Include "You might wonder..." anticipatory guidance
+  3. Explain common errors readers will encounter
+  4. Add "checkpoint" summaries after hard concepts
+  5. Use more inclusive language ("we'll explore" vs "you should know")
+
+Would you like me to:
+  [1] Suggest specific rewrites
+  [2] Show examples of encouraging tone
+  [3] Re-review after you make changes
 
 >
 ```
@@ -569,16 +819,37 @@ Would you like me to:
 
 ## Command Reference
 
-### Simple Commands
+### Universal Commands (All Book Types)
 - `[Enter]` - Accept suggestion
 - `creative` - Creative consultant review
 - `tone` - Quick tone check
-- `facts` - Fact-checking review
-- `recipes` - Recipe validation
+- `structure` - Structure and flow review
+- `readability` - Readability assessment
 - `batch` - Batch review mode
 - `status` - Project overview
 - `help` - Show help
 - `quit` - Exit
+
+### Genre-Specific Commands
+
+**Cookbooks:**
+- `recipes` - Recipe validation
+- `facts` - Fact-checking (historical/scientific claims)
+
+**Fiction:**
+- `dialogue` - Dialogue review
+- `character` - Character consistency check
+- `pacing` - Pacing and tension analysis
+
+**Technical/Programming:**
+- `code` - Code sample validation
+- `examples` - Example clarity and accuracy
+- `technical` - Technical accuracy review
+
+**Academic:**
+- `citations` - Citation and reference check
+- `footnotes` - Footnote validation
+- `argument` - Argument structure analysis
 
 ### Complex Commands
 - `review chapter-03` - Review specific chapter

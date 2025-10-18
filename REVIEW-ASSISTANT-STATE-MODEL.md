@@ -26,6 +26,7 @@ manuscript/
 ├── chapter-02-anatomy.md
 ├── ...
 └── .state/
+    ├── book-config.json
     ├── chapters/
     │   ├── chapter-01-history.json
     │   ├── chapter-02-anatomy.json
@@ -46,6 +47,180 @@ manuscript/
 
 ---
 
+## Book Configuration
+
+### 0. Book Configuration
+
+**File:** `manuscript/.state/book-config.json`
+
+**Purpose:** Define book type, genre, and content characteristics
+
+The book configuration drives all genre-specific behavior, making the platform work for any book type.
+
+```json
+{
+  "type": "non-fiction",
+  "genre": "cookbook",
+  "subgenre": "satire",
+  "title": "Drain Salad",
+  "targetAudience": "home-cooks",
+  "voice": "conversational-satirical",
+
+  "contentTypes": {
+    "hasRecipes": true,
+    "hasCodeSamples": false,
+    "hasDialogue": false,
+    "hasTechnicalContent": true,
+    "hasFootnotes": false,
+    "hasScientificClaims": false,
+    "hasHistoricalClaims": true
+  },
+
+  "reviewTypes": [
+    "comprehensive",
+    "tone",
+    "structure",
+    "recipes",
+    "facts",
+    "readability",
+    "creative"
+  ],
+
+  "customDetection": {
+    "recipes": {
+      "patterns": ["## Recipe:", "### Ingredients", "### Instructions"],
+      "requiredFields": ["ingredients", "instructions", "yield"]
+    },
+    "historicalClaims": {
+      "patterns": ["medieval", "century", "ancient", "historical"],
+      "requiresCitation": true
+    }
+  },
+
+  "customWorkflows": {
+    "pre-publication": ["comprehensive", "recipes", "facts", "creative"],
+    "quick-check": ["tone", "readability"],
+    "recipe-focused": ["recipes", "facts"]
+  }
+}
+```
+
+**Multi-Genre Examples:**
+
+**Fiction Novel:**
+```json
+{
+  "type": "fiction",
+  "genre": "literary-fiction",
+  "subgenre": "coming-of-age",
+  "title": "The Summer of Change",
+  "targetAudience": "adult-readers",
+  "voice": "introspective-lyrical",
+
+  "contentTypes": {
+    "hasRecipes": false,
+    "hasCodeSamples": false,
+    "hasDialogue": true,
+    "hasTechnicalContent": false,
+    "hasFootnotes": false,
+    "hasScientificClaims": false,
+    "hasHistoricalClaims": false
+  },
+
+  "reviewTypes": [
+    "comprehensive",
+    "tone",
+    "structure",
+    "dialogue",
+    "character-consistency",
+    "pacing",
+    "creative"
+  ],
+
+  "customDetection": {
+    "dialogue": {
+      "patterns": ["\"", """, """],
+      "checkConsistency": true
+    },
+    "characterMentions": {
+      "patterns": ["character-name-1", "character-name-2"],
+      "trackDevelopment": true
+    }
+  },
+
+  "customWorkflows": {
+    "pre-publication": ["comprehensive", "dialogue", "character-consistency", "pacing", "creative"],
+    "quick-check": ["tone", "dialogue"],
+    "deep-edit": ["comprehensive", "creative", "character-consistency"]
+  }
+}
+```
+
+**Technical Programming Book:**
+```json
+{
+  "type": "technical",
+  "genre": "programming",
+  "subgenre": "tutorial",
+  "title": "Async Patterns in TypeScript",
+  "targetAudience": "intermediate-developers",
+  "voice": "clear-encouraging",
+
+  "contentTypes": {
+    "hasRecipes": false,
+    "hasCodeSamples": true,
+    "hasDialogue": false,
+    "hasTechnicalContent": true,
+    "hasFootnotes": true,
+    "hasScientificClaims": false,
+    "hasHistoricalClaims": false
+  },
+
+  "reviewTypes": [
+    "comprehensive",
+    "tone",
+    "structure",
+    "code",
+    "technical-accuracy",
+    "examples",
+    "readability"
+  ],
+
+  "customDetection": {
+    "code": {
+      "patterns": ["```typescript", "```javascript", "```"],
+      "checkSyntax": true,
+      "checkRunnable": true
+    },
+    "technicalTerms": {
+      "patterns": ["async", "await", "Promise", "callback"],
+      "requiresAccuracy": true
+    }
+  },
+
+  "customWorkflows": {
+    "pre-publication": ["comprehensive", "code", "technical-accuracy", "examples"],
+    "quick-check": ["code", "examples"],
+    "deep-edit": ["comprehensive", "technical-accuracy", "readability"]
+  }
+}
+```
+
+**Field Descriptions:**
+
+- **type**: Book category (fiction, non-fiction, technical, academic)
+- **genre**: Specific genre within type
+- **subgenre**: Further specialization
+- **title**: Book title
+- **targetAudience**: Intended readers
+- **voice**: Writing voice/tone style
+- **contentTypes**: Flags for what kinds of content exist
+- **reviewTypes**: Available review types for this book
+- **customDetection**: Patterns for detecting genre-specific content
+- **customWorkflows**: Pre-defined review sequences
+
+---
+
 ## State File Schemas
 
 ### 1. Chapter State
@@ -63,25 +238,29 @@ manuscript/
   "version": 3,
 
   "characteristics": {
-    "hasRecipes": false,
-    "recipeCount": 0,
-    "hasHistoricalClaims": true,
-    "hasTechnicalContent": true,
-    "hasScientificClaims": false,
     "complexity": "medium",
     "estimatedReadingTime": 12,
-    "detectedTopics": [
-      "fermentation",
-      "medieval-kitchens",
-      "food-waste"
-    ],
     "headingCount": 8,
     "sections": [
       "Introduction",
       "Medieval Kitchens",
       "Depression Era",
       "Modern Revival"
-    ]
+    ],
+    "detectedTopics": [
+      "fermentation",
+      "medieval-kitchens",
+      "food-waste"
+    ],
+    // Genre-specific characteristics (populated from book-config.json):
+    "hasRecipes": false,           // If cookbook
+    "recipeCount": 0,
+    "hasHistoricalClaims": true,   // If book tracks historical content
+    "hasTechnicalContent": true,   // If technical/cookbook
+    "hasScientificClaims": false,  // If science/academic
+    "hasDialogue": false,          // If fiction
+    "hasCodeSamples": false,       // If technical programming
+    "hasFootnotes": false          // If academic
   },
 
   "reviews": [
@@ -205,11 +384,15 @@ manuscript/
 - **status**: Current lifecycle status (see State Transitions below)
 - **version**: Incremented each time file is modified significantly
 - **characteristics**: Auto-detected chapter properties
+  - **Common fields** (all books): complexity, estimatedReadingTime, headingCount, sections, detectedTopics
+  - **Genre-specific fields** (from book-config.json): Dynamically populated based on `contentTypes` defined in book configuration. Examples: `hasRecipes` for cookbooks, `hasDialogue` for fiction, `hasCodeSamples` for technical books
 - **reviews**: Complete history of all reviews run
 - **pendingActions**: To-do items from reviews
 - **completedReviews**: Summary of review types completed
 - **metrics**: Aggregate statistics
 - **readyForPublication**: Boolean flag for publication readiness
+
+**Note on characteristics**: The characteristics object adapts to the book type defined in `book-config.json`. A cookbook chapter will have `hasRecipes` and `recipeCount`, a fiction chapter will have `hasDialogue` and `dialoguePercentage`, and a technical book chapter will have `hasCodeSamples` and `codeBlockCount`.
 
 ---
 
@@ -222,6 +405,9 @@ manuscript/
 ```json
 {
   "name": "Drain Salad",
+  "type": "non-fiction",
+  "genre": "cookbook",
+  "subgenre": "satire",
   "totalChapters": 12,
   "totalWords": 37711,
   "lastUpdate": "2025-10-18T14:32:00Z",
@@ -260,7 +446,7 @@ manuscript/
     "averageIterations": 2.5,
     "mostCommonIssues": [
       "tone-consistency",
-      "recipe-clarity",
+      "genre-specific-content-clarity",  // e.g., recipe-clarity, code-accuracy, dialogue-naturalness
       "missing-citations"
     ],
     "totalCost": 2.34,
@@ -271,9 +457,14 @@ manuscript/
 
 **Field Descriptions:**
 
+- **name**: Book title
+- **type**: Book category from book-config.json (fiction, non-fiction, technical, academic)
+- **genre**: Specific genre from book-config.json (cookbook, literary-fiction, programming, etc.)
+- **subgenre**: Further specialization from book-config.json
 - **chapters**: Summary of each chapter's status
 - **overallProgress**: Manuscript-wide metrics
 - **reviewPatterns**: Learned patterns from history
+  - **mostCommonIssues**: Adapt to book genre (e.g., "recipe-clarity" for cookbooks, "dialogue-naturalness" for fiction, "code-accuracy" for technical books)
 
 ---
 
@@ -305,11 +496,11 @@ manuscript/
     "commonMistakes": [
       "anachronistic-language",
       "missing-citations",
-      "recipe-measurements"
+      "genre-specific-accuracy"  // e.g., recipe-measurements, code-syntax-errors, dialogue-attribution
     ],
     "strengthAreas": [
       "storytelling",
-      "recipe-clarity",
+      "genre-specific-clarity",  // e.g., recipe-clarity, code-examples, dialogue-naturalness
       "voice-consistency"
     ],
     "typicalIterations": 2,
@@ -650,6 +841,39 @@ return chapters.filter(c => {
   return !state.completedReviews.comprehensive ||
          !state.completedReviews.comprehensive.passed;
 });
+```
+
+**"What chapters have genre-specific content that needs review?"**
+```javascript
+const bookConfig = sm.getBookConfig();
+const chapters = sm.getAllChapters();
+
+// Example for cookbooks - find chapters with recipes
+if (bookConfig.contentTypes.hasRecipes) {
+  return chapters.filter(c => {
+    const state = sm.getChapterState(c.name);
+    return state.characteristics.hasRecipes &&
+           (!state.completedReviews.recipes || !state.completedReviews.recipes.passed);
+  });
+}
+
+// Example for fiction - find chapters with dialogue
+if (bookConfig.contentTypes.hasDialogue) {
+  return chapters.filter(c => {
+    const state = sm.getChapterState(c.name);
+    return state.characteristics.hasDialogue &&
+           (!state.completedReviews.dialogue || !state.completedReviews.dialogue.passed);
+  });
+}
+
+// Example for technical - find chapters with code samples
+if (bookConfig.contentTypes.hasCodeSamples) {
+  return chapters.filter(c => {
+    const state = sm.getChapterState(c.name);
+    return state.characteristics.hasCodeSamples &&
+           (!state.completedReviews.code || !state.completedReviews.code.passed);
+  });
+}
 ```
 
 **"Show project overview"**
