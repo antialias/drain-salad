@@ -39,7 +39,15 @@
     "review": "./scripts/review-chapter.sh",
     "review:all": "./scripts/review-all-chapters.sh",
     "review:compare": "./scripts/compare-reviews.sh",
-    "review:pro": "node scripts/review-pro.js"
+    "review:pro": "node scripts/review-pro.js",
+    "review:images": "node scripts/review-images.js",
+    "review:image": "node scripts/review-images.js",
+    "review:images:structured": "node scripts/review-images-structured.js",
+    "prompts:refine": "node scripts/refine-prompts-from-review.js",
+    "prompts:refine:preview": "node scripts/refine-prompts-from-review.js --dry-run",
+    "quality:loop": "node scripts/image-quality-loop.js",
+    "quality:loop:full": "node scripts/image-quality-loop.js --regenerate-minor",
+    "quality:fix": "node scripts/image-quality-loop.js --skip-initial-review"
   },
   "keywords": [
     "cookbook",
